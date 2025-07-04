@@ -1,0 +1,5037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Solutions | TURBO TITANS Digital Transformation</title>
+    <meta name="description" content="Turbo Titans startup solutions that accelerate growth through disruptive technology, AI, and digital innovation.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+	<link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">      	  
+    <style>
+        /* Base Styles */
+        :root {
+            --neon-pink: #FF10F0;
+            --electric-purple: #B026FF;
+            --cyber-teal: #00F5D4;
+            --matrix-green: #00FF41;
+            --dark-space: #0A0A12;
+            --void-black: #000000;
+            --pure-white: #FFFFFF;
+            --neon-glow-pink: 0 0 15px rgba(255, 16, 240, 0.8);
+            --neon-glow-purple: 0 0 15px rgba(176, 38, 255, 0.8);
+            --neon-glow-teal: 0 0 15px rgba(0, 245, 212, 0.8);
+            --holographic-gradient: linear-gradient(135deg, var(--electric-purple), var(--neon-pink), var(--cyber-teal));
+            --cyberpunk-text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--electric-purple);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+		/* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--rich-black);
+            border-left: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--electric-blue), var(--highlight-red));
+            border-radius: 10px;
+            border: 3px solid var(--rich-black);
+            background-size: 200% 200%;
+            animation: scrollGradient 3s ease infinite;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--highlight-purple), var(--electric-blue));
+        }
+
+        @keyframes scrollGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* ===== Enhanced Cyberpunk Header ===== */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+}
+
+/* Logo Enhancements */
+.logo {
+    display: flex;
+    flex-direction: column;
+    z-index: 1001;
+}
+
+.logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--cyber-teal);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: var(--neon-glow-teal);
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-text {
+    color: var(--neon-pink);
+    text-shadow: var(--neon-glow-pink);
+}
+
+.logo-tagline {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--neon-pink);
+    text-transform: uppercase;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-tagline {
+    color: var(--cyber-teal);
+}
+
+/* Main Navigation */
+.desktop-nav ul {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.desktop-nav ul li {
+    position: relative;
+}
+
+.desktop-nav ul li a {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+    position: relative;
+    color: var(--pure-white);
+}
+
+.desktop-nav ul li a:hover {
+    color: var(--cyber-teal);
+    text-shadow: var(--neon-glow-teal);
+}
+
+/* Animated Underline Effect */
+.desktop-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-pink);
+    transition: width 0.3s ease;
+}
+
+.desktop-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Active Page Indicator */
+.desktop-nav ul li a.active {
+    color: var(--cyber-teal);
+    text-shadow: var(--neon-glow-teal);
+}
+
+.desktop-nav ul li a.active::after {
+    width: 100%;
+    background: var(--cyber-teal);
+}
+
+/* Dropdown Enhancements */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(10, 10, 18, 0.95);
+    backdrop-filter: blur(10px);
+    min-width: 220px;
+    padding: 15px 0;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(176, 38, 255, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid var(--electric-purple);
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 25px;
+    color: var(--pure-white);
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: rgba(0, 245, 212, 0.1);
+    color: var(--cyber-teal);
+    padding-left: 30px;
+}
+
+.dropdown-content a::before {
+    content: '>';
+    position: absolute;
+    left: 15px;
+    color: var(--neon-pink);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover::before {
+    opacity: 1;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cyber-teal);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: var(--neon-pink);
+    transform: scale(1.1);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 18, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 100px 30px 30px;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+}
+
+.mobile-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu .desktop-nav ul {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-menu .desktop-nav ul li a {
+    font-size: 1.1rem;
+    padding: 12px 0;
+}
+
+.mobile-menu .dropdown-content {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 10px 0 0 20px;
+    margin-top: 10px;
+}
+
+.mobile-menu .dropdown-content a {
+    padding: 8px 0;
+    font-size: 0.95rem;
+}
+
+.mobile-menu .dropdown-content a::before {
+    left: 0;
+}
+
+/* Header Scroll Effects */
+header.scrolled {
+    background: rgba(10, 10, 18, 0.98);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--electric-purple);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .logo-tagline {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    .logo-tagline {
+        letter-spacing: 3px;
+    }
+    
+    .header-inner {
+        padding: 10px 0;
+    }
+}
+/* Prevent scrolling when mobile menu is open */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Dropdown arrow animation */
+.dropdown > a::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-left: 8px;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a::after {
+    transform: rotate(180deg);
+}
+
+/* Mobile menu close button */
+.mobile-menu-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 1.5rem;
+    color: var(--cyber-teal);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mobile menu animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-menu .desktop-nav ul li {
+    animation: fadeInUp 0.4s ease forwards;
+    opacity: 0;
+}
+
+.mobile-menu .desktop-nav ul li:nth-child(1) { animation-delay: 0.1s; }
+.mobile-menu .desktop-nav ul li:nth-child(2) { animation-delay: 0.2s; }
+.mobile-menu .desktop-nav ul li:nth-child(3) { animation-delay: 0.3s; }
+.mobile-menu .desktop-nav ul li:nth-child(4) { animation-delay: 0.4s; }
+.mobile-menu .desktop-nav ul li:nth-child(5) { animation-delay: 0.5s; }
+.mobile-menu .desktop-nav ul li:nth-child(6) { animation-delay: 0.6s; }
+        body {
+            font-family: 'Rajdhani', 'Orbitron', sans-serif;
+            background-color: var(--dark-space);
+            color: var(--pure-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @font-face {
+            font-family: 'Rajdhani';
+            src: url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+        }
+
+        @font-face {
+            font-family: 'Orbitron';
+            src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Cyberpunk Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 18, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 16, 240, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--cyber-teal);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: var(--neon-glow-teal);
+        }
+
+        .logo-tagline {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            color: var(--neon-pink);
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Cyberpunk Navigation */
+        .desktop-nav ul {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .desktop-nav ul li {
+            position: relative;
+        }
+
+        .desktop-nav ul li a {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+            color: var(--pure-white);
+        }
+
+        .desktop-nav ul li a:hover {
+            color: var(--cyber-teal);
+            text-shadow: var(--neon-glow-teal);
+        }
+
+        .desktop-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-pink);
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Vanta.js Background */
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* Cyberpunk Hero */
+        .startup-hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--cyber-teal);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: var(--cyberpunk-text-shadow);
+            animation: flicker 3s infinite alternate;
+        }
+
+        .hero-subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            color: var(--pure-white);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--neon-pink);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        /* 3D DNA Helix Section */
+        .dna-section {
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #dna-helix {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .dna-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dna-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: var(--electric-purple);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: var(--neon-glow-purple);
+        }
+
+        .dna-description {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: var(--pure-white);
+        }
+
+        /* Particle Grid Solutions */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .solution-card {
+            position: relative;
+            height: 450px;
+            perspective: 1500px;
+            transform-style: preserve-3d;
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--electric-purple);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(176, 38, 255, 0.3);
+            border-color: var(--cyber-teal);
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(176, 38, 255, 0.1), rgba(0, 245, 212, 0.1));
+            z-index: -1;
+        }
+
+        .solution-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .solution-icon {
+            font-size: 3.5rem;
+            color: var(--neon-pink);
+            margin-bottom: 25px;
+            text-shadow: var(--neon-glow-pink);
+            transition: all 0.5s ease;
+        }
+
+        .solution-card:hover .solution-icon {
+            transform: scale(1.2);
+            color: var(--cyber-teal);
+            text-shadow: var(--neon-glow-teal);
+        }
+
+        .solution-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: var(--cyber-teal);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .solution-description {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: var(--pure-white);
+        }
+
+        .solution-features {
+            margin-top: auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .feature-icon {
+            color: var(--neon-pink);
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* 3D Floating Tech Shapes */
+        .tech-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .tech-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.15;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-pink);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--electric-purple);
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            background: var(--cyber-teal);
+            top: 60%;
+            left: 30%;
+            animation-delay: 6s;
+        }
+
+        /* Startup Growth Path */
+        .growth-path {
+            padding: 150px 0;
+            position: relative;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .path-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .path-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--neon-pink), var(--electric-purple));
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .path-milestone {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+            z-index: 2;
+        }
+
+        .milestone-content {
+            width: 45%;
+            padding: 30px;
+            background: rgba(10, 10, 18, 0.8);
+            border: 1px solid var(--electric-purple);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(176, 38, 255, 0.2);
+        }
+
+        .milestone-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: var(--dark-space);
+            border: 3px solid var(--neon-pink);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--cyber-teal);
+            z-index: 3;
+        }
+
+        .milestone-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--cyber-teal);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .milestone-description {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--pure-white);
+        }
+        /* Additional Styles for New Sections */
+        
+        /* Neural Network Section */
+        .neural-section {
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .neural-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .neural-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: var(--electric-purple);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: var(--neon-glow-purple);
+        }
+        
+        .neural-subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            color: var(--pure-white);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .neural-visualization {
+            position: relative;
+            height: 500px;
+            margin-bottom: 80px;
+        }
+        
+        #neuralCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .neural-nodes {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .node {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(176, 38, 255, 0.2);
+            border: 2px solid var(--electric-purple);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--pure-white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(176, 38, 255, 0.3);
+        }
+        
+        .node:hover {
+            background: rgba(176, 38, 255, 0.4);
+            transform: scale(1.1);
+            box-shadow: 0 0 30px var(--electric-purple);
+        }
+        
+        .node-1 { top: 30%; left: 20%; }
+        .node-2 { top: 10%; left: 50%; }
+        .node-3 { top: 70%; left: 40%; }
+        .node-4 { top: 50%; left: 70%; }
+        .node-5 { top: 30%; left: 80%; }
+        
+        .neural-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .neural-feature {
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--electric-purple);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .neural-feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(176, 38, 255, 0.2);
+            border-color: var(--cyber-teal);
+        }
+        
+        .neural-feature .feature-icon {
+            font-size: 2rem;
+            color: var(--neon-pink);
+            margin-bottom: 20px;
+        }
+        
+        .neural-feature h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--cyber-teal);
+            margin-bottom: 15px;
+        }
+        
+        .neural-feature p {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--pure-white);
+        }
+        
+        /* Holographic Testimonials */
+        .holographic-testimonials {
+            padding: 150px 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(10, 10, 30, 0.9));
+        }
+        
+        .holo-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: var(--cyber-teal);
+            text-align: center;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: var(--neon-glow-teal);
+        }
+        
+        .holo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .holo-card {
+            position: relative;
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--electric-purple);
+            border-radius: 10px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .holo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(176, 38, 255, 0.3);
+            border-color: var(--cyber-teal);
+        }
+        
+        .holo-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 25px;
+            border: 3px solid var(--neon-pink);
+            box-shadow: var(--neon-glow-pink);
+        }
+        
+        .holo-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .holo-content p {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--pure-white);
+            margin-bottom: 25px;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .holo-content p::before,
+        .holo-content p::after {
+            content: '"';
+            color: var(--neon-pink);
+            font-size: 1.5rem;
+            font-family: serif;
+        }
+        
+        .holo-content p::before {
+            margin-right: 5px;
+        }
+        
+        .holo-content p::after {
+            margin-left: 5px;
+        }
+        
+        .holo-author {
+            font-family: 'Rajdhani', sans-serif;
+        }
+        
+        .holo-author strong {
+            display: block;
+            color: var(--cyber-teal);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .holo-author span {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .holo-glows {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .holo-glows::before,
+        .holo-glows::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+        }
+        
+        .holo-glows::before {
+            background: var(--neon-pink);
+            top: -50px;
+            left: -50px;
+        }
+        
+        .holo-glows::after {
+            background: var(--electric-purple);
+            bottom: -50px;
+            right: -50px;
+        }
+        
+        /* Tech Stack Floating Islands */
+        .tech-stack {
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stack-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: var(--electric-purple);
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: var(--neon-glow-purple);
+        }
+        
+        .stack-subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            color: var(--pure-white);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
+        }
+        
+        .stack-islands {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .island {
+            width: calc(33.333% - 20px);
+            min-width: 300px;
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--electric-purple);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .island:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 0 30px 50px rgba(176, 38, 255, 0.3);
+            border-color: var(--cyber-teal);
+        }
+        
+        .island::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(176, 38, 255, 0.1), rgba(0, 245, 212, 0.1));
+            z-index: -1;
+        }
+        
+        .island-icon {
+            font-size: 2.5rem;
+            color: var(--neon-pink);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .island:hover .island-icon {
+            transform: scale(1.2);
+            color: var(--cyber-teal);
+        }
+        
+        .island h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            color: var(--cyber-teal);
+            margin-bottom: 20px;
+        }
+        
+        .island ul {
+            margin-top: 20px;
+        }
+        
+        .island ul li {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.95rem;
+            color: var(--pure-white);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .island ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--neon-pink);
+        }
+        
+        /* Interactive Roadmap */
+        .interactive-roadmap {
+            padding: 150px 0;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .roadmap-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: var(--electric-purple);
+            text-align: center;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+			text-shadow: var(--neon-glow-purple);
+        }
+        
+        .roadmap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 50px;
+        }
+        
+        .roadmap-timeline {
+            flex: 1;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-bar {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--electric-purple), var(--cyber-teal));
+            border-radius: 2px;
+        }
+        
+        .milestone {
+            position: relative;
+            margin-bottom: 60px;
+            padding-left: 80px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .milestone:last-child {
+            margin-bottom: 0;
+        }
+        
+        .milestone:hover {
+            transform: translateX(10px);
+        }
+        
+        .milestone.active .milestone-dot {
+            background: var(--cyber-teal);
+            box-shadow: 0 0 20px var(--cyber-teal);
+            transform: scale(1.2);
+        }
+        
+        .milestone-dot {
+            position: absolute;
+            left: 46px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--electric-purple);
+            border: 2px solid var(--pure-white);
+            transition: all 0.3s ease;
+        }
+        
+        .milestone-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-pink);
+            margin-bottom: 10px;
+        }
+        
+        .milestone-info p {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .roadmap-details {
+            flex: 2;
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--electric-purple);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(176, 38, 255, 0.2);
+        }
+        
+        .phase-details {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .phase-details h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--cyber-teal);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .phase-details ul {
+            list-style-type: none;
+        }
+        
+        .phase-details ul li {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            color: var(--pure-white);
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .phase-details ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 15px;
+            height: 3px;
+            background: var(--neon-pink);
+        }
+        /* Add this CSS right before the media queries section */
+/* Metrics Dashboard Styles */
+.metrics-dashboard {
+    padding: 150px 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 16, 240, 0.1);
+    border-bottom: 1px solid rgba(0, 245, 212, 0.1);
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    color: var(--cyber-teal);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0, 245, 212, 0.5);
+}
+
+.dashboard-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: var(--pure-white);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.time-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.time-filter {
+    background: transparent;
+    border: 1px solid var(--electric-purple);
+    color: var(--pure-white);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.time-filter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(176, 38, 255, 0.3), transparent);
+    transition: all 0.5s ease;
+}
+
+.time-filter:hover {
+    background: rgba(176, 38, 255, 0.2);
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
+}
+
+.time-filter:hover::before {
+    left: 100%;
+}
+
+.time-filter.active {
+    background: var(--electric-purple);
+    box-shadow: 0 0 20px var(--electric-purple);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.metric-card {
+    background: rgba(10, 10, 18, 0.7);
+    border: 1px solid var(--electric-purple);
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(176, 38, 255, 0.1), rgba(0, 245, 212, 0.1));
+    z-index: -1;
+}
+
+.metric-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 20px 40px rgba(176, 38, 255, 0.3);
+    border-color: var(--cyber-teal);
+}
+
+.metric-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.metric-header i {
+    font-size: 1.5rem;
+    color: var(--neon-pink);
+    margin-right: 15px;
+    text-shadow: var(--neon-glow-pink);
+}
+
+.metric-header h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: var(--pure-white);
+    margin-right: auto;
+}
+
+.metric-change {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.metric-change.positive {
+    background: rgba(0, 255, 128, 0.1);
+    color: #00ff80;
+    border: 1px solid rgba(0, 255, 128, 0.3);
+}
+
+.metric-change.negative {
+    background: rgba(255, 0, 64, 0.1);
+    color: #ff0040;
+    border: 1px solid rgba(255, 0, 64, 0.3);
+}
+
+.metric-chart {
+    height: 150px;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.metric-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat {
+    text-align: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: var(--cyber-teal);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dashboard-cta {
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-cta p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    color: var(--pure-white);
+    margin-bottom: 20px;
+}
+
+.dashboard-tech-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.dashboard-tech-shapes .tech-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.1;
+    animation: float 15s infinite ease-in-out;
+}
+
+.dashboard-tech-shapes .shape-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--neon-pink);
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.dashboard-tech-shapes .shape-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--electric-purple);
+    bottom: 15%;
+    right: 10%;
+    animation-delay: 5s;
+}
+
+.dashboard-tech-shapes .shape-3 {
+    width: 250px;
+    height: 250px;
+    background: var(--cyber-teal);
+    top: 60%;
+    left: 30%;
+    animation-delay: 10s;
+}
+
+/* Chart tooltip styles */
+.chart-tooltip {
+    background: rgba(10, 10, 18, 0.95) !important;
+    border: 1px solid var(--electric-purple) !important;
+    border-radius: 5px !important;
+    padding: 10px 15px !important;
+    font-family: 'Rajdhani', sans-serif !important;
+}
+
+.chart-tooltip .label {
+    color: var(--neon-pink) !important;
+    font-weight: 600 !important;
+    margin-bottom: 5px !important;
+}
+
+.chart-tooltip .value {
+    color: var(--cyber-teal) !important;
+    font-weight: 700 !important;
+}
+        /* Funding Engine Styles */
+.funding-engine {
+    padding: 150px 0;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(10, 10, 18, 0.9), rgba(5, 5, 15, 1));
+    overflow: hidden;
+    border-top: 1px solid rgba(0, 245, 212, 0.2);
+}
+
+.engine-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 3;
+}
+
+.engine-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--neon-pink);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 16, 240, 0.5);
+}
+
+.engine-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: var(--pure-white);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+}
+
+.engine-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.engine-tab {
+    background: transparent;
+    border: 1px solid var(--electric-purple);
+    color: var(--pure-white);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.engine-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(176, 38, 255, 0.3), transparent);
+    transition: all 0.5s ease;
+}
+
+.engine-tab:hover {
+    background: rgba(176, 38, 255, 0.2);
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
+}
+
+.engine-tab.active {
+    background: var(--electric-purple);
+    box-shadow: 0 0 20px var(--electric-purple);
+}
+
+.engine-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.engine-content.active {
+    display: block;
+}
+
+/* Valuation Model Styles */
+.valuation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.valuation-model {
+    background: rgba(10, 10, 18, 0.7);
+    border: 1px solid var(--electric-purple);
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.valuation-model::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(176, 38, 255, 0.1), rgba(0, 245, 212, 0.1));
+    z-index: -1;
+}
+
+.valuation-model h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--cyber-teal);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.valuation-visual {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.valuation-dial {
+    flex: 1;
+    position: relative;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dial-face {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 5px solid var(--electric-purple);
+    position: relative;
+    box-shadow: 0 0 30px rgba(176, 38, 255, 0.3);
+}
+
+.dial-needle {
+    position: absolute;
+    width: 4px;
+    height: 80px;
+    background: var(--neon-pink);
+    top: 20px;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(45deg);
+    box-shadow: 0 0 10px var(--neon-pink);
+    border-radius: 2px;
+}
+
+.dial-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--cyber-teal);
+    text-shadow: 0 0 10px var(--cyber-teal);
+}
+
+.dial-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.dial-metrics .metric {
+    text-align: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dial-metrics .metric span {
+    display: block;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 5px;
+}
+
+.dial-metrics .metric strong {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: var(--pure-white);
+}
+
+.valuation-factors {
+    flex: 1;
+}
+
+.valuation-factors h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    color: var(--pure-white);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.factor-list {
+    list-style: none;
+}
+
+.factor-list .factor {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.factor-bar {
+    width: 100px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-right: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.factor-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--cyber-teal);
+}
+
+.factor[data-impact="high"] .factor-bar::after { width: 80%; }
+.factor[data-impact="medium"] .factor-bar::after { width: 50%; }
+.factor[data-impact="low"] .factor-bar::after { width: 30%; }
+
+.factor-list .factor span {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    color: var(--pure-white);
+    flex: 1;
+}
+
+.factor-list .factor strong {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: var(--neon-pink);
+    width: 80px;
+    text-align: right;
+}
+
+.valuation-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Comparison Table Styles */
+.valuation-comparison {
+    background: rgba(10, 10, 18, 0.7);
+    border: 1px solid var(--electric-purple);
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.valuation-comparison::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(176, 38, 255, 0.1), rgba(0, 245, 212, 0.1));
+    z-index: -1;
+}
+
+.valuation-comparison h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--cyber-teal);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.comparison-chart {
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.comparison-table {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    background: rgba(176, 38, 255, 0.1);
+    padding: 12px 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cyber-teal);
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    padding: 12px 15px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    color: var(--pure-white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table-row.highlight {
+    background: rgba(0, 245, 212, 0.1);
+    color: var(--cyber-teal);
+    font-weight: 600;
+}
+
+/* Funding Rounds Timeline */
+.rounds-timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-bar {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--electric-purple), var(--cyber-teal));
+    border-radius: 2px;
+}
+
+.round {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.round:last-child {
+    margin-bottom: 0;
+}
+
+.round-icon {
+    position: absolute;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dark-space);
+    border: 2px solid var(--electric-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--neon-pink);
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
+}
+
+.round-content {
+    background: rgba(10, 10, 18, 0.7);
+    border: 1px solid var(--electric-purple);
+    border-radius: 10px;
+    padding: 25px;
+    flex: 1;
+    box-shadow: 0 10px 30px rgba(176, 38, 255, 0.2);
+}
+
+.round-content h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: var(--cyber-teal);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.round-content p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.round-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.round-stats .stat {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.round-stats .stat span {
+    display: block;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 5px;
+}
+
+.round-stats .stat strong {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: var(--pure-white);
+}
+
+.round-cta {
+    text-align: right;
+}
+
+/* Circuit Board Overlay */
+.circuit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(176, 38, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(176, 38, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.engine-cta {
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.engine-cta p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: var(--pure-white);
+    margin-bottom: 20px;
+}
+        /* Final CTA with Particle Network */
+        .final-cta {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        #particle-network {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .cta-content h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            color: var(--pure-white);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--electric-purple), 
+                         0 0 20px var(--electric-purple);
+        }
+        
+        .cta-content p {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            color: var(--pure-white);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cyber-button {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: var(--pure-white);
+            background: transparent;
+            border: 2px solid var(--electric-purple);
+            padding: 15px 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+        }
+        
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(176, 38, 255, 0.4), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .cyber-button:hover {
+            background: rgba(176, 38, 255, 0.2);
+            box-shadow: 0 0 20px var(--electric-purple);
+        }
+        
+        .cyber-button:hover::before {
+            left: 100%;
+        }
+        
+        .cyber-button.secondary {
+            border-color: var(--cyber-teal);
+            box-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
+        }
+        
+        .cyber-button.secondary:hover {
+            background: rgba(0, 245, 212, 0.2);
+            box-shadow: 0 0 20px var(--cyber-teal);
+        }
+        
+        /* Cyberpunk Footer */
+        footer {
+            background: linear-gradient(to bottom, rgba(10, 10, 18, 0.9), rgba(5, 5, 15, 1));
+            padding: 80px 0 30px;
+            position: relative;
+            border-top: 1px solid var(--electric-purple);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--cyber-teal);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .footer-about {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: var(--pure-white);
+            font-size: 1rem;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--electric-purple);
+            transform: translateY(-3px);
+        }
+        
+        .footer-col ul {
+            list-style-type: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-col ul li a {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-col ul li a::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--neon-pink);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--pure-white);
+            padding-left: 20px;
+        }
+        
+        .footer-col ul li a:hover::before {
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-bottom p {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-links a {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--neon-pink);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(176, 38, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(176, 38, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(176, 38, 255, 0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .roadmap-container {
+                flex-direction: column;
+            }
+            
+            .roadmap-timeline {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+            }
+            
+            .timeline-bar {
+                left: auto;
+                top: 50px;
+                bottom: auto;
+                width: 80%;
+                height: 4px;
+            }
+            
+            .milestone {
+                width: 100%;
+                max-width: 400px;
+                padding: 60px 0 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            
+            .milestone-dot {
+                left: 50%;
+                top: -8px;
+                transform: translateX(-50%);
+            }
+            
+            .neural-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .stack-islands {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .island {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .neural-title, .holo-title, .stack-title, .roadmap-title, .cta-content h2 {
+                font-size: 2rem;
+            }
+            
+            .neural-subtitle, .stack-subtitle {
+                font-size: 1rem;
+            }
+            
+            .neural-visualization {
+                height: 400px;
+            }
+            
+            .node {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .holo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cyber-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .neural-title, .holo-title, .stack-title, .roadmap-title, .cta-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .neural-section, .holographic-testimonials, .tech-stack, .interactive-roadmap {
+                padding: 80px 0;
+            }
+            
+            .neural-visualization {
+                height: 300px;
+            }
+            
+            .node {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+            
+            .final-cta {
+                height: 500px;
+            }
+        }
+        /* Cyberpunk CTA */
+        .cyber-cta {
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cyber-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(176, 38, 255, 0.3), rgba(255, 16, 240, 0.3));
+            z-index: -1;
+        }
+
+        .cyber-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cyber-cta h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: var(--cyber-teal);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: var(--cyberpunk-text-shadow);
+        }
+
+        .cyber-cta p {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            color: var(--pure-white);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cyber-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: var(--cyber-teal);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--cyber-teal);
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 20px rgba(0, 245, 212, 0.3);
+        }
+
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 212, 0.4), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .cyber-button:hover {
+            background: rgba(0, 245, 212, 0.1);
+            color: var(--pure-white);
+            box-shadow: 0 0 30px rgba(0, 245, 212, 0.6);
+        }
+
+        .cyber-button:hover::before {
+            left: 100%;
+        }
+
+        /* Cyberpunk Footer */
+        footer {
+            background: linear-gradient(to bottom, rgba(10, 10, 18, 1), rgba(0, 0, 5, 1));
+            padding: 80px 0 0;
+            position: relative;
+            border-top: 1px solid rgba(255, 16, 240, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col {
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--cyber-teal);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col ul li a {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            color: var(--pure-white);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-col ul li a::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--neon-pink);
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--cyber-teal);
+            padding-left: 20px;
+        }
+
+        .footer-col ul li a:hover::before {
+            color: var(--electric-purple);
+        }
+
+        .footer-about {
+            margin: 20px 0;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--pure-white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(176, 38, 255, 0.1);
+            border: 1px solid var(--electric-purple);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--electric-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px var(--electric-purple);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 16, 240, 0.1);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.8rem;
+            color: var(--pure-white);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--neon-pink);
+        }
+
+        /* Animations */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: var(--cyberpunk-text-shadow);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 0.2;
+            }
+            100% {
+                opacity: 0.1;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .dna-title {
+                font-size: 2.5rem;
+            }
+            
+            .cyber-cta h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .path-line {
+                display: none;
+            }
+            
+            .path-milestone {
+                flex-direction: column;
+                margin-bottom: 60px;
+            }
+            
+            .milestone-content {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .milestone-number {
+                position: relative;
+                margin: 20px 0;
+                transform: none;
+                left: auto;
+                top: auto;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cyber-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .cyber-cta p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .dna-title {
+                font-size: 1.8rem;
+            }
+            
+            .solution-card {
+                height: 400px;
+                padding: 25px;
+            }
+            
+            .cyber-cta {
+                padding: 100px 0;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Vanta.js Background -->
+    <div id="vanta-bg"></div>
+
+    <!-- Cyberpunk Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TURBO TITANS</span>
+                    <span class="logo-tagline">Startup Acceleration</span>
+                </a>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">Solutions <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="startupsac.html">Startup Solutions</a>
+                                <a href="enterprise.html">Enterprise Solutions</a>
+                                <a href="ai.html">AI Transformation</a>
+                            </div>
+                        </li>
+                        <li><a href="case-studies.html">Success Stories</a></li>
+                        <li><a href="case-studies.html">Insights</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cyberpunk Hero -->
+    <section class="startup-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Startup Solutions</h1>
+            <p class="hero-subtitle">Supercharge your startup with our disruptive digital transformation technologies designed for rapid scaling and market domination</p>
+            <a href="#solutions" class="cyber-button">Launch Your Rocket</a>
+        </div>
+        <div class="hero-scroll">Scroll to Explore</div>
+    </section>
+
+    <!-- 3D DNA Digital Transformation -->
+    <section class="dna-section">
+        <div id="dna-helix"></div>
+        <div class="dna-content">
+            <h2 class="dna-title">Digital DNA Transformation</h2>
+            <p class="dna-description">We rebuild your startup's digital DNA from the ground up, integrating cutting-edge technologies that become part of your company's core identity. Our approach ensures sustainable growth and adaptability in today's volatile markets.</p>
+            <a href="#" class="cyber-button">Transform Your DNA</a>
+        </div>
+    </section>
+
+    <!-- Particle Grid Solutions -->
+    <section id="solutions" class="solutions-section">
+        <div class="container">
+            <div class="tech-shapes">
+                <div class="tech-shape shape-1"></div>
+                <div class="tech-shape shape-2"></div>
+                <div class="tech-shape shape-3"></div>
+            </div>
+            
+            <div class="section-header">
+                <h2 class="section-title">Hypergrowth Solutions</h2>
+                <p class="section-subtitle">Modular solutions that scale with your startup's explosive growth</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <!-- Solution 1 -->
+                <div class="solution-card">
+                    <div class="solution-card-inner">
+                        <i class="fas fa-rocket solution-icon"></i>
+                        <h3 class="solution-title">Launch Platform</h3>
+                        <p class="solution-description">Everything you need to go from zero to product-market fit in record time with our battle-tested startup launch system.</p>
+                        <div class="solution-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>MVP Development Framework</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>Growth Hacking Toolkit</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>Market Validation Systems</span>
+                            </div>
+                        </div>
+                        <a href="#" class="cyber-button"></a>
+                    </div>
+                </div>
+                
+                <!-- Solution 2 -->
+                <div class="solution-card">
+                    <div class="solution-card-inner">
+                        <i class="fas fa-brain solution-icon"></i>
+                        <h3 class="solution-title">AI Core</h3>
+                        <p class="solution-description">Embed artificial intelligence into your product and operations from day one with our modular AI systems.</p>
+                        <div class="solution-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>Predictive Analytics</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>Automated Decision Engines</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>Natural Language Processing</span>
+                            </div>
+                        </div>
+                        <a href="#" class="cyber-button"></a>
+                    </div>
+                </div>
+                
+                <!-- Solution 3 -->
+                <div class="solution-card">
+                    <div class="solution-card-inner">
+                        <i class="fas fa-chart-line solution-icon"></i>
+                        <h3 class="solution-title">Scale Stack</h3>
+                        <p class="solution-description">Infrastructure designed to handle 10x growth spikes without even breaking a sweat or your budget.</p>
+                        <div class="solution-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>Auto-scaling Architecture</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>Microservices Foundation</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check feature-icon"></i>
+                                <span>Performance Optimization</span>
+                            </div>
+                        </div>
+                        <a href="#" class="cyber-button"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startup Growth Path -->
+    <section class="growth-path">
+        <div class="path-container">
+            <div class="path-line"></div>
+            
+            <!-- Milestone 1 -->
+            <div class="path-milestone">
+                <div class="milestone-content left">
+                    <h3 class="milestone-title">Ideation & Validation</h3>
+                    <p class="milestone-description">We help refine your startup concept with market validation tools, competitor analysis frameworks, and rapid prototyping systems that test assumptions before you build.</p>
+                </div>
+                <div class="milestone-number">1</div>
+                <div class="milestone-content right">
+                    <h3 class="milestone-title">Tech Stack Design</h3>
+                    <p class="milestone-description">Our architects design future-proof technology stacks that scale with your growth while minimizing technical debt from day one.</p>
+                </div>
+            </div>
+            
+            <!-- Milestone 2 -->
+            <div class="path-milestone">
+                <div class="milestone-content left">
+                    <h3 class="milestone-title">MVP Development</h3>
+                    <p class="milestone-description">Using our accelerated development framework, we build your minimum viable product in weeks, not months, with built-in analytics and user feedback loops.</p>
+                </div>
+                <div class="milestone-number">2</div>
+                <div class="milestone-content right">
+                    <h3 class="milestone-title">Launch & Traction</h3>
+                    <p class="milestone-description">Our growth hacking playbook combines viral mechanics, conversion optimization, and data-driven marketing to achieve explosive early traction.</p>
+                </div>
+            </div>
+            
+            <!-- Milestone 3 -->
+            <div class="path-milestone">
+                <div class="milestone-content left">
+                    <h3 class="milestone-title">Scale Infrastructure</h3>
+                    <p class="milestone-description">As demand grows, we seamlessly transition your systems to auto-scaling cloud architectures with 99.99% uptime guarantees.</p>
+                </div>
+                <div class="milestone-number">3</div>
+                <div class="milestone-content right">
+                    <h3 class="milestone-title">AI Integration</h3>
+                    <p class="milestone-description">We inject artificial intelligence throughout your operations - from customer service automation to predictive analytics and smart personalization.</p>
+                </div>
+            </div>
+            
+            <!-- Milestone 4 -->
+            <div class="path-milestone">
+                <div class="milestone-content left">
+                    <h3 class="milestone-title">Funding Preparation</h3>
+                    <p class="milestone-description">Our systems generate investor-ready metrics, pitch materials, and financial models that showcase your startup's potential and traction.</p>
+                </div>
+                <div class="milestone-number">4</div>
+                <div class="milestone-content right">
+                    <h3 class="milestone-title">Global Expansion</h3>
+                    <p class="milestone-description">When you're ready, we localize your product for international markets with multi-currency, multi-language, and regional compliance solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cyberpunk CTA -->
+    <section class="cyber-cta">
+        <div class="cyber-cta-content">
+            <h2>Ready To Disrupt The Market?</h2>
+            <p>Schedule a free startup consultation with our digital transformation architects and receive a customized growth roadmap for your venture.</p>
+            <a href="contactus.html" class="cyber-button">Claim Your Future</a>
+        </div>
+    </section>
+
+        <!-- Neural Network Visualization -->
+    <section class="neural-section">
+        <div class="container">
+            <div class="neural-header">
+                <h2 class="neural-title">AI-Powered Growth Neural Network</h2>
+                <p class="neural-subtitle">Our proprietary algorithms create a digital neural network that continuously optimizes your startup's growth pathways</p>
+            </div>
+            
+            <div class="neural-visualization">
+                <canvas id="neuralCanvas"></canvas>
+                <div class="neural-nodes">
+                    <div class="node node-1" data-tooltip="Customer Acquisition">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="node node-2" data-tooltip="Revenue Streams">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="node node-3" data-tooltip="Product Engagement">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="node node-4" data-tooltip="Operational Efficiency">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="node node-5" data-tooltip="Market Expansion">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="neural-features">
+                <div class="neural-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Real-time Adaptation</h3>
+                    <p>Our system continuously analyzes hundreds of growth signals to optimize your strategies in real-time.</p>
+                </div>
+                <div class="neural-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Connected Intelligence</h3>
+                    <p>All business units are interconnected, allowing insights from one area to benefit others automatically.</p>
+                </div>
+                <div class="neural-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Predictive Scaling</h3>
+                    <p>Anticipate growth bottlenecks before they happen with our predictive infrastructure scaling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Holographic Testimonials -->
+    <section class="holographic-testimonials">
+        <div class="container">
+            <h2 class="holo-title">Key Insights on Startup Acceleration</h2>
+            
+            <div class="holo-grid">
+                <div class="holo-card">
+                    <div class="holo-avatar" style="background-image: url('https://flagcdn.com/w320/za.png')"></div>
+                    <div class="holo-content">
+                        <p>"The leap from MVP to Series B in 18 months demands more than grit—it takes systems that expose hidden market whitespace."</p>
+                        <div class="holo-author">
+                            <strong>SOUTH AFRICA</strong>
+                            <span>Cape Town</span>
+                        </div>
+                    </div>
+                    <div class="holo-glows"></div>
+                </div>
+                
+                <div class="holo-card">
+                    <div class="holo-avatar" style="background-image: url('https://flagcdn.com/w320/jp.png  ')"></div>
+                    <div class="holo-content">
+                        <p>"Cutting CAC by 70% requires more than optimization—it’s about rewriting the playbook for conversion."</p>
+                        <div class="holo-author">
+                            <strong>JAPAN</strong>
+                            <span>Kyoto</span>
+                        </div>
+                    </div>
+                    <div class="holo-glows"></div>
+                </div>
+                
+                <div class="holo-card">
+                    <div class="holo-avatar" style="background-image: url('https://flagcdn.com/w320/us.png')"></div>
+                    <div class="holo-content">
+                        <p>"Scaling to 1M users without bloating headcount isn’t magic—it’s infrastructure built for zero-friction growth."</p>
+                        <div class="holo-author">
+                            <strong>UNITED STATES</strong>
+                            <span>Wasington, DC</span>
+                        </div>
+                    </div>
+                    <div class="holo-glows"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Floating Islands -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="stack-title">Modular Tech Stack Components</h2>
+            <p class="stack-subtitle">Mix and match our battle-tested technology modules to build your perfect growth engine</p>
+            
+            <div class="stack-islands">
+                <div class="island island-1">
+                    <div class="island-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>Frontend Accelerators</h3>
+                    <ul>
+                        <li>React Hyperstack</li>
+                        <li>WebAssembly Boost</li>
+                        <li>Progressive Web Core</li>
+                    </ul>
+                </div>
+                
+                <div class="island island-2">
+                    <div class="island-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Systems</h3>
+                    <ul>
+                        <li>Node.js Clusters</li>
+                        <li>Serverless Fabric</li>
+                        <li>Real-time Engines</li>
+                    </ul>
+                </div>
+                
+                <div class="island island-3">
+                    <div class="island-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Architecture</h3>
+                    <ul>
+                        <li>Polyglot Persistence</li>
+                        <li>Stream Processing</li>
+                        <li>OLAP Cubes</li>
+                    </ul>
+                </div>
+                
+                <div class="island island-4">
+                    <div class="island-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Infrastructure</h3>
+                    <ul>
+                        <li>Auto-scaling Mesh</li>
+                        <li>Edge Network</li>
+                        <li>Chaos Engineering</li>
+                    </ul>
+                </div>
+                
+                <div class="island island-5">
+                    <div class="island-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Modules</h3>
+                    <ul>
+                        <li>Predictive Analytics</li>
+                        <li>Recommendation Engines</li>
+                        <li>Computer Vision</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Roadmap -->
+    <section class="interactive-roadmap">
+        <div class="container">
+            <h2 class="roadmap-title">Your 180-Day Hypergrowth Roadmap</h2>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-timeline">
+                    <div class="timeline-bar"></div>
+                    
+                    <div class="milestone" data-phase="1">
+                        <div class="milestone-dot"></div>
+                        <div class="milestone-info">
+                            <h3>Week 1-4: Ignition</h3>
+                            <p>Digital architecture blueprint, MVP framework, growth hypotheses</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone" data-phase="2">
+                        <div class="milestone-dot"></div>
+                        <div class="milestone-info">
+                            <h3>Week 5-8: Liftoff</h3>
+                            <p>Core product development, early adopter program, analytics layer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone" data-phase="3">
+                        <div class="milestone-dot"></div>
+                        <div class="milestone-info">
+                            <h3>Week 9-12: Acceleration</h3>
+                            <p>Growth hacking campaigns, conversion optimization, scaling prep</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone" data-phase="4">
+                        <div class="milestone-dot"></div>
+                        <div class="milestone-info">
+                            <h3>Week 13-24: Hypergrowth</h3>
+                            <p>Infrastructure scaling, AI automation, expansion frameworks</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-details">
+                    <div class="phase-details" data-phase="1">
+                        <h3>Ignition Phase</h3>
+                        <ul>
+                            <li>Digital transformation audit</li>
+                            <li>Technology stack selection</li>
+                            <li>Growth hypothesis development</li>
+                            <li>MVP architecture design</li>
+                            <li>Initial KPI framework</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="phase-details" data-phase="2">
+                        <h3>Liftoff Phase</h3>
+                        <ul>
+                            <li>Core product development sprint</li>
+                            <li>Early adopter recruitment</li>
+                            <li>Feedback loops implementation</li>
+                            <li>Basic analytics integration</li>
+                            <li>First growth experiments</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="phase-details" data-phase="3">
+                        <h3>Acceleration Phase</h3>
+                        <ul>
+                            <li>Conversion rate optimization</li>
+                            <li>Growth hacking campaigns</li>
+                            <li>Infrastructure stress testing</li>
+                            <li>Team scaling framework</li>
+                            <li>Monetization strategies</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="phase-details" data-phase="4">
+                        <h3>Hypergrowth Phase</h3>
+                        <ul>
+                            <li>Auto-scaling implementation</li>
+                            <li>AI-driven automation</li>
+                            <li>International expansion prep</li>
+                            <li>Advanced predictive analytics</li>
+                            <li>Funding round preparation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Add this right above the Final CTA section -->
+<!-- Startup Metrics Dashboard -->
+<section class="metrics-dashboard">
+    <div class="container">
+        <div class="dashboard-header">
+            <h2 class="dashboard-title">REAL-TIME GROWTH METRICS</h2>
+            <p class="dashboard-subtitle">Monitor your startup's vital signs with our AI-powered analytics dashboard</p>
+            <div class="time-filters">
+                <button class="time-filter active" data-period="7d">7D</button>
+                <button class="time-filter" data-period="30d">30D</button>
+                <button class="time-filter" data-period="90d">90D</button>
+                <button class="time-filter" data-period="all">ALL</button>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <!-- Metric Card 1 -->
+            <div class="metric-card" data-metric="users">
+                <div class="metric-header">
+                    <i class="fas fa-users"></i>
+                    <h3>User Growth</h3>
+                    <span class="metric-change positive">+24.7% <i class="fas fa-arrow-up"></i></span>
+                </div>
+                <div class="metric-chart" id="userChart"></div>
+                <div class="metric-stats">
+                    <div class="stat">
+                        <span class="stat-value">8,742</span>
+                        <span class="stat-label">Total Users</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">1.2k</span>
+                        <span class="stat-label">New (7D)</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">42%</span>
+                        <span class="stat-label">Retention</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Metric Card 2 -->
+            <div class="metric-card" data-metric="revenue">
+                <div class="metric-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Revenue</h3>
+                    <span class="metric-change positive">+18.3% <i class="fas fa-arrow-up"></i></span>
+                </div>
+                <div class="metric-chart" id="revenueChart"></div>
+                <div class="metric-stats">
+                    <div class="stat">
+                        <span class="stat-value">$28.5k</span>
+                        <span class="stat-label">MRR</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">$4.2k</span>
+                        <span class="stat-label">7D Revenue</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">8.7%</span>
+                        <span class="stat-label">Growth Rate</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Metric Card 3 -->
+            <div class="metric-card" data-metric="engagement">
+                <div class="metric-header">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Engagement</h3>
+                    <span class="metric-change negative">-3.2% <i class="fas fa-arrow-down"></i></span>
+                </div>
+                <div class="metric-chart" id="engagementChart"></div>
+                <div class="metric-stats">
+                    <div class="stat">
+                        <span class="stat-value">6.8</span>
+                        <span class="stat-label">DAU/MAU</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">24m</span>
+                        <span class="stat-label">Avg. Session</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">3.2</span>
+                        <span class="stat-label">Pages/Session</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Metric Card 4 -->
+            <div class="metric-card" data-metric="acquisition">
+                <div class="metric-header">
+                    <i class="fas fa-funnel-dollar"></i>
+                    <h3>Acquisition</h3>
+                    <span class="metric-change positive">+9.1% <i class="fas fa-arrow-up"></i></span>
+                </div>
+                <div class="metric-chart" id="acquisitionChart"></div>
+                <div class="metric-stats">
+                    <div class="stat">
+                        <span class="stat-value">$14.50</span>
+                        <span class="stat-label">CAC</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">3.2x</span>
+                        <span class="stat-label">LTV/CAC</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">22d</span>
+                        <span class="stat-label">Payback</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard-cta">
+            <p>Want to integrate this real-time dashboard with your startup's data?</p>
+            <a href="#" class="cyber-button">Connect Your Data Sources</a>
+        </div>
+    </div>
+    
+    <!-- Floating tech elements -->
+    <div class="dashboard-tech-shapes">
+        <div class="tech-shape shape-1"></div>
+        <div class="tech-shape shape-2"></div>
+        <div class="tech-shape shape-3"></div>
+    </div>
+</section>
+<!-- Startup Funding & Valuation Engine -->
+<section class="funding-engine">
+    <div class="container">
+        <div class="engine-header">
+            <h2 class="engine-title">FUNDING & VALUATION ENGINE</h2>
+            <p class="engine-subtitle">AI-powered systems to maximize your startup's valuation and secure optimal funding terms</p>
+            <div class="engine-tabs">
+                <button class="engine-tab active" data-tab="valuation">VALUATION MODEL</button>
+                <button class="engine-tab" data-tab="rounds">FUNDING ROUNDS</button>
+                <button class="engine-tab" data-tab="investors">INVESTOR MATRIX</button>
+                <button class="engine-tab" data-tab="terms">TERM OPTIMIZER</button>
+            </div>
+        </div>
+        
+        <!-- Valuation Model Tab -->
+        <div class="engine-content active" data-tab="valuation">
+            <div class="valuation-grid">
+                <div class="valuation-model">
+                    <h3>Dynamic Valuation Algorithm</h3>
+                    <div class="valuation-visual">
+                        <div class="valuation-dial">
+                            <div class="dial-face">
+                                <div class="dial-needle"></div>
+                                <div class="dial-value">$12.4M</div>
+                            </div>
+                            <div class="dial-metrics">
+                                <div class="metric" data-metric="revenue">
+                                    <span>Revenue Multiple</span>
+                                    <strong>8.2x</strong>
+                                </div>
+                                <div class="metric" data-metric="growth">
+                                    <span>Growth Rate</span>
+                                    <strong>32%</strong>
+                                </div>
+                                <div class="metric" data-metric="market">
+                                    <span>Market Size</span>
+                                    <strong>$4.2B</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="valuation-factors">
+                            <h4>Valuation Drivers</h4>
+                            <ul class="factor-list">
+                                <li class="factor" data-impact="high">
+                                    <div class="factor-bar"></div>
+                                    <span>Monthly Recurring Revenue</span>
+                                    <strong>+38% Impact</strong>
+                                </li>
+                                <li class="factor" data-impact="medium">
+                                    <div class="factor-bar"></div>
+                                    <span>Customer Acquisition Cost</span>
+                                    <strong>+22% Impact</strong>
+                                </li>
+                                <li class="factor" data-impact="high">
+                                    <div class="factor-bar"></div>
+                                    <span>Gross Margin</span>
+                                    <strong>+41% Impact</strong>
+                                </li>
+                                <li class="factor" data-impact="low">
+                                    <div class="factor-bar"></div>
+                                    <span>Competitive Landscape</span>
+                                    <strong>+15% Impact</strong>
+                                </li>
+                                <li class="factor" data-impact="medium">
+                                    <div class="factor-bar"></div>
+                                    <span>Team Experience</span>
+                                    <strong>+26% Impact</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="valuation-actions">
+                        <button class="cyber-button small">Run New Simulation</button>
+                        <button class="cyber-button small secondary">Export Valuation Report</button>
+                    </div>
+                </div>
+                <div class="valuation-comparison">
+                    <h3>Comparable Transactions</h3>
+                    <div class="comparison-chart" id="comparisonChart"></div>
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <span>Company</span>
+                            <span>Stage</span>
+                            <span>ARR</span>
+                            <span>Valuation</span>
+                            <span>Multiple</span>
+                        </div>
+                        <div class="table-row">
+                            <span>NeuroTech AI</span>
+                            <span>Series A</span>
+                            <span>$1.2M</span>
+                            <span>$14.8M</span>
+                            <span>12.3x</span>
+                        </div>
+                        <div class="table-row">
+                            <span>Quantum SaaS</span>
+                            <span>Seed</span>
+                            <span>$480K</span>
+                            <span>$6.2M</span>
+                            <span>12.9x</span>
+                        </div>
+                        <div class="table-row highlight">
+                            <span>Your Startup</span>
+                            <span>Seed</span>
+                            <span>$520K</span>
+                            <span>$12.4M</span>
+                            <span>23.8x</span>
+                        </div>
+                        <div class="table-row">
+                            <span>BlockChainify</span>
+                            <span>Series A</span>
+                            <span>$2.1M</span>
+                            <span>$18.3M</span>
+                            <span>8.7x</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Funding Rounds Tab -->
+        <div class="engine-content" data-tab="rounds">
+            <div class="rounds-timeline">
+                <div class="timeline-bar"></div>
+                <div class="round" data-round="pre-seed">
+                    <div class="round-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="round-content">
+                        <h4>Pre-Seed Round</h4>
+                        <p>Ideal for concept validation and initial product development</p>
+                        <div class="round-stats">
+                            <div class="stat">
+                                <span>Typical Amount</span>
+                                <strong>$50K - $500K</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Valuation</span>
+                                <strong>$1M - $3M</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Equity</span>
+                                <strong>10% - 20%</strong>
+                            </div>
+                        </div>
+                        <div class="round-cta">
+                            <button class="cyber-button small">Generate Pre-Seed Plan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="round" data-round="seed">
+                    <div class="round-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="round-content">
+                        <h4>Seed Round</h4>
+                        <p>For product-market fit and initial customer acquisition</p>
+                        <div class="round-stats">
+                            <div class="stat">
+                                <span>Typical Amount</span>
+                                <strong>$500K - $2M</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Valuation</span>
+                                <strong>$3M - $10M</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Equity</span>
+                                <strong>15% - 25%</strong>
+                            </div>
+                        </div>
+                        <div class="round-cta">
+                            <button class="cyber-button small">Generate Seed Plan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="round" data-round="series-a">
+                    <div class="round-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="round-content">
+                        <h4>Series A</h4>
+                        <p>Scaling operations and accelerating growth</p>
+                        <div class="round-stats">
+                            <div class="stat">
+                                <span>Typical Amount</span>
+                                <strong>$2M - $15M</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Valuation</span>
+                                <strong>$10M - $50M</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Equity</span>
+                                <strong>15% - 20%</strong>
+                            </div>
+                        </div>
+                        <div class="round-cta">
+                            <button class="cyber-button small">Generate Series A Plan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investor Matrix Tab (content would be similar structure) -->
+        <div class="engine-content" data-tab="investors">
+            <div class="investor-matrix">
+                <!-- Investor grid content -->
+            </div>
+        </div>
+        
+        <!-- Term Optimizer Tab (content would be similar structure) -->
+        <div class="engine-content" data-tab="terms">
+            <div class="term-optimizer">
+                <!-- Term sheet optimizer content -->
+            </div>
+        </div>
+        
+        <div class="engine-cta">
+            <p>Ready to optimize your funding strategy with AI-powered insights?</p>
+            <a href="#" class="cyber-button">Launch Funding Engine</a>
+        </div>
+    </div>
+    
+    <!-- Floating circuit board pattern -->
+    <div class="circuit-overlay"></div>
+</section>
+    <!-- Final CTA with Particle Network -->
+    <section class="final-cta">
+        <div id="particle-network"></div>
+        <div class="cta-content">
+            <h2>Begin Your Transformation Today</h2>
+            <p>The future belongs to startups that leverage technology as their core competitive advantage. Let's build yours.</p>
+            <div class="cta-buttons">
+                <a href="contactus.html" class="cyber-button">Schedule Consultation</a>
+                <a href="case-studies.html" class="cyber-button secondary">View Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cyberpunk Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Turbo Titans</h3>
+                    <p class="footer-about">We accelerate startups through disruptive digital transformation, cutting-edge technology, and growth engineering.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twiter"></i></a>
+                        <a href="#"><i class="fab fa-linedin-in"></i></a>
+                        <a href="#"><i class="fab fa-gihub"></i></a>
+                        <a href="#"><i class="fab fadiscord"></i></a>
+						<a href="#"><i class="fab fadiscord"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="startupsac.html">Startup Acceleration</a></li>
+                        <li><a href="enterprise.html">Enterprise Transformation</a></li>
+                        <li><a href="ai.html">AI Integration</a></li>
+                        <li><a href="blockchain.html">Blockchain Solutions</a></li>
+                        <li><a href="ar-vr.html">AR/VR Experiences</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="case-studies.html">Growth Blog</a></li>
+                        <li><a href="case-studies.html">Success Stories</a></li>
+                        <li><a href="aboutus.html">Whitepapers</a></li>
+                        <li><a href="aboutus.html">Webinars</a></li>
+                        <li><a href="startup-tools.html">Founder Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="aboutus.html">Our Mission</a></li>
+                        <li><a href="teamus.html">Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="press.html">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TURBO TITANS. DIGITAL TRANSFORMATION AGENCY. ALL RIGHTS RESERVED.</p>
+                <div class="footer-links">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+	     document.addEventListener('DOMContentLoaded', function() {
+    // Tab switching functionality
+    const tabs = document.querySelectorAll('.engine-tab');
+    const contents = document.querySelectorAll('.engine-content');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and contents
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            tab.classList.add('active');
+            const tabName = tab.getAttribute('data-tab');
+            document.querySelector(`.engine-content[data-tab="${tabName}"]`).classList.add('active');
+            
+            // Trigger specific functionality based on tab
+            if (tabName === 'valuation') {
+                updateValuationDial();
+                renderComparisonChart();
+            }
+        });
+    });
+    
+    // Valuation dial animation
+    function updateValuationDial() {
+        const dialNeedle = document.querySelector('.dial-needle');
+        const dialValue = document.querySelector('.dial-value');
+        
+        // Simulate loading animation
+        dialNeedle.style.transition = 'none';
+        dialNeedle.style.transform = 'rotate(-90deg)';
+        dialValue.textContent = '$0';
+        
+        setTimeout(() => {
+            dialNeedle.style.transition = 'transform 1.5s ease-out';
+            dialNeedle.style.transform = 'rotate(30deg)'; // Adjust this for different values
+            
+            // Animate the value count
+            let current = 0;
+            const target = 12400000;
+            const increment = target / 50;
+            const interval = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    clearInterval(interval);
+                    current = target;
+                }
+                dialValue.textContent = '$' + Math.floor(current).toLocaleString();
+            }, 30);
+        }, 50);
+    }
+    
+    // Comparison chart rendering (simplified)
+    function renderComparisonChart() {
+        const chartContainer = document.getElementById('comparisonChart');
+        
+        // In a real implementation, you would use a charting library like Chart.js
+        // This is a simplified placeholder
+        chartContainer.innerHTML = `
+            <div class="chart-placeholder">
+                <div class="chart-bar" style="height: 40%;" data-company="NeuroTech AI"></div>
+                <div class="chart-bar" style="height: 25%;" data-company="Quantum SaaS"></div>
+                <div class="chart-bar highlight" style="height: 70%;" data-company="Your Startup"></div>
+                <div class="chart-bar" style="height: 50%;" data-company="BlockChainify"></div>
+            </div>
+            <div class="chart-labels">
+                <span>NeuroTech</span>
+                <span>Quantum</span>
+                <span>Yours</span>
+                <span>BlockChain</span>
+            </div>
+        `;
+    }
+    
+    // Factor bar animations
+    function animateFactorBars() {
+        const factors = document.querySelectorAll('.factor');
+        
+        factors.forEach(factor => {
+            const impact = factor.getAttribute('data-impact');
+            const bar = factor.querySelector('.factor-bar');
+            
+            // Set different widths based on impact
+            let width = '30%';
+            if (impact === 'medium') width = '60%';
+            if (impact === 'high') width = '90%';
+            
+            // Animate the bar
+            setTimeout(() => {
+                bar.style.width = width;
+                bar.style.transition = 'width 1s ease-out';
+            }, 100);
+        });
+    }
+    
+    // Round timeline animations
+    function animateTimeline() {
+        const timelineBar = document.querySelector('.timeline-bar');
+        const rounds = document.querySelectorAll('.round');
+        
+        // Animate the timeline bar
+        setTimeout(() => {
+            timelineBar.style.height = '100%';
+            timelineBar.style.transition = 'height 1s ease-out';
+        }, 500);
+        
+        // Animate each round with a delay
+        rounds.forEach((round, index) => {
+            setTimeout(() => {
+                round.style.opacity = '1';
+                round.style.transform = 'translateY(0)';
+                round.style.transition = 'all 0.5s ease-out';
+            }, 600 + (index * 200));
+        });
+    }
+    
+    // Button hover effects
+    const buttons = document.querySelectorAll('.cyber-button');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.style.boxShadow = '0 0 15px rgba(0, 255, 255, 0.7)';
+        });
+        
+        button.addEventListener('mouseleave', () => {
+            button.style.boxShadow = 'none';
+        });
+    });
+    
+    // Initialize components based on active tab
+    const activeTab = document.querySelector('.engine-tab.active').getAttribute('data-tab');
+    if (activeTab === 'valuation') {
+        updateValuationDial();
+        renderComparisonChart();
+        animateFactorBars();
+    } else if (activeTab === 'rounds') {
+        animateTimeline();
+    }
+    
+    // Simulate "Run New Simulation" button
+    const runSimulationBtn = document.querySelector('.valuation-actions .cyber-button:first-child');
+    if (runSimulationBtn) {
+        runSimulationBtn.addEventListener('click', () => {
+            // Show loading state
+            runSimulationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Running Simulation...';
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // Update values randomly
+                const metrics = document.querySelectorAll('.metric strong');
+                metrics[0].textContent = (Math.random() * 5 + 5).toFixed(1) + 'x';
+                metrics[1].textContent = Math.floor(Math.random() * 30 + 10) + '%';
+                metrics[2].textContent = '$' + (Math.random() * 3 + 2).toFixed(1) + 'B';
+                
+                // Update valuation
+                updateValuationDial();
+                
+                // Reset button
+                runSimulationBtn.innerHTML = 'Run New Simulation';
+            }, 2000);
+        });
+    }
+});
+/**
+ * Startup Funding & Valuation Engine
+ * Complete JavaScript Implementation
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    // Main Engine Class
+    class FundingEngine {
+        constructor() {
+            // DOM Elements
+            this.tabs = document.querySelectorAll('.engine-tab');
+            this.contents = document.querySelectorAll('.engine-content');
+            this.currentValuation = 12400000; // $12.4M initial valuation
+            
+            // Initialize
+            this.init();
+        }
+        
+        // Initialization
+        init() {
+            this.setupTabSwitching();
+            this.setupButtonEffects();
+            this.activateCurrentTab();
+            this.setupEventListeners();
+        }
+        
+        // Event Listeners
+        setupEventListeners() {
+            // Window resize handler
+            window.addEventListener('resize', this.handleResize.bind(this));
+        }
+        
+        handleResize() {
+            // Re-render charts on resize
+            const activeTab = document.querySelector('.engine-tab.active');
+            if (activeTab) {
+                const tabName = activeTab.getAttribute('data-tab');
+                if (tabName === 'valuation') {
+                    this.renderComparisonChart();
+                }
+            }
+        }
+        
+        // Tab Management
+        setupTabSwitching() {
+            this.tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.switchTab(tab);
+                });
+            });
+        }
+        
+        switchTab(selectedTab) {
+            // Remove active classes
+            this.tabs.forEach(t => t.classList.remove('active'));
+            this.contents.forEach(c => c.classList.remove('active'));
+            
+            // Add active classes
+            selectedTab.classList.add('active');
+            const tabName = selectedTab.getAttribute('data-tab');
+            const content = document.querySelector(`.engine-content[data-tab="${tabName}"]`);
+            if (content) content.classList.add('active');
+            
+            // Initialize tab components
+            this.initTabComponents(tabName);
+        }
+        
+        initTabComponents(tabName) {
+            switch(tabName) {
+                case 'valuation':
+                    this.initValuationTab();
+                    break;
+                case 'rounds':
+                    this.initRoundsTab();
+                    break;
+                case 'investors':
+                    this.initInvestorsTab();
+                    break;
+                case 'terms':
+                    this.initTermsTab();
+                    break;
+                default:
+                    console.warn(`Unknown tab: ${tabName}`);
+            }
+        }
+        
+        activateCurrentTab() {
+            const activeTab = document.querySelector('.engine-tab.active');
+            if (activeTab) {
+                const tabName = activeTab.getAttribute('data-tab');
+                this.initTabComponents(tabName);
+            }
+        }
+        
+        // Valuation Tab
+        initValuationTab() {
+            this.updateValuationDial();
+            this.renderComparisonChart();
+            this.animateFactorBars();
+            this.setupValuationActions();
+        }
+        
+        updateValuationDial() {
+            const dialNeedle = document.querySelector('.dial-needle');
+            const dialValue = document.querySelector('.dial-value');
+            
+            if (!dialNeedle || !dialValue) return;
+            
+            // Calculate needle position (0° = $0, 180° = $25M)
+            const needlePosition = (Math.min(this.currentValuation, 25000000) / 25000000) * 180 - 90;
+            
+            // Reset for animation
+            dialNeedle.style.transition = 'none';
+            dialNeedle.style.transform = 'rotate(-90deg)';
+            dialValue.textContent = '$0';
+            
+            setTimeout(() => {
+                dialNeedle.style.transition = 'transform 1.5s ease-out';
+                dialNeedle.style.transform = `rotate(${needlePosition}deg)`;
+                this.animateValueCounter(dialValue, this.currentValuation);
+            }, 50);
+        }
+        
+        animateValueCounter(element, targetValue) {
+            let current = 0;
+            const increment = targetValue / 50;
+            const interval = setInterval(() => {
+                current += increment;
+                if (current >= targetValue) {
+                    clearInterval(interval);
+                    current = targetValue;
+                }
+                element.textContent = this.formatCurrency(current);
+            }, 30);
+        }
+        
+        renderComparisonChart() {
+            const chartContainer = document.getElementById('comparisonChart');
+            if (!chartContainer) return;
+            
+            const companies = [
+                { name: 'NeuroTech AI', valuation: 14800000, short: 'NeuroTech' },
+                { name: 'Quantum SaaS', valuation: 6200000, short: 'Quantum' },
+                { name: 'Your Startup', valuation: this.currentValuation, short: 'Yours' },
+                { name: 'BlockChainify', valuation: 18300000, short: 'BlockChain' }
+            ];
+            
+            const maxVal = Math.max(...companies.map(c => c.valuation));
+            
+            chartContainer.innerHTML = `
+                <div class="chart-bars">
+                    ${companies.map(company => `
+                        <div class="chart-bar ${company.name === 'Your Startup' ? 'highlight' : ''}" 
+                             style="height: ${(company.valuation / maxVal) * 100}%"
+                             data-company="${company.short}">
+                            <div class="bar-value">${this.formatCurrency(company.valuation)}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="chart-labels">
+                    ${companies.map(company => `
+                        <span>${company.short}</span>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        animateFactorBars() {
+            const factors = document.querySelectorAll('.factor');
+            
+            factors.forEach(factor => {
+                const impact = factor.getAttribute('data-impact');
+                const bar = factor.querySelector('.factor-bar');
+                if (!bar) return;
+                
+                let width;
+                switch(impact) {
+                    case 'low': width = '30%'; break;
+                    case 'medium': width = '60%'; break;
+                    case 'high': width = '90%'; break;
+                    default: width = '50%';
+                }
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                    bar.style.transition = 'width 1s ease-out';
+                }, 100);
+            });
+        }
+        
+        setupValuationActions() {
+            const runSimulationBtn = document.querySelector('.valuation-actions .cyber-button:first-child');
+            const exportBtn = document.querySelector('.valuation-actions .cyber-button.secondary');
+            
+            if (runSimulationBtn) {
+                runSimulationBtn.addEventListener('click', () => this.runValuationSimulation());
+            }
+            
+            if (exportBtn) {
+                exportBtn.addEventListener('click', () => {
+                    alert('Valuation report exported (simulated)');
+                });
+            }
+        }
+        
+        runValuationSimulation() {
+            const runSimulationBtn = document.querySelector('.valuation-actions .cyber-button:first-child');
+            if (!runSimulationBtn) return;
+            
+            const originalText = runSimulationBtn.innerHTML;
+            runSimulationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Running Simulation...';
+            runSimulationBtn.disabled = true;
+            
+            setTimeout(() => {
+                this.generateNewMetrics();
+                this.currentValuation = Math.floor(Math.random() * 15000000) + 5000000;
+                this.updateValuationDial();
+                this.renderComparisonChart();
+                
+                runSimulationBtn.innerHTML = originalText;
+                runSimulationBtn.disabled = false;
+            }, 2000);
+        }
+        
+        generateNewMetrics() {
+            const metrics = [
+                { selector: '[data-metric="revenue"] strong', range: [5, 15], suffix: 'x' },
+                { selector: '[data-metric="growth"] strong', range: [10, 50], suffix: '%' },
+                { selector: '[data-metric="market"] strong', range: [1, 8], prefix: '$', suffix: 'B' }
+            ];
+            
+            metrics.forEach(metric => {
+                const element = document.querySelector(metric.selector);
+                if (element) {
+                    const value = (Math.random() * (metric.range[1] - metric.range[0]) + metric.range[0]).toFixed(1);
+                    element.textContent = `${metric.prefix || ''}${value}${metric.suffix || ''}`;
+                }
+            });
+        }
+        
+        // Rounds Tab
+        initRoundsTab() {
+            this.animateTimeline();
+            this.setupRoundButtons();
+        }
+        
+        animateTimeline() {
+            const timelineBar = document.querySelector('.timeline-bar');
+            const rounds = document.querySelectorAll('.round');
+            
+            if (!timelineBar || rounds.length === 0) return;
+            
+            timelineBar.style.height = '0';
+            rounds.forEach(round => {
+                round.style.opacity = '0';
+                round.style.transform = 'translateY(20px)';
+            });
+            
+            setTimeout(() => {
+                timelineBar.style.height = '100%';
+                timelineBar.style.transition = 'height 1s ease-out';
+            }, 500);
+            
+            rounds.forEach((round, index) => {
+                setTimeout(() => {
+                    round.style.opacity = '1';
+                    round.style.transform = 'translateY(0)';
+                    round.style.transition = 'all 0.5s ease-out';
+                }, 600 + (index * 200));
+            });
+        }
+        
+        setupRoundButtons() {
+            document.querySelectorAll('.round-cta .cyber-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const round = button.closest('.round');
+                    if (round) {
+                        const roundType = round.getAttribute('data-round');
+                        this.generateRoundPlan(roundType);
+                    }
+                });
+            });
+        }
+        
+        generateRoundPlan(roundType) {
+            const plans = {
+                'pre-seed': 'Generating Pre-Seed funding plan with ideal investor profile...',
+                'seed': 'Creating Seed round strategy with valuation targets...',
+                'series-a': 'Developing Series A roadmap with growth milestones...'
+            };
+            
+            if (plans[roundType]) {
+                alert(plans[roundType]);
+            }
+        }
+        
+        // Investors Tab
+        initInvestorsTab() {
+            // Placeholder for investor matrix
+            const container = document.querySelector('.investor-matrix');
+            if (container) {
+                container.innerHTML = `
+                    <div class="investor-placeholder">
+                        <h3>Investor Matching Matrix</h3>
+                        <p>AI-powered investor matching coming soon</p>
+                        <div class="investor-grid">
+                            <div class="investor-card">VC Firms</div>
+                            <div class="investor-card">Angel Investors</div>
+                            <div class="investor-card">Corporate VCs</div>
+                            <div class="investor-card">Accelerators</div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Terms Tab
+        initTermsTab() {
+            // Placeholder for term optimizer
+            const container = document.querySelector('.term-optimizer');
+            if (container) {
+                container.innerHTML = `
+                    <div class="terms-placeholder">
+                        <h3>Term Sheet Optimizer</h3>
+                        <p>Interactive term sheet analyzer coming soon</p>
+                        <div class="terms-visual">
+                            <div class="term-option">Valuation Cap</div>
+                            <div class="term-option">Discount Rate</div>
+                            <div class="term-option">Liquidation Pref</div>
+                            <div class="term-option">Vesting Terms</div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Utility Methods
+        formatCurrency(value) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            }).format(value);
+        }
+        
+        setupButtonEffects() {
+            document.querySelectorAll('.cyber-button').forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.style.boxShadow = '0 0 15px rgba(0, 255, 255, 0.7)';
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.boxShadow = 'none';
+                });
+                
+                // Main CTA button
+                if (button.classList.contains('engine-cta')) {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert('Launching full Funding Engine with AI capabilities...');
+                    });
+                }
+            });
+        }
+    }
+    
+    // Initialize the engine
+    try {
+        new FundingEngine();
+    } catch (error) {
+        console.error('Error initializing Funding Engine:', error);
+    }
+}); 
+
+        // Initialize Vanta.js background
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xb026ff,
+            backgroundColor: 0xa0a12,
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+        // Enhanced Mobile Menu Functionality
+function setupMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'mobile-menu';
+    
+    // Clone desktop nav for mobile
+    const desktopNav = document.querySelector('.desktop-nav').cloneNode(true);
+    mobileMenu.appendChild(desktopNav);
+    document.body.appendChild(mobileMenu);
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+        mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+        document.body.classList.toggle('no-scroll');
+    });
+    
+    // Close menu when clicking on links
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            document.body.classList.remove('no-scroll');
+        });
+    });
+}
+
+// Header Scroll Effects
+function setupHeaderScroll() {
+    const header = document.querySelector('header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            header.classList.remove('scrolled');
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !header.classList.contains('scrolled')) {
+            // Scroll down
+            header.classList.add('scrolled');
+        } else if (currentScroll < lastScroll && header.classList.contains('scrolled')) {
+            // Scroll up
+            header.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    });
+}
+
+// Initialize all header functionality
+document.addEventListener('DOMContentLoaded', () => {
+    setupMobileMenu();
+    setupHeaderScroll();
+    
+    // Add active class to current page link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.desktop-nav a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
+        // Initialize DNA Helix with Three.js
+        const dnaContainer = document.getElementById('dna-helix');
+        let dnaScene, dnaCamera, dnaRenderer, dnaHelix;
+        
+        function initDNAHelix() {
+            // Scene setup
+            dnaScene = new THREE.Scene();
+            dnaCamera = new THREE.PerspectiveCamera(75, dnaContainer.clientWidth / dnaContainer.clientHeight, 0.1, 1000);
+            dnaCamera.position.z = 30;
+            
+            // Renderer
+            dnaRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            dnaRenderer.setSize(dnaContainer.clientWidth, dnaContainer.clientHeight);
+            dnaContainer.appendChild(dnaRenderer.domElement);
+            
+            // Create DNA helix
+            createDNAHelix();
+            
+            // Handle resize
+            window.addEventListener('resize', onDNAResize);
+        }
+        
+        function createDNAHelix() {
+            const geometry = new THREE.BufferGeometry();
+            const material = new THREE.LineBasicMaterial({ color: 0x00f5d4 });
+            
+            // DNA helix parameters
+            const segments = 100;
+            const radius = 5;
+            const height = 20;
+            const positions = new Float32Array(segments * 3 * 2);
+            
+            for (let i = 0; i < segments; i++) {
+                const t = i / segments * Math.PI * 8;
+                const x1 = Math.sin(t) * radius;
+                const y1 = Math.cos(t) * radius;
+                const z1 = i / segments * height - height / 2;
+                
+                const x2 = Math.sin(t + Math.PI) * radius;
+                const y2 = Math.cos(t + Math.PI) * radius;
+                const z2 = i / segments * height - height / 2;
+                
+                positions[i * 6] = x1;
+                positions[i * 6 + 1] = y1;
+                positions[i * 6 + 2] = z1;
+                
+                positions[i * 6 + 3] = x2;
+                positions[i * 6 + 4] = y2;
+                positions[i * 6 + 5] = z2;
+            }
+            
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            
+            dnaHelix = new THREE.LineSegments(geometry, material);
+            dnaScene.add(dnaHelix);
+        }
+        
+        function onDNAResize() {
+            dnaCamera.aspect = dnaContainer.clientWidth / dnaContainer.clientHeight;
+            dnaCamera.updateProjectionMatrix();
+            dnaRenderer.setSize(dnaContainer.clientWidth, dnaContainer.clientHeight);
+        }
+        
+        function animateDNAHelix() {
+            requestAnimationFrame(animateDNAHelix);
+            
+            if (dnaHelix) {
+                dnaHelix.rotation.y += 0.01;
+            }
+            
+            dnaRenderer.render(dnaScene, dnaCamera);
+        }
+        
+        // Initialize neural network visualization
+        function initNeuralNetwork() {
+            const canvas = document.getElementById('neuralCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+            
+            // Neural network parameters
+            const nodes = [
+                { x: 100, y: 150, connections: [1, 2, 3] },
+                { x: 300, y: 100, connections: [4] },
+                { x: 300, y: 200, connections: [4] },
+                { x: 300, y: 300, connections: [4] },
+                { x: 500, y: 200, connections: [] }
+            ];
+            
+            // Animation variables
+            let pulse = 0;
+            let direction = 1;
+            
+            function drawNetwork() {
+                // Clear canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw connections
+                ctx.strokeStyle = `rgba(0, 245, 212, ${0.2 + pulse * 0.3})`;
+                ctx.lineWidth = 1 + pulse * 2;
+                
+                nodes.forEach((node, i) => {
+                    node.connections.forEach(connIndex => {
+                        const connNode = nodes[connIndex];
+                        ctx.beginPath();
+                        ctx.moveTo(node.x, node.y);
+                        ctx.lineTo(connNode.x, connNode.y);
+                        ctx.stroke();
+                    });
+                });
+                
+                // Draw nodes
+                nodes.forEach(node => {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, 15 + pulse * 5, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(176, 38, 255, ${0.7 + pulse * 0.3})`;
+                    ctx.fill();
+                });
+                
+                // Update pulse animation
+                pulse += 0.01 * direction;
+                if (pulse >= 1 || pulse <= 0) direction *= -1;
+                
+                requestAnimationFrame(drawNetwork);
+            }
+            
+            drawNetwork();
+            
+            // Handle resize
+            window.addEventListener('resize', () => {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+            });
+        }
+        
+        // Initialize particle network for final CTA
+        function initParticleNetwork() {
+            const container = document.getElementById('particle-network');
+            const canvas = document.createElement('canvas');
+            container.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+            
+            // Particle system
+            const particles = [];
+            const particleCount = Math.floor(canvas.width * canvas.height / 5000);
+            
+            // Create particles
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1,
+                    speedX: Math.random() * 2 - 1,
+                    speedY: Math.random() * 2 - 1,
+                    color: `rgba(${Math.floor(Math.random() * 56 + 200)}, 
+                            ${Math.floor(Math.random() * 56)}, 
+                            ${Math.floor(Math.random() * 156 + 100)}, 
+                            ${Math.random() * 0.5 + 0.1})`
+                });
+            }
+            
+            // Animation loop
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Update and draw particles
+                particles.forEach(p => {
+                    // Move particles
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+                    
+                    // Bounce off edges
+                    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+                    
+                    // Draw particle
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.fill();
+                    
+                    // Draw connections
+                    particles.forEach(p2 => {
+                        const dx = p.x - p2.x;
+                        const dy = p.y - p2.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = `rgba(176, 38, 255, ${1 - distance / 150})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    });
+                });
+                
+                requestAnimationFrame(animateParticles);
+            }
+            
+            animateParticles();
+            
+            // Handle resize
+            window.addEventListener('resize', () => {
+                canvas.width = container.clientWidth;
+                canvas.height = container.clientHeight;
+            });
+        }
+        
+        // Interactive roadmap functionality
+        function setupRoadmap() {
+            const milestones = document.querySelectorAll('.milestone');
+            const phaseDetails = document.querySelectorAll('.phase-details');
+            
+            // Show first phase by default
+            phaseDetails[0].style.display = 'block';
+            
+            milestones.forEach(milestone => {
+                milestone.addEventListener('click', () => {
+                    const phase = milestone.getAttribute('data-phase');
+                    
+                    // Hide all phase details
+                    phaseDetails.forEach(detail => {
+                        detail.style.display = 'none';
+                    });
+                    
+                    // Show selected phase
+                    document.querySelector(`.phase-details[data-phase="${phase}"]`).style.display = 'block';
+                    
+                    // Update active milestone
+                    milestones.forEach(m => m.classList.remove('active'));
+                    milestone.classList.add('active');
+                });
+            });
+        }
+        
+        // Initialize all components when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initDNAHelix();
+            animateDNAHelix();
+            initNeuralNetwork();
+            initParticleNetwork();
+            setupRoadmap();
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'mobile-menu';
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                if (mobileMenu.style.display === 'block') {
+                    mobileMenu.style.display = 'none';
+                } else {
+                    // Clone desktop nav for mobile
+                    const desktopNav = document.querySelector('.desktop-nav').cloneNode(true);
+                    mobileMenu.innerHTML = '';
+                    mobileMenu.appendChild(desktopNav);
+                    mobileMenu.style.display = 'block';
+                    document.body.appendChild(mobileMenu);
+                }
+            });
+        });
+
+        // Track scroll position for parallax effects
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const parallaxElements = document.querySelectorAll('[data-parallax]');
+            
+            parallaxElements.forEach(el => {
+                const speed = parseFloat(el.getAttribute('data-parallax'));
+                el.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        });
+		document.addEventListener('DOMContentLoaded', function() {
+    // Tab switching functionality
+    const tabs = document.querySelectorAll('.engine-tab');
+    const contents = document.querySelectorAll('.engine-content');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and contents
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            tab.classList.add('active');
+            const tabName = tab.getAttribute('data-tab');
+            document.querySelector(`.engine-content[data-tab="${tabName}"]`).classList.add('active');
+            
+            // Trigger specific functionality based on tab
+            if (tabName === 'valuation') {
+                updateValuationDial();
+                renderComparisonChart();
+            }
+        });
+    });
+    
+    // Valuation dial animation
+    function updateValuationDial() {
+        const dialNeedle = document.querySelector('.dial-needle');
+        const dialValue = document.querySelector('.dial-value');
+        
+        // Simulate loading animation
+        dialNeedle.style.transition = 'none';
+        dialNeedle.style.transform = 'rotate(-90deg)';
+        dialValue.textContent = '$0';
+        
+        setTimeout(() => {
+            dialNeedle.style.transition = 'transform 1.5s ease-out';
+            dialNeedle.style.transform = 'rotate(30deg)'; // Adjust this for different values
+            
+            // Animate the value count
+            let current = 0;
+            const target = 12400000;
+            const increment = target / 50;
+            const interval = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    clearInterval(interval);
+                    current = target;
+                }
+                dialValue.textContent = '$' + Math.floor(current).toLocaleString();
+            }, 30);
+        }, 50);
+    }
+    
+    // Comparison chart rendering (simplified)
+    function renderComparisonChart() {
+        const chartContainer = document.getElementById('comparisonChart');
+        
+        // In a real implementation, you would use a charting library like Chart.js
+        // This is a simplified placeholder
+        chartContainer.innerHTML = `
+            <div class="chart-placeholder">
+                <div class="chart-bar" style="height: 40%;" data-company="NeuroTech AI"></div>
+                <div class="chart-bar" style="height: 25%;" data-company="Quantum SaaS"></div>
+                <div class="chart-bar highlight" style="height: 70%;" data-company="Your Startup"></div>
+                <div class="chart-bar" style="height: 50%;" data-company="BlockChainify"></div>
+            </div>
+            <div class="chart-labels">
+                <span>NeuroTech</span>
+                <span>Quantum</span>
+                <span>Yours</span>
+                <span>BlockChain</span>
+            </div>
+        `;
+    }
+    
+    // Factor bar animations
+    function animateFactorBars() {
+        const factors = document.querySelectorAll('.factor');
+        
+        factors.forEach(factor => {
+            const impact = factor.getAttribute('data-impact');
+            const bar = factor.querySelector('.factor-bar');
+            
+            // Set different widths based on impact
+            let width = '30%';
+            if (impact === 'medium') width = '60%';
+            if (impact === 'high') width = '90%';
+            
+            // Animate the bar
+            setTimeout(() => {
+                bar.style.width = width;
+                bar.style.transition = 'width 1s ease-out';
+            }, 100);
+        });
+    }
+    
+    // Round timeline animations
+    function animateTimeline() {
+        const timelineBar = document.querySelector('.timeline-bar');
+        const rounds = document.querySelectorAll('.round');
+        
+        // Animate the timeline bar
+        setTimeout(() => {
+            timelineBar.style.height = '100%';
+            timelineBar.style.transition = 'height 1s ease-out';
+        }, 500);
+        
+        // Animate each round with a delay
+        rounds.forEach((round, index) => {
+            setTimeout(() => {
+                round.style.opacity = '1';
+                round.style.transform = 'translateY(0)';
+                round.style.transition = 'all 0.5s ease-out';
+            }, 600 + (index * 200));
+        });
+    }
+    
+    // Button hover effects
+    const buttons = document.querySelectorAll('.cyber-button');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.style.boxShadow = '0 0 15px rgba(0, 255, 255, 0.7)';
+        });
+        
+        button.addEventListener('mouseleave', () => {
+            button.style.boxShadow = 'none';
+        });
+    });
+    
+    // Initialize components based on active tab
+    const activeTab = document.querySelector('.engine-tab.active').getAttribute('data-tab');
+    if (activeTab === 'valuation') {
+        updateValuationDial();
+        renderComparisonChart();
+        animateFactorBars();
+    } else if (activeTab === 'rounds') {
+        animateTimeline();
+    }
+    
+    // Simulate "Run New Simulation" button
+    const runSimulationBtn = document.querySelector('.valuation-actions .cyber-button:first-child');
+    if (runSimulationBtn) {
+        runSimulationBtn.addEventListener('click', () => {
+            // Show loading state
+            runSimulationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Running Simulation...';
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // Update values randomly
+                const metrics = document.querySelectorAll('.metric strong');
+                metrics[0].textContent = (Math.random() * 5 + 5).toFixed(1) + 'x';
+                metrics[1].textContent = Math.floor(Math.random() * 30 + 10) + '%';
+                metrics[2].textContent = '$' + (Math.random() * 3 + 2).toFixed(1) + 'B';
+                
+                // Update valuation
+                updateValuationDial();
+                
+                // Reset button
+                runSimulationBtn.innerHTML = 'Run New Simulation';
+            }, 2000);
+        });
+    }
+});
+
+		</script>
+</body>
+</html>
+			
+			
+		
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			

@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | TURBO TITANS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+	<style>
+        :root {
+            --primary-tan: #D2B48C;
+            --dark-tan: #B38B6D;
+            --primary-blue: #003366;
+            --electric-blue: #0066CC;
+            --highlight-red: #CC0000;
+            --dark-red: #990000;
+            --pure-black: #000000;
+            --rich-black: #0A0A0A;
+            --pure-white: #FFFFFF;
+            --off-white: #F5F5F5;
+            --neon-blue: #00F0FF;
+            --neon-pink: #FF00F0;
+            --gold: #FFD700;
+            --platinum: #E5E4E2;
+        }
+        /* Add this to your existing CSS (in the :root or body section) */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(10, 10, 10, 0.5);
+    border-left: 1px solid rgba(210, 180, 140, 0.1);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, 
+        var(--electric-blue) 0%, 
+        rgba(0, 102, 204, 0.7) 50%, 
+        var(--highlight-red) 100%);
+    border-radius: 8px;
+    border: 2px solid var(--rich-black);
+    box-shadow: 
+        inset 0 0 5px rgba(255, 255, 255, 0.1),
+        0 0 15px rgba(0, 102, 204, 0.5);
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, 
+        var(--highlight-red) 0%, 
+        rgba(204, 0, 0, 0.7) 50%, 
+        var(--primary-tan) 100%);
+    box-shadow: 
+        inset 0 0 8px rgba(255, 255, 255, 0.2),
+        0 0 20px rgba(204, 0, 0, 0.6);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--rich-black);
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--electric-blue) var(--rich-black);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animated scrollbar for extra tech feel */
+@keyframes scrollbarGlow {
+    0% { box-shadow: 0 0 10px rgba(0, 102, 204, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(0, 102, 204, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(0, 102, 204, 0.5); }
+}
+
+::-webkit-scrollbar-thumb {
+    animation: scrollbarGlow 3s infinite;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    animation: none;
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--rich-black);
+            color: var(--off-white);
+            overflow-x: hidden;
+        }
+
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--pure-black);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 30px 0;
+            position: relative;
+            z-index: 100;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.2);
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-tan), var(--electric-blue), var(--highlight-red));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            text-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+        }
+
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--highlight-red), var(--primary-blue));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover .logo-text::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .logo-tagline {
+            font-size: 0.8rem;
+            color: var(--primary-tan);
+            letter-spacing: 2px;
+            margin-left: 15px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 40px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--highlight-red);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-tan);
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        /* Contact Hero Section */
+        .contact-hero {
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.3), rgba(204, 0, 0, 0.3));
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 240, 255, 0.05) 0%, transparent 30%),
+                        radial-gradient(circle at 80% 70%, rgba(255, 0, 240, 0.05) 0%, transparent 30%);
+            z-index: -1;
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-hero-title {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary-tan), var(--electric-blue), var(--highlight-red));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px rgba(0, 102, 204, 0.3);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 102, 204, 0.6), 0 0 30px rgba(204, 0, 0, 0.4);
+            }
+        }
+
+        .contact-hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin: 100px 0;
+        }
+
+        /* Enhanced Contact Form */
+        .contact-form-container {
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .contact-form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-form-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right, 
+                transparent 45%, 
+                rgba(0, 240, 255, 0.05) 50%, 
+                transparent 55%
+            );
+            transform: rotate(30deg);
+            animation: shine 6s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(30deg) translateX(-50%) translateY(-50%); }
+            100% { transform: rotate(30deg) translateX(50%) translateY(50%); }
+        }
+
+        .form-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .form-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--highlight-red), var(--primary-blue));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .contact-form-container:hover .form-title::after {
+            transform: scaleX(1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--off-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            color: var(--off-white);
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-input::placeholder {
+            color: rgba(245, 245, 245, 0.5);
+            font-style: italic;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-tan);
+            box-shadow: 0 0 0 2px rgba(210, 180, 140, 0.3), 
+                        inset 0 1px 3px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        select.form-input {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D2B48C'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 15px;
+            padding-right: 40px;
+        }
+
+        .optional-tag {
+            color: rgba(245, 245, 245, 0.6);
+            font-size: 0.8em;
+            font-style: italic;
+            margin-left: 5px;
+        }
+
+        .char-counter {
+            text-align: right;
+            font-size: 0.8rem;
+            color: rgba(245, 245, 245, 0.6);
+            margin-top: 5px;
+        }
+
+        /* Enhanced Button Styles */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 40px;
+            background: transparent;
+            color: var(--primary-tan);
+            border: 2px solid var(--primary-tan);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(210, 180, 140, 0.3);
+            text-decoration: none;
+            gap: 10px;
+        }
+
+        .cta-button .button-icon {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(210, 180, 140, 0.4), 
+                transparent);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            color: var(--pure-black);
+            background: var(--primary-tan);
+            box-shadow: 0 10px 25px rgba(210, 180, 140, 0.8);
+            transform: translateY(-3px);
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+
+        .cta-button:hover .button-icon {
+            transform: translateX(5px) rotate(45deg);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Floating decorative elements */
+        .floating-icon {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 24px;
+            color: var(--primary-tan);
+            z-index: 0;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        /* Loading spinner */
+        .fa-spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Success message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 102, 0, 0.2);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .form-success i {
+            font-size: 3rem;
+            color: #00CC00;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .info-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--highlight-red), var(--primary-blue));
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(10, 10, 10, 0.5);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border-left: 3px solid var(--highlight-red);
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(10, 10, 10, 0.7);
+            border-left: 3px solid var(--electric-blue);
+        }
+
+        .info-icon {
+            font-size: 1.8rem;
+            color: var(--highlight-red);
+            margin-right: 20px;
+            min-width: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover .info-icon {
+            color: var(--electric-blue);
+            transform: scale(1.1);
+        }
+
+        .info-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--off-white);
+        }
+
+        .info-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--off-white);
+            opacity: 0.8;
+        }
+
+        .info-content a {
+            color: var(--electric-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .info-content a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--electric-blue);
+            transition: width 0.3s ease;
+        }
+
+        .info-content a:hover {
+            color: var(--primary-tan);
+        }
+
+        .info-content a:hover::after {
+            width: 100%;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            margin-right: 15px;
+            color: var(--off-white);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .social-link:hover {
+            background: var(--electric-blue);
+            color: var(--pure-white);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 102, 204, 0.6);
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        /* Interactive Map */
+        .map-container {
+            height: 500px;
+            margin: 100px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.3), rgba(204, 0, 0, 0.3));
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Advanced Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            width: 350px;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-header {
+            background: var(--primary-blue);
+            color: var(--pure-white);
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-header:hover {
+            background: var(--electric-blue);
+        }
+
+        .chatbot-title {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .chatbot-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .chatbot-body {
+            background: var(--rich-black);
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .chatbot-active .chatbot-body {
+            max-height: 500px;
+            padding: 20px;
+        }
+
+        .chatbot-active .chatbot-toggle {
+            transform: rotate(180deg);
+        }
+
+        .chatbot-messages {
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding-right: 10px;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bot-message {
+            align-items: flex-start;
+        }
+
+        .user-message {
+            align-items: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        .bot-message .message-bubble {
+            background: rgba(0, 102, 204, 0.3);
+            border: 1px solid rgba(0, 102, 204, 0.5);
+            border-bottom-left-radius: 0;
+            color: var(--off-white);
+        }
+
+        .user-message .message-bubble {
+            background: rgba(210, 180, 140, 0.2);
+            border: 1px solid rgba(210, 180, 140, 0.4);
+            border-bottom-right-radius: 0;
+            color: var(--off-white);
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            color: var(--primary-tan);
+            opacity: 0.7;
+        }
+
+        .chatbot-input-container {
+            display: flex;
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            border-radius: 30px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chatbot-input {
+            flex: 1;
+            padding: 12px 15px;
+            background: transparent;
+            border: none;
+            color: var(--off-white);
+            font-size: 0.9rem;
+        }
+
+        .chatbot-input:focus {
+            outline: none;
+        }
+
+        .chatbot-send {
+            width: 40px;
+            background: var(--electric-blue);
+            color: var(--pure-white);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-send:hover {
+            background: var(--highlight-red);
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .quick-link {
+            padding: 10px 15px;
+            background: rgba(0, 102, 204, 0.2);
+            border: 1px solid rgba(0, 102, 204, 0.4);
+            border-radius: 5px;
+            font-size: 0.8rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:hover {
+            background: rgba(0, 102, 204, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+        }
+
+        /* Holographic Effect */
+        .holographic-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .holographic-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right, 
+                transparent 45%, 
+                rgba(0, 240, 255, 0.05) 50%, 
+                transparent 55%
+            );
+            transform: rotate(30deg);
+            animation: holographic 8s infinite linear;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes holographic {
+            0% { transform: rotate(30deg) translateX(-50%) translateY(-50%); }
+            100% { transform: rotate(30deg) translateX(50%) translateY(50%); }
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), rgba(0, 0, 0, 0.9));
+            color: var(--off-white);
+            padding: 80px 0 30px;
+            position: relative;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(0,51,102,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+            z-index: -1;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column {
+            position: relative;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-tan), var(--electric-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--highlight-red), var(--primary-blue));
+        }
+
+        .footer-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--highlight-red);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-red);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-tan);
+            padding-left: 20px;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: -5px;
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-contact i {
+            color: var(--highlight-red);
+            margin-right: 15px;
+            font-size: 1.1rem;
+            min-width: 20px;
+        }
+
+        .footer-contact span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .footer-contact a {
+            color: var(--electric-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--primary-tan);
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hero-title {
+                font-size: 4rem;
+            }
+
+            .chatbot-container {
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero-title {
+                font-size: 3rem;
+            }
+
+            .contact-hero-subtitle {
+                max-width: 100%;
+                font-size: 1.1rem;
+            }
+
+            .contact-form-container {
+                padding: 30px;
+            }
+
+            .chatbot-container {
+                width: 280px;
+                right: 20px;
+                bottom: 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 3px;
+            }
+
+            .form-title, .info-title {
+                font-size: 1.8rem;
+            }
+
+            .chatbot-container {
+                width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <h1 class="logo-text">TURBO TITANS</h1>
+                    <span class="logo-tagline">Digital Transformation Agency</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1 class="contact-hero-title">CONNECT WITH US</h1>
+                <p class="contact-hero-subtitle">
+                    Ready to accelerate your digital transformation? Our team of experts is here to answer your questions, 
+                    discuss your project needs, and explore how we can collaborate to drive your business forward.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Grid -->
+    <section class="container">
+        <div class="contact-grid">
+            <!-- Enhanced Contact Form -->
+            <div class="contact-form-container holographic-card">
+                <!-- Floating decorative elements -->
+                <div class="floating-icon" style="top: 20px; left: 30px;">✉</div>
+                <div class="floating-icon" style="bottom: 40px; right: 30px; animation-delay: 0.5s;">📱</div>
+                
+                <h2 class="form-title">SEND US A MESSAGE</h2>
+                <form id="contactForm" action="https://formspree.io/f/xvgrlyay" method="POST">
+                    <input type="hidden" name="_replyto" value="turbotitans@zohomail.com">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from Turbo Titans">
+                    <input type="hidden" name="_next" value="/thank-you.html">
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number <span class="optional-tag">(optional)</span></label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (123) 456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <select id="subject" name="subject" class="form-input" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Project Proposal">Project Proposal</option>
+                            <option value="Partnership">Partnership</option>
+                            <option value="Support">Support</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project or inquiry..." required maxlength="500"></textarea>
+                        <div class="char-counter"><span id="charCount">0</span>/500</div>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">
+                        <span class="button-text">SEND MESSAGE</span>
+                        <i class="fas fa-paper-plane button-icon"></i>
+                    </button>
+                    
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Thank you for your message!</h3>
+                        <p>We'll get back to you within 24 hours.</p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2 class="info-title">GET IN TOUCH</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon">✉</div>
+                    <div class="info-content">
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:Turbotitans@zohomail.com">Turbotitans@zohomail.com</a></p>
+                        <p>Response time: Within 24 hours</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">✆</div>
+                    <div class="info-content">
+                        <h3>Call Us</h3>
+                        <p><a href="tel:+27645231633">+27 64 523 1633</a></p>
+                        <p>Monday - Friday, 3AM - 10PM GMT+2</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">⌂</div>
+                    <div class="info-content">
+                        <h3>Always Available</h3>
+                        <p>Remote Consultations Available Worldwide</p>
+                        <p>Based in South Africa</p>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-faebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-lnkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-witter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fainstagram"></i></a>
+					<a href="#" class="social-link"><i class="fab fainstagram"></i></a>
+					<a href="#" class="social-link"><i class="fab fainstagram"></i></a>
+					<a href="#" class="social-link"><i class="fab fainstagram"></i></a>
+					<a href="#" class="social-link"><i class="fab fainstagram"></i></a>					
+			        <a href="#" class="social-link"><i class="fab fainstagram"></i></a>
+					<a href="#" class="social-link"><i class="fab fainstagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="container">
+        <div class="map-container">
+            <div class="map-overlay"></div>
+            <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.052919393233!2d28.03489931502873!3d-26.19546298344209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c1a1e6d5e1f%3A0x5e3a8c1d8e0e3b1f!2sJohannesburg%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h2 class="footer-logo">TURBO TITANS</h2>
+                    <p class="footer-description">
+                        We accelerate digital transformation for businesses of all sizes, 
+                        delivering innovative solutions that drive growth and efficiency.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fafacebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab f-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab a-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab a-instagram"></i></a>
+						<a href="#" class="social-link"><i class="fab fainstagram"></i></a>
+						<a href="#" class="social-link"><i class="fab fainstagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="case-studies.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Remote Consultations Available Worldwide<br>Based in South Africa</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span><a href="tel:+27645231633">+27 64 523 1633</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:Turbotitans@zohomail.com">Turbotitans@zohomail.com</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Monday - Friday: 3AM - 10PM (GMT+2)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 TURBO TITANS. ALL RIGHTS RESERVED.</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header" id="chatbotHeader">
+            <div class="chatbot-title">Need Help? Chat with us!</div>
+            <div class="chatbot-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-bubble">Hello! I'm Tanaka, your digital assistant. How can I help you today?</div>
+                    <div class="message-time">Just now</div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Type your message...">
+                <button class="chatbot-send" id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="quick-links">
+                <div class="quick-link" data-message="What services do you offer?">Services</div>
+                <div class="quick-link" data-message="How can I contact support?">Support</div>
+                <div class="quick-link" data-message="What are your working hours?">Hours</div>
+                <div class="quick-link" data-message="Do you offer consultations?">Consultations</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#D2B48C"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            },
+                            "polygon": {
+                                "nb_sides": 5
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": false,
+                            "anim": {
+                                "enable": false,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 40,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#0066CC",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 2,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 200,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+
+            // Chatbot functionality
+            const chatbotHeader = document.getElementById('chatbotHeader');
+            const chatbotBody = document.getElementById('chatbotBody');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const chatbotInput = document.getElementById('chatbotInput');
+            const chatbotSend = document.getElementById('chatbotSend');
+            const quickLinks = document.querySelectorAll('.quick-link');
+
+            // Toggle chatbot
+            chatbotHeader.addEventListener('click', function() {
+                document.getElementById('chatbot').classList.toggle('chatbot-active');
+            });
+
+            // Send message function
+            function sendMessage() {
+                const message = chatbotInput.value.trim();
+                if (message) {
+                    // Add user message
+                    addMessage(message, 'user');
+                    chatbotInput.value = '';
+                    
+                    // Simulate bot response after a delay
+                    setTimeout(() => {
+                        const botResponse = getBotResponse(message);
+                        addMessage(botResponse, 'bot');
+                    }, 1000);
+                }
+            }
+
+            // Add message to chat
+            function addMessage(text, sender) {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}-message`;
+                messageDiv.innerHTML = `
+                    <div class="message-bubble">${text}</div>
+                    <div class="message-time">${timeString}</div>
+                `;
+                
+                chatbotMessages.appendChild(messageDiv);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+
+            // Get bot response
+            function getBotResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                
+                if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+                    return "Hello there! How can I assist you today?";
+                } else if (lowerMessage.includes('service') || lowerMessage.includes('offer')) {
+                    return "We offer a range of digital transformation services including web development, mobile apps, cloud solutions, and AI integration. Would you like more details on any specific service?";
+                } else if (lowerMessage.includes('support') || lowerMessage.includes('help')) {
+                    return "Our support team is available Monday-Friday, 9AM-5PM GMT+2. You can reach us at +27 64 523 1633 or email Turbotitans@zohomail.com";
+                } else if (lowerMessage.includes('hour') || lowerMessage.includes('time')) {
+                    return "Our business hours are Monday to Friday, 9AM to 5PM (GMT+2). We're closed on weekends and public holidays.";
+                } else if (lowerMessage.includes('consult') || lowerMessage.includes('meeting')) {
+                    return "Yes! We offer free initial consultations. Would you like to schedule one? You can call us or use the contact form on this page.";
+                } else if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
+                    return "You're welcome! Is there anything else I can help you with?";
+                } else {
+                    return "I'm not sure I understand. Could you rephrase that? For immediate assistance, you can call us at +27 64 523 1633.";
+                }
+            }
+
+            // Event listeners
+            chatbotSend.addEventListener('click', sendMessage);
+            chatbotInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Quick links
+            quickLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const message = this.getAttribute('data-message');
+                    chatbotInput.value = message;
+                    sendMessage();
+                });
+            });
+
+            // Enhanced form functionality
+            const contactForm = document.getElementById('contactForm');
+            const messageTextarea = document.getElementById('message');
+            const charCount = document.getElementById('charCount');
+            const formSuccess = document.getElementById('formSuccess');
+            
+            // Character counter for message textarea
+            if (messageTextarea && charCount) {
+                messageTextarea.addEventListener('input', function() {
+                    charCount.textContent = this.value.length;
+                });
+            }
+            
+            // Form submission handling
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Form validation
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value.trim();
+                    
+                    if (!name || !email || !subject || !message) {
+                        alert('Please fill all required fields correctly');
+                        return;
+                    }
+                    
+                    if (message.length > 500) {
+                        alert('Message must be 500 characters or less');
+                        return;
+                    }
+                    
+                    // Add loading state
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const buttonText = submitButton.querySelector('.button-text');
+                    const buttonIcon = submitButton.querySelector('.button-icon');
+                    
+                    submitButton.disabled = true;
+                    buttonText.textContent = 'Sending...';
+                    buttonIcon.classList.remove('fa-paper-plane');
+                    buttonIcon.classList.add('fa-spinner', 'fa-spin');
+                    
+                    // Create a new FormData object
+                    const formData = new FormData(contactForm);
+                    
+                    // Send the form data using fetch
+                    fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show success message
+                            contactForm.style.display = 'none';
+                            formSuccess.style.display = 'block';
+                            
+                            // Reset form
+                            contactForm.reset();
+                            charCount.textContent = '0';
+                        } else {
+                            throw new Error('Network response was not ok');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('There was a problem submitting your form. Please try again later.');
+                    })
+                    .finally(() => {
+                        // Reset button state
+                        submitButton.disabled = false;
+                        buttonText.textContent = 'SEND MESSAGE';
+                        buttonIcon.classList.add('fa-paper-plane');
+                        buttonIcon.classList.remove('fa-spinner', 'fa-spin');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

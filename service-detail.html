@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo Titans | Digital Transformation Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+	<style>
+        :root {
+    --primary-tan: #D2B48C;
+    --dark-tan: #B38B6D;
+    --primary-blue: #003366;
+    --electric-blue: #0066CC;
+    --highlight-red: #CC0000;
+    --dark-red: #990000;
+    --pure-black: #000000;
+    --rich-black: #0A0A0A;
+    --pure-white: #FFFFFF;
+    --off-white: #F5F5F5;
+}      
+			    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--rich-black);
+    color: var(--off-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+        
+        /* Screen Container */
+        .screen-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        .screen-container.active {
+            display: flex;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Header Styles */
+        .service-header {
+            background: linear-gradient(135deg, var(--pure-black), var(--rich-black));
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--blood-red);
+        }
+        
+        .service-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--primary-tan);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px rgba(210, 180, 140, 0.7);
+}
+
+.service-subtitle {
+    font-size: 1.3rem;
+    color: var(--electric-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+        
+        /* Main Content */
+        .service-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        /* Service Section */
+        .service-section {
+            margin-bottom: 2rem;
+            background-color: rgba(10, 10, 10, 0.8);
+            border: 1px solid var(--blood-red);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(255, 0, 56, 0.2);
+        }
+        
+        .service-section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-tan);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.service-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--electric-blue);
+    transition: width 0.3s ease;
+}
+        
+        .service-text p {
+    color: var(--off-white);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+        
+        /* Service Features */
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .feature-card {
+    background: linear-gradient(135deg, rgba(10,10,10,0.9), rgba(0,51,102,0.5));
+    border: 1px solid rgba(210, 180, 140, 0.1);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--blood-red);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 56, 0.2);
+        }
+        
+        .feature-card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+        
+        .feature-icon {
+    color: var(--electric-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+        
+        .feature-title {
+    color: var(--primary-tan);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+}
+        
+        .feature-desc {
+    color: var(--off-white);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+        
+        /* Case Studies */
+        .case-studies {
+            margin-top: 2rem;
+        }
+        
+        .case-study-card {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--blood-red);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .case-study-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--pure-white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .case-study-meta {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .case-study-meta span {
+            font-size: 0.7rem;
+            color: var(--warm-tan);
+            background-color: rgba(255, 0, 56, 0.2);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+        
+        .case-study-desc {
+            color: var(--light-tan);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .case-study-link {
+            color: var(--blood-red);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+        
+        .case-study-link:hover {
+            color: var(--warm-tan);
+        }
+        
+        /* Navigation Controls */
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: var(--pure-black);
+            border-top: 1px solid var(--blood-red);
+        }
+        
+        .nav-button {
+            background-color: var(--blood-red);
+            color: var(--pure-white);
+            border: none;
+            padding: 10px 20px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-button:hover {
+            background-color: var(--deep-red);
+        }
+        
+        .nav-button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+        
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .progress-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #333;
+            border: 1px solid var(--blood-red);
+        }
+        
+        .progress-dot.active {
+            background-color: var(--blood-red);
+        }
+        
+        /* Loading Screen */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--pure-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--blood-red);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .service-title {
+                font-size: 2rem;
+            }
+            
+            .service-subtitle {
+                font-size: 1rem;
+            }
+            
+            .service-section-title {
+                font-size: 1.5rem;
+            }
+            
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .service-title {
+                font-size: 1.8rem;
+            }
+            
+            .nav-button {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div class="screen-container active" id="welcome-screen">
+        <div class="service-header">
+            <h1 class="service-title">Digital Transformation Services</h1>
+            <p class="service-subtitle">Redefining business performance through cutting-edge digital strategies and technology solutions</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <p>Welcome to Turbo Titans Digital Transformation Services. We'll guide you through our comprehensive offerings designed to propel your business into the digital future.</p>
+                <p>This interactive presentation will showcase our key service areas and how they can benefit your organization.</p>
+                <p>Use the navigation buttons at the bottom to move through the presentation at your own pace.</p>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button" disabled>
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Digital Strategy Screen 1 -->
+    <div class="screen-container" id="digital-strategy-1">
+        <div class="service-header">
+            <h1 class="service-title">Digital Strategy</h1>
+            <p class="service-subtitle">Creating comprehensive roadmaps for your digital transformation journey</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <h2 class="service-section-title">Digital Strategy</h2>
+                <div class="service-text">
+                    <p>In today's rapidly evolving digital landscape, having a comprehensive digital strategy is no longer optional, it's essential for survival and growth. Our digital strategy services help you navigate the complexities of digital transformation with a clear roadmap tailored to your business objectives.</p>
+                    <p>We combine market insights, technology trends, and business acumen to create strategies that drive measurable results. From digital maturity assessments to full-scale transformation roadmaps, we ensure every initiative aligns with your overarching business goals.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Digital Strategy Screen 2 -->
+    <div class="screen-container" id="digital-strategy-2">
+        <div class="service-header">
+            <h1 class="service-title">Digital Strategy</h1>
+            <p class="service-subtitle">Creating comprehensive roadmaps for your digital transformation journey</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <div class="service-text">
+                    <p>Our approach focuses on creating seamless omnichannel experiences, optimizing digital operations, and leveraging emerging technologies to create competitive advantages in your industry.</p>
+                </div>
+                
+                <div class="service-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chess"></i>
+                        </div>
+                        <h3 class="feature-title">Strategic Roadmapping</h3>
+                        <p class="feature-desc">Comprehensive digital transformation plans aligned with business objectives and market opportunities.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">Digital Maturity Assessment</h3>
+                        <p class="feature-desc">Evaluate your current digital capabilities and identify gaps for improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Digital Strategy Screen 3 -->
+    <div class="screen-container" id="digital-strategy-3">
+        <div class="service-header">
+            <h1 class="service-title">Digital Strategy</h1>
+            <p class="service-subtitle">Creating comprehensive roadmaps for your digital transformation journey</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <div class="service-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 class="feature-title">Omnichannel Strategy</h3>
+                        <p class="feature-desc">Create seamless customer experiences across all digital and physical touchpoints.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="feature-title">Innovation Workshops</h3>
+                        <p class="feature-desc">Collaborative sessions to identify and prioritize digital innovation opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="case-studies">
+                    <h3 class="service-section-title">Case Study</h3>
+                    
+                    <div class="case-study-card">
+                        <h4 class="case-study-title">Global Retail Transformation</h4>
+                        <div class="case-study-meta">
+                            <span>Retail</span>
+                            <span>Digital Strategy</span>
+                            <span>+300% ROI</span>
+                        </div>
+                        <p class="case-study-desc">Developed and implemented a comprehensive digital strategy for a global retail chain, resulting in a 300% increase in online sales and 40% improvement in customer retention within 12 months.</p>
+                        <a href="#" class="case-study-link">ENHANCED PRODUCTIVITY <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- AI Solutions Screen 1 -->
+    <div class="screen-container" id="ai-solutions-1">
+        <div class="service-header">
+            <h1 class="service-title">AI Solutions</h1>
+            <p class="service-subtitle">Harnessing artificial intelligence to transform your business operations</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <h2 class="service-section-title">AI Solutions</h2>
+                <div class="service-text">
+                    <p>Artificial Intelligence is transforming every industry, and we help businesses harness its power to drive innovation, efficiency, and growth. Our AI solutions range from machine learning models to complete AI-powered business transformations.</p>
+                    <p>We specialize in developing custom AI solutions that address your specific business challenges. Whether it's automating repetitive tasks, gaining insights from data, or creating intelligent customer experiences, our team of data scientists and AI experts deliver measurable results.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- AI Solutions Screen 2 -->
+    <div class="screen-container" id="ai-solutions-2">
+        <div class="service-header">
+            <h1 class="service-title">AI Solutions</h1>
+            <p class="service-subtitle">Harnessing artificial intelligence to transform your business operations</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <div class="service-text">
+                    <p>Our approach combines cutting-edge AI technologies with deep industry knowledge to create solutions that are not just technically advanced but also practical and business-focused.</p>
+                </div>
+                
+                <div class="service-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="feature-title">Machine Learning</h3>
+                        <p class="feature-desc">Predictive models and algorithms that learn from data to improve decision-making.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="feature-title">Process Automation</h3>
+                        <p class="feature-desc">Intelligent automation of repetitive tasks to boost efficiency and reduce costs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- AI Solutions Screen 3 -->
+    <div class="screen-container" id="ai-solutions-3">
+        <div class="service-header">
+            <h1 class="service-title">AI Solutions</h1>
+            <p class="service-subtitle">Harnessing artificial intelligence to transform your business operations</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <div class="service-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="feature-title">Conversational AI</h3>
+                        <p class="feature-desc">Chatbots and virtual assistants that enhance customer service and engagement.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="feature-title">Computer Vision</h3>
+                        <p class="feature-desc">Image and video analysis solutions for quality control, security, and more.</p>
+                    </div>
+                </div>
+                
+                <div class="case-studies">
+                    <h3 class="service-section-title">Case Study</h3>
+                    
+                    <div class="case-study-card">
+                        <h4 class="case-study-title">Manufacturing Quality Control</h4>
+                        <div class="case-study-meta">
+                            <span>Manufacturing</span>
+                            <span>Computer Vision</span>
+                            <span>90% Defect Detection</span>
+                        </div>
+                        <p class="case-study-desc">Implemented a computer vision system for a manufacturing client that automated quality control, achieving 90% defect detection accuracy and reducing inspection costs by 65%.</p>
+                        <a href="#" class="case-study-link">ENHANCED PRODUCTIVITY <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Cloud Transformation Screen 1 -->
+    <div class="screen-container" id="cloud-transformation-1">
+        <div class="service-header">
+            <h1 class="service-title">Cloud Transformation</h1>
+            <p class="service-subtitle">Building agile, scalable foundations for your digital future</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <h2 class="service-section-title">Cloud Transformation</h2>
+                <div class="service-text">
+                    <p>Cloud computing has become the foundation for digital innovation, and our cloud transformation services help businesses migrate, optimize, and innovate in the cloud. We guide you through every step of your cloud journey, from strategy to implementation and ongoing management.</p>
+                    <p>Whether you're looking to migrate legacy systems, build cloud-native applications, or optimize your existing cloud environment, our certified cloud architects deliver solutions that improve agility, reduce costs, and enable innovation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Cloud Transformation Screen 2 -->
+    <div class="screen-container" id="cloud-transformation-2">
+        <div class="service-header">
+            <h1 class="service-title">Cloud Transformation</h1>
+            <p class="service-subtitle">Building agile, scalable foundations for your digital future</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <div class="service-text">
+                    <p>We work across all major cloud platforms and specialize in hybrid and multi-cloud strategies that give you the flexibility and resilience needed in today's business environment.</p>
+                </div>
+                
+                <div class="service-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Cloud Migration</h3>
+                        <p class="feature-desc">Seamless transition of applications and data to the cloud with minimal disruption.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3 class="feature-title">Cloud Architecture</h3>
+                        <p class="feature-desc">Design and implementation of scalable, secure, and cost-effective cloud solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Cloud Transformation Screen 3 -->
+    <div class="screen-container" id="cloud-transformation-3">
+        <div class="service-header">
+            <h1 class="service-title">Cloud Transformation</h1>
+            <p class="service-subtitle">Building agile, scalable foundations for your digital future</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section">
+                <div class="service-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="feature-title">Cloud Optimization</h3>
+                        <p class="feature-desc">Continuous monitoring and optimization of cloud resources for performance and cost.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Cloud Security</h3>
+                        <p class="feature-desc">Comprehensive security solutions to protect your cloud environments and data.</p>
+                    </div>
+                </div>
+                
+                <div class="case-studies">
+                    <h3 class="service-section-title">Case Study</h3>
+                    
+                    <div class="case-study-card">
+                        <h4 class="case-study-title">Financial Services Cloud Migration</h4>
+                        <div class="case-study-meta">
+                            <span>Finance</span>
+                            <span>AWS Migration</span>
+                            <span>40% Cost Reduction</span>
+                        </div>
+                        <p class="case-study-desc">Migrated a financial services firm's entire infrastructure to AWS, achieving 40% cost savings, 99.99% uptime, and enabling new digital products that drove 25% revenue growth.</p>
+                        <a href="#" class="case-study-link">ENHANCED PRODUCTIVITY <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- CTA Screen -->
+    <div class="screen-container" id="cta-screen">
+        <div class="service-header">
+            <h1 class="service-title">Ready to Transform Your Business?</h1>
+            <p class="service-subtitle">Let's discuss how we can help you achieve your digital transformation goals</p>
+        </div>
+        
+        <div class="service-content">
+            <div class="service-section" style="text-align: center;">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Our team of digital transformation experts is ready to help you navigate the complexities of the digital age and achieve breakthrough results.</p>
+                <a href="contactus.html" class="nav-button" style="display: inline-flex; text-decoration: none;">
+                    Schedule Consultation <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            <button class="nav-button prev-button">
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="progress-indicator">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="nav-button next-button" disabled>
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Simulate loading
+        setTimeout(function() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }, 1500);
+        
+        // Get all screens and navigation elements
+        const screens = document.querySelectorAll('.screen-container');
+        const nextButtons = document.querySelectorAll('.next-button');
+        const prevButtons = document.querySelectorAll('.prev-button');
+        const progressDots = document.querySelectorAll('.progress-dot');
+        let currentScreenIndex = 0;
+        
+        // Initialize the first screen
+        showScreen(currentScreenIndex);
+        
+        // Next button functionality
+        nextButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (currentScreenIndex < screens.length - 1) {
+                    currentScreenIndex++;
+                    showScreen(currentScreenIndex);
+                }
+            });
+        });
+        
+        // Previous button functionality
+        prevButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (currentScreenIndex > 0) {
+                    currentScreenIndex--;
+                    showScreen(currentScreenIndex);
+                }
+            });
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' && currentScreenIndex < screens.length - 1) {
+                currentScreenIndex++;
+                showScreen(currentScreenIndex);
+            } else if (e.key === 'ArrowLeft' && currentScreenIndex > 0) {
+                currentScreenIndex--;
+                showScreen(currentScreenIndex);
+            }
+        });
+        
+        // Swipe functionality for touch devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        function handleSwipe() {
+            const threshold = 50; // Minimum swipe distance
+            
+            if (touchEndX < touchStartX - threshold) {
+                // Swipe left - next
+                if (currentScreenIndex < screens.length - 1) {
+                    currentScreenIndex++;
+                    showScreen(currentScreenIndex);
+                }
+            } else if (touchEndX > touchStartX + threshold) {
+                // Swipe right - previous
+                if (currentScreenIndex > 0) {
+                    currentScreenIndex--;
+                    showScreen(currentScreenIndex);
+                }
+            }
+        }
+        
+        // Function to show a specific screen
+        function showScreen(index) {
+            // Hide all screens
+            screens.forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show the selected screen
+            screens[index].classList.add('active');
+            
+            // Update progress dots
+            progressDots.forEach((dot, i) => {
+                dot.classList.remove('active');
+                if (i === index) {
+                    dot.classList.add('active');
+                }
+            });
+            
+            // Scroll to top of the screen
+            screens[index].scrollTo(0, 0);
+            
+            // Update button states
+            updateButtonStates();
+        }
+        
+        // Function to update button states
+        function updateButtonStates() {
+            const prevButtons = document.querySelectorAll('.prev-button');
+            const nextButtons = document.querySelectorAll('.next-button');
+            
+            // Update previous buttons
+            prevButtons.forEach(button => {
+                if (currentScreenIndex === 0) {
+                    button.disabled = true;
+                } else {
+                    button.disabled = false;
+                }
+            });
+            
+            // Update next buttons
+            nextButtons.forEach(button => {
+                if (currentScreenIndex === screens.length - 1) {
+                    button.disabled = true;
+                } else {
+                    button.disabled = false;
+                }
+            });
+        }
+        
+        // Progress dot navigation
+        progressDots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                currentScreenIndex = index;
+                showScreen(currentScreenIndex);
+            });
+        });
+    });
+</script>

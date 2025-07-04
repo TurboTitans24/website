@@ -1,0 +1,2981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Solutions | TURBO TITANS Digital Transformation Agency</title>
+    <meta name="description" content="Turbo Titans enterprise-grade solutions that transform businesses through cutting-edge technology, AI, and digital innovation.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">       
+	<style>
+        /* Base Styles */
+        :root {
+            --primary-tan: #D2B48C;
+            --dark-tan: #B38B6D;
+            --primary-blue: #003366;
+            --electric-blue: #0066CC;
+            --highlight-red: #CC0000;
+            --dark-red: #990000;
+            --pure-black: #000000;
+            --rich-black: #0A0A0A;
+            --pure-white: #FFFFFF;
+            --off-white: #F5F5F5;
+            --neon-glow: 0 0 10px rgba(0, 102, 204, 0.7), 0 0 20px rgba(204, 0, 0, 0.5);
+            --neon-blue: 0 0 15px rgba(0, 102, 204, 0.8);
+            --neon-red: 0 0 15px rgba(204, 0, 0, 0.8);
+            --neon-tan: 0 0 15px rgba(210, 180, 140, 0.8);
+            --holographic-gradient: linear-gradient(135deg, rgba(0,102,204,0.8), rgba(204,0,0,0.8), rgba(210,180,140,0.8));
+        }
+        header {
+    transition: transform 0.3s ease;
+}
+		
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+         /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+            background-color: var(--rich-black);
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--pure-black);
+            border-left: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--electric-blue), var(--highlight-red));
+            border-radius: 10px;
+            border: 2px solid var(--rich-black);
+            background-size: 200% 200%;
+            animation: scrollbarGradient 3s ease infinite;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--highlight-red), var(--primary-tan));
+            animation: scrollbarGradientHover 1.5s ease infinite;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background: var(--pure-black);
+        }
+
+        @keyframes scrollbarGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes scrollbarGradientHover {
+            0% { background-position: 0% 50%; box-shadow: 0 0 5px var(--highlight-red); }
+            50% { background-position: 100% 50%; box-shadow: 0 0 10px var(--electric-blue); }
+            100% { background-position: 0% 50%; box-shadow: 0 0 5px var(--highlight-red); }
+        }
+
+        /* Scrollbar for Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--electric-blue) var(--pure-black);
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--rich-black);
+            color: var(--off-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: var(--neon-tan);
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Navigation Styles */
+        .desktop-nav ul {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .desktop-nav ul li {
+            position: relative;
+        }
+
+        .desktop-nav ul li a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .desktop-nav ul li a:hover {
+            color: var(--primary-tan);
+        }
+
+        .desktop-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--electric-blue);
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Styles */
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--rich-black);
+            min-width: 200px;
+            padding: 15px 0;
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            border-top: 2px solid var(--electric-blue);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 102, 204, 0.1);
+            color: var(--electric-blue);
+            padding-left: 25px;
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-tan);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-nav-active {
+            display: block !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--rich-black);
+            padding: 20px;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .mobile-nav-active ul {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-nav-active .dropdown-content {
+            position: static;
+            border: none;
+            padding: 10px 0 0 15px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero Section */
+		.hero-shape {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+        .enterprise-hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+            background: radial-gradient(ellipse at center, rgba(0,51,102,0.2) 0%, rgba(10,10,10,1) 70%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: var(--neon-tan);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary-tan);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        /* 3D Grid Section */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            padding: 100px 0;
+        }
+
+        .solution-card {
+            position: relative;
+            height: 500px;
+            perspective: 1500px;
+            transform-style: preserve-3d;
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-20px);
+        }
+
+        .solution-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .solution-card:hover .solution-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .solution-card-front,
+        .solution-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .solution-card-front {
+            background: linear-gradient(135deg, rgba(10,10,10,0.9), rgba(0,51,102,0.5));
+            border: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .solution-card-back {
+            background: linear-gradient(135deg, rgba(10,10,10,0.95), rgba(204,0,0,0.3));
+            transform: rotateY(180deg);
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .solution-icon {
+            font-size: 5rem;
+            color: var(--electric-blue);
+            margin-bottom: 30px;
+            text-shadow: var(--neon-blue);
+            transition: all 0.5s ease;
+        }
+
+        .solution-card:hover .solution-icon {
+            transform: scale(1.2);
+            color: var(--primary-tan);
+            text-shadow: var(--neon-tan);
+        }
+
+        .solution-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .solution-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .solution-features {
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .feature-icon {
+            color: var(--electric-blue);
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* 3D Shapes for Visual Interest */
+        .solution-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(30px);
+            z-index: -1;
+            transition: all 1s ease;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--electric-blue);
+            top: -50px;
+            left: -50px;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--highlight-red);
+            bottom: -30px;
+            right: -30px;
+        }
+
+        .solution-card:hover .shape-1 {
+            transform: translate(20px, 20px) scale(1.2);
+            opacity: 0.15;
+        }
+
+        .solution-card:hover .shape-2 {
+            transform: translate(-20px, -20px) scale(1.2);
+            opacity: 0.15;
+        }
+
+        /* Back Content */
+        .back-title {
+            font-size: 1.8rem;
+            color: var(--primary-tan);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .back-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .back-features {
+            margin-bottom: 30px;
+        }
+
+        .back-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .back-feature-icon {
+            color: var(--electric-blue);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .back-feature-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .solution-cta {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-tan);
+            color: var(--pure-black);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        .solution-cta:hover {
+            background: var(--electric-blue);
+            color: var(--pure-white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Enterprise Platform Section */
+        .platform-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0,51,102,0.1), rgba(204,0,0,0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-container {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .platform-visual {
+            flex: 1;
+            min-height: 500px;
+            position: relative;
+            perspective: 1500px;
+        }
+
+        .platform-cube {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            animation: rotateCube 20s infinite linear;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .platform-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.7);
+            border: 2px solid rgba(210, 180, 140, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: all 0.5s ease;
+        }
+
+        .platform-face:hover {
+            background: rgba(210, 180, 140, 0.1);
+            color: var(--electric-blue);
+            box-shadow: 0 0 30px rgba(0, 102, 204, 0.5);
+        }
+
+        .platform-face-1 { transform: rotateY(0deg) translateZ(150px); }
+        .platform-face-2 { transform: rotateY(90deg) translateZ(150px); }
+        .platform-face-3 { transform: rotateY(180deg) translateZ(150px); }
+        .platform-face-4 { transform: rotateY(-90deg) translateZ(150px); }
+        .platform-face-5 { transform: rotateX(90deg) translateZ(150px); }
+        .platform-face-6 { transform: rotateX(-90deg) translateZ(150px); }
+
+        .platform-content {
+            flex: 1;
+        }
+
+        .platform-title {
+            font-size: 2.5rem;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .platform-subtitle {
+            font-size: 1.2rem;
+            color: var(--electric-blue);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .platform-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .platform-features {
+            margin-bottom: 40px;
+        }
+
+        .platform-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .platform-feature-icon {
+            font-size: 1.5rem;
+            color: var(--electric-blue);
+            margin-right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 102, 204, 0.1);
+        }
+
+        .platform-feature-text {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Data Visualization Section */
+        .data-viz-section {
+            padding: 100px 0;
+            background: rgba(10, 10, 10, 0.7);
+            position: relative;
+        }
+
+        .data-viz-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .data-viz-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--electric-blue);
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .data-viz-container {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .data-viz-visual {
+            flex: 1;
+            height: 500px;
+            position: relative;
+        }
+
+        .data-sphere {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(0,102,204,0.3), rgba(204,0,0,0.3));
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 4s infinite alternate;
+        }
+
+        .data-node {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--electric-blue);
+            box-shadow: 0 0 15px var(--electric-blue);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .data-node:nth-child(1) {
+            top: 20%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+
+        .data-node:nth-child(2) {
+            top: 60%;
+            left: 20%;
+            animation-delay: 1s;
+            background: var(--highlight-red);
+            box-shadow: 0 0 15px var(--highlight-red);
+        }
+
+        .data-node:nth-child(3) {
+            top: 40%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+
+        .data-node:nth-child(4) {
+            top: 70%;
+            left: 60%;
+            animation-delay: 3s;
+            background: var(--primary-tan);
+            box-shadow: 0 0 15px var(--primary-tan);
+        }
+
+        .data-node:nth-child(5) {
+            top: 20%;
+            left: 60%;
+            animation-delay: 4s;
+        }
+
+        .data-viz-content {
+            flex: 1;
+        }
+
+        .data-viz-features {
+            margin-bottom: 40px;
+        }
+
+        .data-viz-feature {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .data-viz-feature::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--electric-blue);
+            box-shadow: 0 0 10px var(--electric-blue);
+        }
+
+        .data-viz-feature:nth-child(2)::before {
+            background: var(--highlight-red);
+            box-shadow: 0 0 10px var(--highlight-red);
+        }
+
+        .data-viz-feature:nth-child(3)::before {
+            background: var(--primary-tan);
+            box-shadow: 0 0 10px var(--primary-tan);
+        }
+
+        .data-viz-feature-title {
+            font-size: 1.3rem;
+            color: var(--primary-tan);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .data-viz-feature-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+        /* Advanced Security Section */
+.security-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, rgba(204,0,0,0.1), rgba(0,51,102,0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.security-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.security-title {
+    font-size: 2.5rem;
+    color: var(--primary-tan);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.security-subtitle {
+    font-size: 1.2rem;
+    color: var(--electric-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.security-card {
+    position: relative;
+    height: 350px;
+    perspective: 1500px;
+}
+
+.security-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.security-card:hover .security-card-inner {
+    transform: rotateY(180deg);
+}
+
+.security-card-front,
+.security-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.security-card-front {
+    background: linear-gradient(135deg, rgba(10,10,10,0.9), rgba(0,51,102,0.5));
+    border: 1px solid rgba(210, 180, 140, 0.1);
+}
+
+.security-card-back {
+    background: linear-gradient(135deg, rgba(10,10,10,0.95), rgba(204,0,0,0.3));
+    transform: rotateY(180deg);
+    justify-content: center;
+    text-align: left;
+}
+
+.security-icon {
+    font-size: 3.5rem;
+    color: var(--electric-blue);
+    margin-bottom: 20px;
+    text-shadow: var(--neon-blue);
+    transition: all 0.5s ease;
+}
+
+.security-card:hover .security-icon {
+    color: var(--highlight-red);
+    text-shadow: var(--neon-red);
+}
+
+.security-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-tan);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.security-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.security-card-back ul {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.security-card-back li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.security-card-back i {
+    color: var(--electric-blue);
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.security-cta {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--primary-tan);
+    color: var(--pure-black);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.security-cta:hover {
+    background: var(--electric-blue);
+    color: var(--pure-white);
+    transform: translateY(-3px);
+}
+
+.security-shape {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: var(--electric-blue);
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.1;
+    z-index: -1;
+    transition: all 0.8s ease;
+}
+
+.security-card:hover .security-shape {
+    opacity: 0.15;
+    transform: scale(1.2);
+}
+
+.compliance-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.badge-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(210, 180, 140, 0.1);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.badge-item i {
+    color: var(--primary-tan);
+    margin-right: 10px;
+}
+
+.badge-item:hover {
+    background: rgba(0, 102, 204, 0.2);
+    transform: translateY(-3px);
+}   
+    /* ===== Growth Accelerator Section ===== */
+.accelerator-section {
+    padding: 120px 0;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(0,102,204,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(204,0,0,0.15) 0%, transparent 50%),
+        var(--rich-black);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(210, 180, 140, 0.1);
+    border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+}
+
+.accelerator-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.accelerator-title {
+    font-size: 2.8rem;
+    color: var(--primary-tan);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    text-shadow: var(--neon-tan);
+    animation: fadeInDown 1s ease;
+}
+
+.accelerator-subtitle {
+    font-size: 1.3rem;
+    color: var(--electric-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+/* Circular Progress */
+.circular-progress {
+    position: absolute;
+    top: -30px;
+    right: 5%;
+    width: 120px;
+    height: 120px;
+    animation: fadeInRight 1s ease 0.6s both;
+}
+
+.progress-ring-circle {
+    stroke-dasharray: 326.56;
+    stroke-dashoffset: 326.56;
+    transition: stroke-dashoffset 1.5s ease;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.progress-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-tan);
+}
+
+/* Control Panel */
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    background: rgba(10, 10, 10, 0.7);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(210, 180, 140, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease 0.9s both;
+}
+
+.panel-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.center-column {
+    flex: 1.2;
+}
+
+/* Knob Controls */
+.control-knob {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+    border: 3px solid var(--electric-blue);
+    box-shadow: 
+        0 0 15px rgba(0, 102, 204, 0.5),
+        inset 0 0 10px rgba(0, 0, 0, 0.8);
+    position: relative;
+    cursor: pointer;
+}
+
+.knob-indicator {
+    width: 20px;
+    height: 20px;
+    background: var(--primary-tan);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg) translateY(-40px);
+    transform-origin: center 40px;
+    box-shadow: 0 0 10px var(--primary-tan);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+}
+
+.knob-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(210,180,140,0.3), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.control-knob:hover .knob-glow {
+    opacity: 1;
+}
+
+.knob-label {
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--electric-blue);
+}
+
+/* Digital Displays */
+.digital-display {
+    background: rgba(0, 51, 102, 0.2);
+    border: 1px solid var(--electric-blue);
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 0 15px rgba(0, 102, 204, 0.3);
+    transition: all 0.3s ease;
+}
+
+.digital-display:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 102, 204, 0.5);
+}
+
+.display-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--highlight-red);
+    display: block;
+    text-shadow: 0 0 10px rgba(204, 0, 0, 0.5);
+}
+
+.display-label {
+    font-size: 0.8rem;
+    color: var(--primary-tan);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Holographic Interface */
+.holo-interface {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(0,102,204,0.1), transparent 70%);
+    border: 2px solid rgba(210, 180, 140, 0.3);
+    position: relative;
+    margin: 0 auto 40px;
+}
+
+.holo-line {
+    position: absolute;
+    background: rgba(210, 180, 140, 0.5);
+    width: 80%;
+    height: 1px;
+    left: 10%;
+    box-shadow: 0 0 5px var(--primary-tan);
+    transform-origin: center;
+}
+
+.holo-line:nth-child(1) {
+    top: 25%;
+    transform: rotate(0deg);
+    animation: holoGlow 3s infinite;
+}
+.holo-line:nth-child(2) {
+    top: 50%;
+    transform: rotate(60deg);
+    animation: holoGlow 3s infinite 0.5s;
+}
+.holo-line:nth-child(3) {
+    top: 75%;
+    transform: rotate(120deg);
+    animation: holoGlow 3s infinite 1s;
+}
+
+.core-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: var(--electric-blue);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px var(--electric-blue);
+    animation: pulse 2s infinite;
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary-tan);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    animation: ripple 3s infinite;
+    opacity: 0;
+}
+
+.pulse-ring.delay-1 {
+    animation-delay: 1s;
+}
+.pulse-ring.delay-2 {
+    animation-delay: 2s;
+}
+
+/* Activate Button */
+.activate-button {
+    position: relative;
+    padding: 18px 50px;
+    background: linear-gradient(to right, var(--electric-blue), var(--highlight-red));
+    color: var(--pure-white);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 102, 204, 0.5);
+    z-index: 1;
+}
+
+.activate-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(204, 0, 0, 0.6);
+}
+
+.button-text {
+    position: relative;
+    z-index: 3;
+}
+
+.button-lights {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: 
+        linear-gradient(45deg, 
+        transparent 48%, 
+        var(--electric-blue) 49%, 
+        var(--electric-blue) 51%, 
+        transparent 52%),
+        linear-gradient(-45deg, 
+        transparent 48%, 
+        var(--highlight-red) 49%, 
+        var(--highlight-red) 51%, 
+        transparent 52%);
+    background-size: 10px 10px;
+    opacity: 0.3;
+    animation: lightMove 0.5s linear infinite;
+    z-index: 2;
+}
+
+.button-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: var(--electric-blue);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.activate-button.activated .button-pulse {
+    animation: buttonPulse 0.8s ease-out;
+}
+
+/* Growth Matrix */
+.growth-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    animation: fadeInUp 1s ease 1.2s both;
+}
+
+.matrix-item {
+    text-align: center;
+}
+
+.matrix-bar {
+    height: 10px;
+    background: rgba(210, 180, 140, 0.2);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.matrix-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, var(--electric-blue), var(--highlight-red));
+    border-radius: 5px;
+    transition: width 1.5s ease 1.5s;
+}
+
+.matrix-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-tan);
+}
+
+/* Tech Particles */
+.tech-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--electric-blue);
+    opacity: 0.5;
+    filter: blur(1px);
+    z-index: 0;
+    animation: float 15s infinite ease-in-out;
+}
+
+.tech-particle.p1 {
+    width: 8px;
+    height: 8px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+.tech-particle.p2 {
+    width: 5px;
+    height: 5px;
+    top: 60%;
+    left: 85%;
+    animation-delay: 3s;
+    background: var(--highlight-red);
+}
+.tech-particle.p3 {
+    width: 3px;
+    height: 3px;
+    top: 80%;
+    left: 15%;
+    animation-delay: 6s;
+    background: var(--primary-tan);
+}
+
+/* Particle Burst */
+.particle-burst {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    filter: blur(1px);
+    transition: opacity 0.2s;
+}
+
+/* Additional Animations */
+@keyframes holoGlow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+    70% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+} 
+    /* Future Vision Section */
+.future-vision {
+    padding: 120px 0;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(0,102,204,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(204,0,0,0.15) 0%, transparent 50%),
+        var(--rich-black);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(210, 180, 140, 0.1);
+    border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+}
+
+.future-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.future-title {
+    font-size: 3.5rem;
+    color: var(--pure-white);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px rgba(0, 102, 204, 0.7);
+}
+
+.title-highlight {
+    color: var(--primary-tan);
+    position: relative;
+    display: inline-block;
+}
+
+.title-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--electric-blue);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.future-title:hover .title-highlight::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.future-subtitle {
+    font-size: 1.3rem;
+    color: var(--electric-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Holographic Display */
+.holographic-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.holo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.holo-cell {
+    position: relative;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.holo-cell:hover {
+    transform: translateY(-20px);
+}
+
+.holo-icon {
+    font-size: 3.5rem;
+    color: var(--electric-blue);
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.holo-cell:hover .holo-icon {
+    color: var(--primary-tan);
+    transform: scale(1.2);
+    text-shadow: var(--neon-tan);
+}
+
+.holo-label {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--off-white);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.holo-cell:hover .holo-label {
+    color: var(--primary-tan);
+}
+
+.holo-beam {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to top, var(--electric-blue), transparent);
+    transition: all 0.8s ease;
+    z-index: 1;
+}
+
+.holo-cell:hover .holo-beam {
+    height: 100px;
+    box-shadow: 0 0 20px var(--electric-blue);
+}
+
+.holo-core {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.core-orb {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, var(--electric-blue), transparent 70%);
+    box-shadow: 0 0 50px var(--electric-blue);
+    animation: pulse 3s infinite alternate;
+    position: relative;
+    z-index: 1;
+}
+
+.core-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary-tan);
+    border-radius: 50%;
+    animation: ripple 4s infinite;
+    opacity: 0;
+}
+
+.core-pulse.delay-1 {
+    animation-delay: 1s;
+}
+
+.core-pulse.delay-2 {
+    animation-delay: 2s;
+}
+
+.core-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(210,180,140,0.1), transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.tech-preview {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 3;
+    width: 80%;
+}
+
+.tech-preview .preview-title {
+    font-size: 1.8rem;
+    color: var(--pure-white);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.tech-preview .highlight {
+    color: var(--primary-tan);
+}
+
+.tech-preview .preview-desc {
+    font-size: 0.9rem;
+    color: var(--off-white);
+    opacity: 0.8;
+}
+
+/* Future Stats */
+.future-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-tan);
+    margin-bottom: 10px;
+    text-shadow: var(--neon-tan);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--electric-blue);
+}
+
+/* Future Particles */
+.future-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--electric-blue);
+    opacity: 0.3;
+    filter: blur(1px);
+    z-index: 0;
+    animation: float 20s infinite ease-in-out;
+}
+
+.future-particle.p1 {
+    width: 10px;
+    height: 10px;
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.future-particle.p2 {
+    width: 6px;
+    height: 6px;
+    top: 70%;
+    left: 80%;
+    animation-delay: 5s;
+    background: var(--highlight-red);
+}
+
+.future-particle.p3 {
+    width: 4px;
+    height: 4px;
+    top: 85%;
+    left: 20%;
+    animation-delay: 10s;
+    background: var(--primary-tan);
+}
+
+/* Animations */
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes techHover {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}   
+        /* CTA Section */
+        .enterprise-cta {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.8), rgba(204, 0, 0, 0.8));
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enterprise-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23D2B48C" stroke-width="0.5" stroke-dasharray="5,5" /></svg>');
+            opacity: 0.2;
+        }
+
+        .enterprise-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .enterprise-cta h2 {
+            font-size: 2.8rem;
+            color: var(--pure-white);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .enterprise-cta p {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--primary-tan);
+            color: var(--pure-black);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background: var(--electric-blue);
+            color: var(--pure-white);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(to bottom, rgba(10,10,10,1), rgba(0,0,0,1));
+            padding: 80px 0 0;
+            position: relative;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col {
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            color: var(--primary-tan);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-tan);
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .footer-about {
+            margin: 20px 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(210, 180, 140, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--electric-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-tan);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        @keyframes rotateCube {
+            from {
+                transform: translate(-50%, -50%) rotateX(0) rotateY(0);
+            }
+            to {
+                transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .platform-container,
+            .data-viz-container {
+                flex-direction: column;
+            }
+            
+            .platform-visual,
+            .data-viz-visual {
+                width: 100%;
+                margin-bottom: 40px;
+                min-height: 400px;
+            }
+            
+            .platform-content,
+            .data-viz-content {
+                width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .solutions-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+            
+            .solution-card {
+                height: 450px;
+            }
+            
+            .solution-title {
+                font-size: 1.8rem;
+            }
+            
+            .back-title {
+                font-size: 1.5rem;
+            }
+            
+            .platform-title,
+            .data-viz-title {
+                font-size: 2rem;
+            }
+            
+            /* Mobile menu toggle */
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .solution-card {
+                height: 400px;
+            }
+            
+            .solution-card-front,
+            .solution-card-back {
+                padding: 30px;
+            }
+            
+            .data-sphere {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .enterprise-cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .solution-card {
+                height: 350px;
+            }
+            
+            .solution-icon {
+                font-size: 3.5rem;
+            }
+            
+            .platform-cube {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .platform-face {
+                font-size: 1.2rem;
+            }
+            
+            .platform-face-1 { transform: rotateY(0deg) translateZ(125px); }
+            .platform-face-2 { transform: rotateY(90deg) translateZ(125px); }
+            .platform-face-3 { transform: rotateY(180deg) translateZ(125px); }
+            .platform-face-4 { transform: rotateY(-90deg) translateZ(125px); }
+            .platform-face-5 { transform: rotateX(90deg) translateZ(125px); }
+            .platform-face-6 { transform: rotateX(-90deg) translateZ(125px); }
+            
+            .enterprise-cta {
+                padding: 60px 0;
+            }
+            
+            .enterprise-cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .enterprise-cta p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TURBO TITANS</span>
+                    <span class="logo-tagline">Digital Transformation Agency</span>
+                </a>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="service-detail.html">Digital Strategy</a>
+                                <a href="service-detail.html">AI Solutions</a>
+                                <a href="service-detail.html">Cloud Transformation</a>
+                                <a href="service-detail.html">Data Analytics</a>
+                                <a href="service-detail.html">CX Optimization</a>
+                            </div>
+                        </li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="blog.html">Insights</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="enterprise-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Enterprise Solutions</h1>
+            <p class="hero-subtitle">Leave legacy behind. Our solutions don’t just modernize they reinvent how enterprises operate at scale.</p>
+            <a href="#solutions" class="cta-button">Explore Solutions</a>
+        </div>
+        <div class="hero-scroll">Scroll to Discover</div>
+        
+        <!-- Animated background elements -->
+        <div class="hero-shape shape-1"></div>
+        <div class="hero-shape shape-2"></div>
+        <div class="hero-shape shape-3"></div>
+    </section>
+
+        <!-- Solutions Grid Section -->
+    <section id="solutions" class="solutions-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Enterprise-Grade Solutions</h2>
+                <p>Continuous digital evolution through iterative, modular transformation frameworks. Our agile approach delivers measurable value at every sprint while maintaining the architectural integrity needed for enterprise-scale deployment and long-term adaptability.</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <!-- Solution Card 1 -->
+                <div class="solution-card">
+                    <div class="solution-card-inner">
+                        <div class="solution-card-front">
+                            <i class="fas fa-cloud-upload-alt solution-icon"></i>
+                            <h3 class="solution-title">Cloud Transformation</h3>
+                            <p class="solution-description">Modernize your infrastructure with our end-to-end cloud migration and optimization services.</p>
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Multi-cloud strategy</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Legacy system migration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Cost optimization</span>
+                                </div>
+                            </div>
+                            <div class="solution-shape shape-1"></div>
+                            <div class="solution-shape shape-2"></div>
+                        </div>
+                        <div class="solution-card-back">
+                            <h4 class="back-title">Cloud Transformation</h4>
+                            <p class="back-description">Our cloud experts design and implement tailored migration strategies that minimize disruption while maximizing performance and cost-efficiency.</p>
+                            <div class="back-features">
+                                <div class="back-feature">
+                                    <i class="fas fa-server back-feature-icon"></i>
+                                    <div class="back-feature-text">Hybrid and multi-cloud architecture design</div>
+                                </div>
+                                <div class="back-feature">
+                                    <i class="fas fa-shield-alt back-feature-icon"></i>
+                                    <div class="back-feature-text">Enterprise-grade security compliance</div>
+                                </div>
+                                <div class="back-feature">
+                                    <i class="fas fa-tachometer-alt back-feature-icon"></i>
+                                    <div class="back-feature-text">Performance optimization and monitoring</div>
+                                </div>
+                            </div>
+                            <a href="#" class="solution-cta">Enhanced Productivity</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solution Card 2 -->
+                <div class="solution-card">
+                    <div class="solution-card-inner">
+                        <div class="solution-card-front">
+                            <i class="fas fa-brain solution-icon"></i>
+                            <h3 class="solution-title">AI & Automation</h3>
+                            <p class="solution-description">Implement intelligent automation and AI solutions at enterprise scale.</p>
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Machine learning</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Process automation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Predictive analytics</span>
+                                </div>
+                            </div>
+                            <div class="solution-shape shape-1"></div>
+                            <div class="solution-shape shape-2"></div>
+                        </div>
+                        <div class="solution-card-back">
+                            <h4 class="back-title">AI & Automation</h4>
+                            <p class="back-description">Deploy cutting-edge artificial intelligence solutions that transform business operations and create competitive advantages.</p>
+                            <div class="back-features">
+                                <div class="back-feature">
+                                    <i class="fas fa-robot back-feature-icon"></i>
+                                    <div class="back-feature-text">Intelligent process automation</div>
+                                </div>
+                                <div class="back-feature">
+                                    <i class="fas fa-chart-line back-feature-icon"></i>
+                                    <div class="back-feature-text">Predictive analytics platforms</div>
+                                </div>
+                                <div class="back-feature">
+                                    <i class="fas fa-comments back-feature-icon"></i>
+                                    <div class="back-feature-text">Conversational AI and chatbots</div>
+                                </div>
+                            </div>
+                            <a href="#" class="solution-cta">Enhanced Productivity</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solution Card 3 -->
+                <div class="solution-card">
+                    <div class="solution-card-inner">
+                        <div class="solution-card-front">
+                            <i class="fas fa-database solution-icon"></i>
+                            <h3 class="solution-title">Data Modernization</h3>
+                            <p class="solution-description">Unlock the full potential of your enterprise data assets.</p>
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Data lakes & warehouses</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Real-time analytics</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Governance & compliance</span>
+                                </div>
+                            </div>
+                            <div class="solution-shape shape-1"></div>
+                            <div class="solution-shape shape-2"></div>
+                        </div>
+                        <div class="solution-card-back">
+                            <h4 class="back-title">Data Modernization</h4>
+                            <p class="back-description">Transform your data infrastructure to support advanced analytics, AI, and real-time decision making across the enterprise.</p>
+                            <div class="back-features">
+                                <div class="back-feature">
+                                    <i class="fas fa-sync-alt back-feature-icon"></i>
+                                    <div class="back-feature-text">Data pipeline modernization</div>
+                                </div>
+                                <div class="back-feature">
+                                    <i class="fas fa-lock back-feature-icon"></i>
+                                    <div class="back-feature-text">Enterprise data governance</div>
+                                </div>
+                                <div class="back-feature">
+                                    <i class="fas fa-bolt back-feature-icon"></i>
+                                    <div class="back-feature-text">Real-time streaming analytics</div>
+                                </div>
+                            </div>
+                            <a href="#" class="solution-cta">Enhanced Productivity</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Platform Section -->
+    <section class="platform-section">
+        <div class="container">
+            <div class="platform-container">
+                <div class="platform-visual">
+                    <div class="platform-cube">
+                        <div class="platform-face platform-face-1">Scale</div>
+                        <div class="platform-face platform-face-2">Secure</div>
+                        <div class="platform-face platform-face-3">Integrate</div>
+                        <div class="platform-face platform-face-4">Automate</div>
+                        <div class="platform-face platform-face-5">Analyze</div>
+                        <div class="platform-face platform-face-6">Transform</div>
+                    </div>
+                </div>
+                <div class="platform-content">
+                    <h2 class="platform-title">Titan Enterprise Platform</h2>
+                    <p class="platform-subtitle">The Foundation for Digital Transformation</p>
+                    <p class="platform-description">Our proprietary Titan Enterprise Platform provides the technological foundation for large-scale digital transformation, combining cutting-edge tools, frameworks, and methodologies tailored for enterprise needs.</p>
+                    
+                    <div class="platform-features">
+                        <div class="platform-feature">
+                            <div class="platform-feature-icon">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                            <div class="platform-feature-text">
+                                <strong>Scalability Engine:</strong> Built to handle exponential growth with our auto-scaling architecture and load-optimized components.
+                            </div>
+                        </div>
+                        <div class="platform-feature">
+                            <div class="platform-feature-icon">
+                                <i class="fas fa-fingerprint"></i>
+                            </div>
+                            <div class="platform-feature-text">
+                                <strong>Security Framework:</strong> Multi-layered protection with zero-trust architecture and continuous threat monitoring.
+                            </div>
+                        </div>
+                        <div class="platform-feature">
+                            <div class="platform-feature-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="platform-feature-text">
+                                <strong>Integration Hub:</strong> Seamless connectivity with 500+ enterprise systems through our API-first approach.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="cta-button">ENHANCED PRODUCTIVITY</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section class="data-viz-section">
+        <div class="container">
+            <h2 class="data-viz-title">Enterprise Data Intelligence</h2>
+            <p class="data-viz-subtitle">Transform data into actionable business intelligence at scale</p>
+            
+            <div class="data-viz-container">
+                <div class="data-viz-visual">
+                    <div class="data-sphere">
+                        <div class="data-node"></div>
+                        <div class="data-node"></div>
+                        <div class="data-node"></div>
+                        <div class="data-node"></div>
+                        <div class="data-node"></div>
+                    </div>
+                </div>
+                <div class="data-viz-content">
+                    <div class="data-viz-features">
+                        <div class="data-viz-feature">
+                            <h3 class="data-viz-feature-title">Real-Time Decision Intelligence</h3>
+                            <p class="data-viz-feature-description">Our streaming analytics platform processes millions of events per second, delivering actionable insights with sub-second latency for time-sensitive decision making.</p>
+                        </div>
+                        <div class="data-viz-feature">
+                            <h3 class="data-viz-feature-title">Predictive Enterprise Modeling</h3>
+                            <p class="data-viz-feature-description">Leverage advanced machine learning to forecast market trends, operational bottlenecks, and customer behavior with 92% accuracy.</p>
+                        </div>
+                        <div class="data-viz-feature">
+                            <h3 class="data-viz-feature-title">Unified Data Fabric</h3>
+                            <p class="data-viz-feature-description">Break down data silos with our integrated data fabric that connects all your enterprise systems, cloud services, and IoT devices into a single source of truth.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="cta-button">ENHANCED PRODUCTIVITY</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Advanced Security Section -->
+<section class="security-section">
+    <div class="container">
+        <div class="security-header">
+            <h2 class="security-title">Enterprise Security & Compliance</h2>
+            <p class="security-subtitle">Military-grade protection for your digital transformation</p>
+        </div>
+        
+        <div class="security-grid">
+            <!-- Security Feature 1 -->
+            <div class="security-card">
+                <div class="security-card-inner">
+                    <div class="security-card-front">
+                        <i class="fas fa-shield-alt security-icon"></i>
+                        <h3>Zero Trust Architecture</h3>
+                        <p>Never trust, always verify with our comprehensive ZTA implementation</p>
+                    </div>
+                    <div class="security-card-back">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Continuous authentication</li>
+                            <li><i class="fas fa-check-circle"></i> Micro-segmentation</li>
+                            <li><i class="fas fa-check-circle"></i> Least privilege access</li>
+                            <li><i class="fas fa-check-circle"></i> Behavioral analytics</li>
+                        </ul>
+                        <div class="security-cta">ENHANCED PRODUCTIVITY</div>
+                    </div>
+                </div>
+                <div class="security-shape"></div>
+            </div>
+            
+            <!-- Security Feature 2 -->
+            <div class="security-card">
+                <div class="security-card-inner">
+                    <div class="security-card-front">
+                        <i class="fas fa-lock security-icon"></i>
+                        <h3>Quantum Encryption</h3>
+                        <p>Future-proof your data with post-quantum cryptography</p>
+                    </div>
+                    <div class="security-card-back">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Lattice-based cryptography</li>
+                            <li><i class="fas fa-check-circle"></i> Quantum key distribution</li>
+                            <li><i class="fas fa-check-circle"></i> Crypto-agility framework</li>
+                            <li><i class="fas fa-check-circle"></i> FIPS 140-3 validated</li>
+                        </ul>
+                        <div class="security-cta">ENHANCED PRODUCTIVITY</div>
+                    </div>
+                </div>
+                <div class="security-shape"></div>
+            </div>
+            
+            <!-- Security Feature 3 -->
+            <div class="security-card">
+                <div class="security-card-inner">
+                    <div class="security-card-front">
+                        <i class="fas fa-robot security-icon"></i>
+                        <h3>AI-Powered SOC</h3>
+                        <p>24/7 intelligent threat detection and response</p>
+                    </div>
+                    <div class="security-card-back">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Autonomous threat hunting</li>
+                            <li><i class="fas fa-check-circle"></i> Predictive analytics</li>
+                            <li><i class="fas fa-check-circle"></i> Incident response automation</li>
+                            <li><i class="fas fa-check-circle"></i> Threat intelligence feeds</li>
+                        </ul>
+                        <div class="security-cta">ENHANCED PRODUCTIVITY</div>
+                    </div>
+                </div>
+                <div class="security-shape"></div>
+            </div>
+        </div>
+        
+        <div class="compliance-badges">
+            <div class="badge-item">
+                <i class="fas fa-certificate"></i>
+                <span>GDPR</span>
+            </div>
+            <div class="badge-item">
+                <i class="fas fa-certificate"></i>
+                <span>HIPAA</span>
+            </div>
+            <div class="badge-item">
+                <i class="fas fa-certificate"></i>
+                <span>ISO 27001</span>
+            </div>
+            <div class="badge-item">
+                <i class="fas fa-certificate"></i>
+                <span>SOC 2</span>
+            </div>
+            <div class="badge-item">
+                <i class="fas fa-certificate"></i>
+                <span>PCI DSS</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Growth Accelerator Section -->
+<section class="accelerator-section">
+    <div class="container">
+        <div class="accelerator-header">
+            <h2 class="accelerator-title">Enterprise Growth Accelerator</h2>
+            <p class="accelerator-subtitle">Activate your digital transformation hyperdrive</p>
+            <div class="circular-progress">
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring-circle" stroke="url(#gradient)" stroke-width="6" fill="transparent" r="52" cx="60" cy="60"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#0066CC" />
+                            <stop offset="100%" stop-color="#CC0000" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="progress-value">0%</span>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <div class="panel-column">
+                <div class="control-knob" data-value="75">
+                    <div class="knob-indicator"></div>
+                    <div class="knob-glow"></div>
+                    <div class="knob-label">Operational Efficiency</div>
+                </div>
+                <div class="digital-display">
+                    <span class="display-value">↑ 34%</span>
+                    <span class="display-label">YOY Growth</span>
+                </div>
+            </div>
+            
+            <div class="panel-column center-column">
+                <div class="holo-interface">
+                    <div class="holo-line"></div>
+                    <div class="holo-line"></div>
+                    <div class="holo-line"></div>
+                    <div class="core-circle"></div>
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring delay-1"></div>
+                    <div class="pulse-ring delay-2"></div>
+                </div>
+                <button class="activate-button" id="growthTrigger">
+                    <span class="button-text">ENHANCED PRODUCTIVITY</span>
+                    <span class="button-lights"></span>
+                    <span class="button-pulse"></span>
+                </button>
+            </div>
+            
+            <div class="panel-column">
+                <div class="control-knob" data-value="60">
+                    <div class="knob-indicator"></div>
+                    <div class="knob-glow"></div>
+                    <div class="knob-label">Market Expansion</div>
+                </div>
+                <div class="digital-display">
+                    <span class="display-value">↑ 28%</span>
+                    <span class="display-label">New Markets</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="growth-matrix">
+            <div class="matrix-item" data-percent="92">
+                <div class="matrix-bar"><div class="matrix-fill"></div></div>
+                <div class="matrix-label">Digital Adoption</div>
+            </div>
+            <div class="matrix-item" data-percent="87">
+                <div class="matrix-bar"><div class="matrix-fill"></div></div>
+                <div class="matrix-label">Process Automation</div>
+            </div>
+            <div class="matrix-item" data-percent="95">
+                <div class="matrix-bar"><div class="matrix-fill"></div></div>
+                <div class="matrix-label">Data Utilization</div>
+            </div>
+            <div class="matrix-item" data-percent="78">
+                <div class="matrix-bar"><div class="matrix-fill"></div></div>
+                <div class="matrix-label">Customer Retention</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating tech particles -->
+    <div class="tech-particle p1"></div>
+    <div class="tech-particle p2"></div>
+    <div class="tech-particle p3"></div>
+</section>
+    <!-- Future Vision Section -->
+<section class="future-vision">
+    <div class="container">
+        <div class="future-header">
+            <h2 class="future-title">The Future <span class="title-highlight">Reimagined</span></h2>
+            <p class="future-subtitle">Experience a glimpse of what's possible with our enterprise technology</p>
+        </div>
+        
+        <div class="holographic-display">
+            <div class="holo-grid">
+                <div class="holo-cell" data-tech="quantum">
+                    <div class="holo-icon"><i class="fas fa-atom"></i></div>
+                    <div class="holo-label">Quantum Computing</div>
+                    <div class="holo-beam"></div>
+                </div>
+                <div class="holo-cell" data-tech="ai">
+                    <div class="holo-icon"><i class="fas fa-brain"></i></div>
+                    <div class="holo-label">Sentient AI</div>
+                    <div class="holo-beam"></div>
+                </div>
+                <div class="holo-cell" data-tech="biotech">
+                    <div class="holo-icon"><i class="fas fa-dna"></i></div>
+                    <div class="holo-label">Bio-Tech Fusion</div>
+                    <div class="holo-beam"></div>
+                </div>
+                <div class="holo-cell" data-tech="spatial">
+                    <div class="holo-icon"><i class="fas fa-globe"></i></div>
+                    <div class="holo-label">Spatial Web</div>
+                    <div class="holo-beam"></div>
+                </div>
+            </div>
+            
+            <div class="holo-core">
+                <div class="core-orb"></div>
+                <div class="core-pulse"></div>
+                <div class="core-glow"></div>
+                <div class="tech-preview">
+                    <h3 class="preview-title">Enterprise <span class="highlight">Evolution</span></h3>
+                    <p class="preview-desc">Hover over technologies to see how we're shaping the future of business</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="future-stats">
+            <div class="stat-item">
+                <div class="stat-value" data-target="87">0</div>
+                <div class="stat-label">Faster Innovation</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" data-target="92">0</div>
+                <div class="stat-label">Transformation Success</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" data-target="3x">0</div>
+                <div class="stat-label">ROI Potential</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating particles -->
+    <div class="future-particle p1"></div>
+    <div class="future-particle p2"></div>
+    <div class="future-particle p3"></div>
+</section>
+    <!-- CTA Section -->
+    <section class="enterprise-cta">
+        <div class="enterprise-cta-content">
+            <h2>Ready for Enterprise Transformation?</h2>
+            <p>Schedule a consultation with our enterprise solutions team to discuss how we can help your organization achieve its digital transformation goals at scale.</p>
+            <a href="contactus.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">TURBO TITANS</span>
+                        <span class="logo-tagline">Digital Transformation Agency</span>
+                    </a>
+                    <p class="footer-about">We help enterprises navigate digital transformation with cutting-edge technology solutions and strategic consulting.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedinin"></i></a>
+                        <a href="#"><i class="fab fa-twitte"></i></a>
+                        <a href="#"><i class="fab fa-faceook-f"></i></a>
+                        <a href="#"><i class="fab fa-intagram"></i></a>
+						<a href="#"><i class="fab fa-intagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="#">Cloud Transformation</a></li>
+                        <li><a href="#">AI & Automation</a></li>
+                        <li><a href="#">Data Modernization</a></li>
+                        <li><a href="#">IoT Integration</a></li>
+                        <li><a href="#">Blockchain Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="#">Financial Services</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Manufacturing</a></li>
+                        <li><a href="#">Retail</a></li>
+                        <li><a href="#">Government</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="case-studies.html">Insights</a></li>
+                        <li><a href="aboutus.html">Careers</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TURBO TITANS. DIGITAL TRANSFORMATION AGENCY. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('.desktop-nav');
+            nav.classList.toggle('mobile-nav-active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+        header.style.transform = 'translateY(-100%)';
+        header.style.transition = 'transform 0.3s ease';
+    } else {
+        header.style.transform = 'translateY(0)';
+    }
+});
+        
+        // Animation for solution cards on scroll
+        const solutionCards = document.querySelectorAll('.solution-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        solutionCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'all 0.8s ease';
+            observer.observe(card);
+        });
+		// Security Card Animations
+const securityCards = document.querySelectorAll('.security-card');
+const securityObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+            // Add slight delay between cards
+            Array.from(securityCards).forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+        }
+    });
+}, { threshold: 0.1 });
+
+securityCards.forEach(card => {
+    card.style.opacity = 0;
+    card.style.transform = 'translateY(50px)';
+    card.style.transition = 'all 0.8s ease';
+    securityObserver.observe(card);
+});
+
+// Compliance Badges Animation
+const badges = document.querySelectorAll('.badge-item');
+badges.forEach((badge, index) => {
+    badge.style.transitionDelay = `${index * 0.05}s`;
+});
+
+// Growth Accelerator Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate progress circle
+    const progressCircle = document.querySelector('.progress-ring-circle');
+    const progressValue = document.querySelector('.progress-value');
+    const targetProgress = 87;
+    const circumference = 2 * Math.PI * 52;
+    
+    progressCircle.style.strokeDasharray = circumference;
+    progressCircle.style.strokeDashoffset = circumference;
+    
+    let currentProgress = 0;
+    const progressInterval = setInterval(() => {
+        currentProgress++;
+        const offset = circumference - (currentProgress / 100) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+        progressValue.textContent = `${currentProgress}%`;
+        
+        if (currentProgress >= targetProgress) {
+            clearInterval(progressInterval);
+        }
+    }, 30);
+
+    // Animate matrix bars
+    const matrixItems = document.querySelectorAll('.matrix-item');
+    matrixItems.forEach(item => {
+        const percent = item.getAttribute('data-percent');
+        const fill = item.querySelector('.matrix-fill');
+        setTimeout(() => {
+            fill.style.width = `${percent}%`;
+        }, 1500);
+    });
+
+    // Initialize knobs
+    const knobs = document.querySelectorAll('.control-knob');
+    knobs.forEach(knob => {
+        const value = parseInt(knob.getAttribute('data-value'));
+        const indicator = knob.querySelector('.knob-indicator');
+        const rotation = (value / 100) * 270 - 135;
+        indicator.style.transform = `translateX(-50%) rotate(${rotation}deg) translateY(-40px)`;
+        
+        knob.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+
+    // Activate button effect
+    const activateBtn = document.getElementById('growthTrigger');
+    activateBtn.addEventListener('click', function() {
+        this.classList.add('activated');
+        
+        // Create burst effect
+        for (let i = 0; i < 12; i++) {
+            createParticle(this);
+        }
+        
+        setTimeout(() => {
+            this.classList.remove('activated');
+        }, 1000);
+    });
+});
+
+function createParticle(element) {
+    const particle = document.createElement('div');
+    particle.className = 'particle-burst';
+    
+    const rect = element.getBoundingClientRect();
+    const x = rect.left + rect.width/2;
+    const y = rect.top + rect.height/2;
+    
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+    particle.style.background = Math.random() > 0.5 ? 'var(--electric-blue)' : 'var(--highlight-red)';
+    particle.style.width = `${5 + Math.random() * 5}px`;
+    particle.style.height = particle.style.width;
+    
+    document.body.appendChild(particle);
+    
+    const angle = Math.random() * Math.PI * 2;
+    const velocity = 2 + Math.random() * 3;
+    const xVel = Math.cos(angle) * velocity;
+    const yVel = Math.sin(angle) * velocity;
+    
+    let posX = x;
+    let posY = y;
+    let opacity = 1;
+    let size = parseFloat(particle.style.width);
+    
+    const animate = () => {
+        posX += xVel;
+        posY += yVel;
+        opacity -= 0.02;
+        size *= 0.98;
+        
+        particle.style.left = `${posX}px`;
+        particle.style.top = `${posY}px`;
+        particle.style.opacity = opacity;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        if (opacity > 0) {
+            requestAnimationFrame(animate);
+        } else {
+            particle.remove();
+        }
+    };
+    
+    animate();
+}
+// Future Vision Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate stats counting
+    const statValues = document.querySelectorAll('.stat-value');
+    statValues.forEach(stat => {
+        const target = stat.getAttribute('data-target');
+        const isNumeric = !isNaN(parseInt(target));
+        let start = 0;
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        
+        const timer = setInterval(() => {
+            start += increment;
+            if (start >= target) {
+                stat.textContent = target;
+                clearInterval(timer);
+            } else {
+                stat.textContent = isNumeric ? Math.floor(start) : start.toFixed(1);
+            }
+        }, 16);
+    });
+    
+    // Holographic grid interactions
+    const holoCells = document.querySelectorAll('.holo-cell');
+    const techPreview = document.querySelector('.tech-preview');
+    
+    holoCells.forEach(cell => {
+        cell.addEventListener('mouseenter', function() {
+            const tech = this.getAttribute('data-tech');
+            let title = '';
+            let desc = '';
+            
+            switch(tech) {
+                case 'quantum':
+                    title = 'Quantum Enterprise';
+                    desc = 'Solving complex business problems with quantum algorithms 1M times faster than classical computers';
+                    break;
+                case 'ai':
+                    title = 'Conscious AI';
+                    desc = 'Self-learning systems that understand context, emotion, and business objectives';
+                    break;
+                case 'biotech':
+                    title = 'Bio-Digital Fusion';
+                    desc = 'Biological processors and neural interfaces revolutionizing human-computer interaction';
+                    break;
+                case 'spatial':
+                    title = 'Spatial Business';
+                    desc = '3D internet where digital and physical realities merge seamlessly for enterprise';
+                    break;
+            }
+            
+            techPreview.querySelector('.preview-title').innerHTML = title;
+            techPreview.querySelector('.preview-desc').textContent = desc;
+            techPreview.style.opacity = '1';
+            
+            // Add connection beams
+            holoCells.forEach(c => {
+                if (c !== cell) {
+                    c.style.opacity = '0.3';
+                }
+            });
+        });
+        
+        cell.addEventListener('mouseleave', function() {
+            techPreview.style.opacity = '0';
+            holoCells.forEach(c => {
+                c.style.opacity = '1';
+            });
+        });
+    });
+    
+    // Floating particles
+    for (let i = 0; i < 15; i++) {
+        createFutureParticle();
+    }
+});
+
+function createFutureParticle() {
+    const particle = document.createElement('div');
+    particle.className = 'future-particle';
+    
+    // Random properties
+    const size = Math.random() * 8 + 2;
+    const posX = Math.random() * 100;
+    const posY = Math.random() * 100;
+    const duration = Math.random() * 30 + 20;
+    const delay = Math.random() * 15;
+    const color = Math.random() > 0.7 ? 'var(--highlight-red)' : 
+                 Math.random() > 0.5 ? 'var(--primary-tan)' : 'var(--electric-blue)';
+    
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.left = `${posX}%`;
+    particle.style.top = `${posY}%`;
+    particle.style.animationDuration = `${duration}s`;
+    particle.style.animationDelay = `${delay}s`;
+    particle.style.background = color;
+    
+    document.querySelector('.future-vision').appendChild(particle);
+}
+    </script>
+</body>
+</html>

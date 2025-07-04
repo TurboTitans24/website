@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | TURBO TITANS Digital Transformation Agency</title>
+    <meta name="description" content="Explore our successful digital transformation case studies across industries. See how Turbo Titans helped enterprises achieve breakthrough results.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+	<style>
+        /* Base styles from services page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0A0A0A;
+            color: #F5F5F5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+
+        /* Color Variables */
+        :root {
+            --primary-tan: #D2B48C;
+            --dark-tan: #B38B6D;
+            --primary-blue: #003366;
+            --electric-blue: #0066CC;
+            --highlight-red: #CC0000;
+            --dark-red: #990000;
+            --pure-black: #000000;
+            --rich-black: #0A0A0A;
+            --pure-white: #FFFFFF;
+            --off-white: #F5F5F5;
+            --neon-glow: 0 0 10px rgba(0, 102, 204, 0.7), 0 0 20px rgba(204, 0, 0, 0.5);
+            --neon-blue: 0 0 15px rgba(0, 102, 204, 0.8);
+            --neon-red: 0 0 15px rgba(204, 0, 0, 0.8);
+            --neon-tan: 0 0 15px rgba(210, 180, 140, 0.8);
+            --holographic-gradient: linear-gradient(135deg, rgba(0,102,204,0.8), rgba(204,0,0,0.8), rgba(210,180,140,0.8));
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: var(--neon-tan);
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .desktop-nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .desktop-nav li {
+            position: relative;
+        }
+
+        .desktop-nav a {
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-tan);
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav a:hover::after,
+        .desktop-nav a.active::after {
+            width: 100%;
+        }
+
+        .desktop-nav a.active {
+            color: var(--primary-tan);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            border-radius: 5px;
+            padding: 15px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 8px 25px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(210, 180, 140, 0.1);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-tan);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Mobile Navigation */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100%;
+            background: var(--rich-black);
+            z-index: 999;
+            transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+            border-left: 1px solid rgba(210, 180, 140, 0.2);
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav ul {
+            padding: 80px 30px;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 10px 0;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .mobile-nav .dropdown-content {
+            position: static;
+            transform: none;
+            background: transparent;
+            border: none;
+            padding: 10px 0 0 15px;
+            display: none;
+        }
+
+        .mobile-nav .dropdown.active .dropdown-content {
+            display: block;
+        }
+
+        .mobile-nav .dropdown-content a {
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(to bottom, rgba(10,10,10,1), rgba(0,0,0,1));
+            padding: 80px 0 0;
+            position: relative;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-tan), transparent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-tagline {
+            font-size: 0.8rem;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(210, 180, 140, 0.1);
+            color: var(--primary-tan);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-tan);
+            color: var(--pure-black);
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            color: var(--primary-tan);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--electric-blue);
+        }
+
+        .footer-links ul li,
+        .footer-services ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a,
+        .footer-services a {
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-links a::before,
+        .footer-services a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--electric-blue);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover,
+        .footer-services a:hover {
+            color: var(--primary-tan);
+            padding-left: 20px;
+        }
+
+        .footer-links a:hover::before,
+        .footer-services a:hover::before {
+            opacity: 1;
+        }
+
+        .footer-contact ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--electric-blue);
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-legal a {
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--primary-tan);
+        }
+
+        /* Rest of your existing styles... */
+        /* Case Studies Hero */
+        .case-studies-hero {
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at center, rgba(0,51,102,0.2) 0%, rgba(10,10,10,1) 70%);
+        }
+        
+        .case-studies-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .case-studies-hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: var(--neon-tan);
+            animation: fadeInDown 1s ease;
+        }
+        
+        .case-studies-hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary-tan);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        /* Case Studies Grid */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        /* 3D Case Study Card */
+        .case-study-card {
+            position: relative;
+            perspective: 1500px;
+            height: 500px;
+            transform-style: preserve-3d;
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .case-study-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .case-study-card:hover .case-study-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .case-study-card-front,
+        .case-study-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .case-study-card-front {
+            background: linear-gradient(135deg, rgba(10,10,10,0.9), rgba(0,51,102,0.5));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 40px;
+            border: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .case-study-card-back {
+            background: linear-gradient(135deg, rgba(10,10,10,0.95), rgba(204,0,0,0.3));
+            padding: 40px;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid rgba(210, 180, 140, 0.2);
+        }
+
+        .case-study-industry {
+            font-size: 0.9rem;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .case-study-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-study-excerpt {
+            font-size: 1.1rem;
+            color: var(--off-white);
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .case-study-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--highlight-red);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .case-study-back-title {
+            font-size: 1.8rem;
+            color: var(--primary-tan);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-study-challenge {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .case-study-challenge::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: var(--electric-blue);
+        }
+
+        .case-study-solution {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .case-study-solution::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-red);
+        }
+
+        .case-study-results {
+            margin-top: auto;
+        }
+
+        .results-title {
+            font-size: 1.2rem;
+            color: var(--primary-tan);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .results-list {
+            list-style: none;
+        }
+
+        .results-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .results-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--electric-blue);
+        }
+
+        /* Case Study Background Images */
+        .case-study-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* 3D Floating Effect */
+        .case-study-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+        }
+
+        /* Case Study Filters */
+        .case-study-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 25px;
+            background: transparent;
+            color: var(--primary-tan);
+            border: 2px solid var(--primary-tan);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-tan);
+            color: var(--pure-black);
+        }
+
+        /* Case Study Showcase */
+        .case-study-showcase {
+            position: relative;
+            margin: 100px 0;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .showcase-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,51,102,0.1), rgba(204,0,0,0.1));
+            z-index: -1;
+        }
+
+        .showcase-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(210, 180, 140, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(210, 180, 140, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.5;
+        }
+
+        .showcase-content {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .showcase-visual {
+            flex: 1;
+            position: relative;
+            height: 500px;
+            perspective: 1500px;
+        }
+
+        .showcase-phone {
+            position: absolute;
+            width: 250px;
+            height: 500px;
+            background: #111;
+            border-radius: 30px;
+            border: 5px solid #222;
+            overflow: hidden;
+            transform: rotateY(-20deg) rotateX(10deg);
+            box-shadow: -20px 20px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s ease;
+        }
+
+        .showcase-phone::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 20px;
+            background: #222;
+            border-radius: 0 0 10px 10px;
+            z-index: 2;
+        }
+
+        .showcase-phone::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .showcase-phone-screen {
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            right: 10px;
+            bottom: 60px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .showcase-phone-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+        }
+
+        .showcase-laptop {
+            position: absolute;
+            width: 600px;
+            height: 400px;
+            background: #111;
+            border-radius: 10px 10px 0 0;
+            border: 5px solid #222;
+            border-bottom: none;
+            bottom: 0;
+            right: 0;
+            transform: rotateY(20deg) rotateX(10deg);
+            box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        .showcase-laptop::before {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 30px;
+            background: #222;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .showcase-laptop::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 350px;
+            height: 10px;
+            background: #000;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .showcase-laptop-screen {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .showcase-laptop-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+        }
+
+        .showcase-text {
+            flex: 1;
+        }
+
+        .showcase-title {
+            font-size: 2.5rem;
+            color: var(--primary-tan);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .showcase-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .showcase-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .showcase-stat {
+            padding: 20px;
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .showcase-stat:hover {
+            transform: translateY(-5px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .showcase-stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--highlight-red);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .showcase-stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* Digital Transformation Impact Section */
+        .impact-section {
+            padding: 100px 0;
+            background: rgba(10, 10, 10, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23D2B48C" stroke-width="0.5" stroke-dasharray="5,5" /></svg>');
+            opacity: 0.1;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .impact-card {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            border-radius: 10px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--electric-blue);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+        }
+
+        .impact-title {
+            font-size: 1.5rem;
+            color: var(--primary-tan);
+            margin-bottom: 15px;
+        }
+
+        .impact-description {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Research Study Section */
+        .research-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0,51,102,0.1), rgba(204,0,0,0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23D2B48C" stroke-width="0.5" stroke-dasharray="5,5" /></svg>');
+            opacity: 0.1;
+        }
+
+        .research-container {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .research-visual {
+            flex: 1;
+            position: relative;
+            min-height: 400px;
+            background: rgba(10, 10, 10, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .research-visual-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .research-visual-title {
+            font-size: 2rem;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .research-visual-image {
+            width: 100%;
+            height: 200px;
+            background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .research-visual-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .research-stat {
+            background: rgba(210, 180, 140, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .research-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--highlight-red);
+            margin-bottom: 5px;
+        }
+
+        .research-stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .research-content {
+            flex: 1;
+        }
+
+        .research-title {
+            font-size: 2.2rem;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .research-subtitle {
+            font-size: 1.2rem;
+            color: var(--electric-blue);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .research-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .research-highlights {
+            margin-bottom: 40px;
+        }
+
+        .research-highlight {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .research-highlight-icon {
+            font-size: 1.5rem;
+            color: var(--electric-blue);
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .research-highlight-text {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .case-studies-cta {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.8), rgba(204, 0, 0, 0.8));
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-studies-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23D2B48C" stroke-width="0.5" stroke-dasharray="5,5" /></svg>');
+            opacity: 0.2;
+        }
+
+        .case-studies-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .case-studies-cta h2 {
+            font-size: 2.8rem;
+            color: var(--pure-white);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .case-studies-cta p {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--primary-tan);
+            color: var(--pure-black);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background: var(--electric-blue);
+            color: var(--pure-white);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .showcase-content,
+            .research-container {
+                flex-direction: column;
+            }
+            
+			            .showcase-visual,
+            .research-visual {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+            
+            .showcase-text,
+            .research-content {
+                width: 100%;
+            }
+            
+            .showcase-laptop {
+                width: 500px;
+                height: 350px;
+            }
+            
+            .showcase-phone {
+                width: 200px;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .case-studies-hero-title {
+                font-size: 3rem;
+            }
+            
+            .case-study-card {
+                height: 450px;
+            }
+            
+            .case-study-title {
+                font-size: 1.8rem;
+            }
+            
+            .case-study-back-title {
+                font-size: 1.5rem;
+            }
+            
+            .showcase-title,
+            .research-title {
+                font-size: 2rem;
+            }
+            
+            .impact-card {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .case-studies-hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 3px;
+            }
+            
+            .case-studies-hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .case-study-card {
+                height: 400px;
+            }
+            
+            .case-study-card-front,
+            .case-study-card-back {
+                padding: 30px;
+            }
+            
+            .case-study-title {
+                font-size: 1.6rem;
+            }
+            
+            .case-study-excerpt {
+                font-size: 1rem;
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+            
+            .showcase-laptop {
+                width: 400px;
+                height: 280px;
+            }
+            
+            .showcase-phone {
+                width: 180px;
+                height: 360px;
+            }
+            
+            .showcase-stat-value {
+                font-size: 2rem;
+            }
+            
+            .research-visual-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-studies-cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .case-studies-hero {
+                min-height: 600px;
+                padding-top: 80px;
+            }
+            
+            .case-studies-hero-title {
+                font-size: 2rem;
+            }
+            
+            .case-study-filters {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .case-study-card {
+                height: 350px;
+            }
+            
+            .case-study-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .showcase-laptop {
+                width: 300px;
+                height: 200px;
+            }
+            
+            .showcase-phone {
+                width: 150px;
+                height: 300px;
+            }
+            
+            .showcase-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-studies-cta {
+                padding: 60px 0;
+            }
+            
+            .case-studies-cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .case-studies-cta p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* Hover Effects */
+        .case-study-card:hover .case-study-bg {
+            transform: scale(1.05);
+            opacity: 0.5;
+        }
+
+        .case-study-bg {
+            transition: all 0.8s ease;
+        }
+
+        .showcase-phone:hover,
+        .showcase-laptop:hover {
+            transform: rotateY(0) rotateX(0);
+        }
+
+        /* Case Study Filtering */
+        .case-study-item {
+            display: block;
+            transition: all 0.5s ease;
+        }
+
+        .case-study-item.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TURBO TITANS</span>
+                    <span class="logo-tagline">Digital Transformation Agency</span>
+                </a>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="service-detail.html">Digital Strategy</a>
+                                <a href="service-detail.html">AI Solutions</a>
+                                <a href="service-detail.html">Cloud Transformation</a>
+                                <a href="service-detail.html">Data Analytics</a>
+                                <a href="service-detail.html">CX Optimization</a>
+                            </div>
+                        </li>
+                        <li><a href="case-studies.html" class="active">Case Studies</a></li>
+                        <li><a href="case-studies.html">Insights</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="overlay"></div>
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="service-detail.html">Digital Strategy</a>
+                    <a href="service-detail.html">AI Solutions</a>
+                    <a href="service-detail.html">Cloud Transformation</a>
+                    <a href="service-detail.html">Data Analytics</a>
+                    <a href="service-detail.html">CX Optimization</a>
+                </div>
+            </li>
+            <li><a href="case-studies.html" class="active">Case Studies</a></li>
+            <li><a href="case-studies.html">Insights</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="case-studies-hero">
+        <div class="case-studies-hero-content">
+            <h1 class="case-studies-hero-title">Transformation Success Stories</h1>
+            <p class="case-studies-hero-subtitle">Explore how we've helped industry leaders achieve breakthrough results through digital transformation, AI implementation, and cutting-edge technology solutions.</p>
+        </div>
+        <a href="#case-studies" class="hero-scroll">Scroll to Explore <i class="fas fa-chevron-down"></i></a>
+    </section>
+
+    <!-- Case Studies Grid -->
+    <section id="case-studies" class="container" style="padding: 100px 0;">
+        <div class="case-study-filters">
+            <button class="filter-btn active" data-filter="all">All Industries</button>
+            <button class="filter-btn" data-filter="finance">Finance</button>
+            <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+            <button class="filter-btn" data-filter="retail">Retail</button>
+            <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
+            <button class="filter-btn" data-filter="technology">Technology</button>
+        </div>
+        
+        <div class="case-studies-grid">
+            <!-- Case Study 1 -->
+            <div class="case-study-card case-study-item" data-category="finance">
+                <div class="case-study-card-inner">
+                    <div class="case-study-card-front">
+                        <div class="case-study-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <span class="case-study-industry">Finance</span>
+                        <h3 class="case-study-title">Global Bank Digital Overhaul</h3>
+                        <p class="case-study-excerpt">Transformed legacy systems into a modern digital banking platform serving 5M+ customers.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">87%</span>
+                                <span class="stat-label">Adoption Rate</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">$42M</span>
+                                <span class="stat-label">Annual Savings</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-card-back">
+                        <h4 class="case-study-back-title">Digital Banking Revolution</h4>
+                        <p class="case-study-challenge">The bank struggled with outdated systems causing slow transactions, poor customer experience, and high maintenance costs.</p>
+                        <p class="case-study-solution">We implemented a cloud-native digital banking platform with AI-powered fraud detection and personalized financial insights.</p>
+                        <div class="case-study-results">
+                            <h5 class="results-title">Key Results</h5>
+                            <ul class="results-list">
+                                <li>87% customer adoption within 6 months</li>
+                                <li>$42M annual operational cost reduction</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 2 -->
+            <div class="case-study-card case-study-item" data-category="healthcare">
+                <div class="case-study-card-inner">
+                    <div class="case-study-card-front">
+                        <div class="case-study-bg" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <span class="case-study-industry">Healthcare</span>
+                        <h3 class="case-study-title">Hospital AI Diagnostics</h3>
+                        <p class="case-study-excerpt">Implemented AI-powered diagnostic tools reducing patient wait times by 60%.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">60%</span>
+                                <span class="stat-label">Faster Diagnosis</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">92%</span>
+                                <span class="stat-label">Accuracy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-card-back">
+                        <h4 class="case-study-back-title">AI in Healthcare</h4>
+                        <p class="case-study-challenge">The hospital system faced critical bottlenecks in diagnostic imaging, leading to long patient wait times and overworked radiologists.</p>
+                        <p class="case-study-solution">We developed a custom AI diagnostic platform that analyzes medical images with 92% accuracy, flagging critical cases for immediate review.</p>
+                        <div class="case-study-results">
+                            <h5 class="results-title">Key Results</h5>
+                            <ul class="results-list">
+                                <li>60% reduction in diagnostic wait times</li>
+                                <li>92% diagnostic accuracy matching senior radiologists</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 3 -->
+            <div class="case-study-card case-study-item" data-category="retail">
+                <div class="case-study-card-inner">
+                    <div class="case-study-card-front">
+                        <div class="case-study-bg" style="background-image: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <span class="case-study-industry">Retail</span>
+                        <h3 class="case-study-title">Omnichannel Retail Transformation</h3>
+                        <p class="case-study-excerpt">Created seamless shopping experience across 250+ stores and e-commerce platform.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">35%</span>
+                                <span class="stat-label">Revenue Growth</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">4.8★</span>
+                                <span class="stat-label">Customer Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-card-back">
+                        <h4 class="case-study-back-title">Retail Reinvented</h4>
+                        <p class="case-study-challenge">The retailer's disjointed online and in-store experiences were causing customer frustration and lost sales opportunities.</p>
+                        <p class="case-study-solution">We engineered an omnichannel platform with unified inventory, AI recommendations, and AR-powered virtual try-ons.</p>
+                        <div class="case-study-results">
+                            <h5 class="results-title">Key Results</h5>
+                            <ul class="results-list">
+                                <li>35% revenue growth in first year</li>
+                                <li>4.8★ average customer satisfaction rating</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 4 -->
+            <div class="case-study-card case-study-item" data-category="manufacturing">
+                <div class="case-study-card-inner">
+                    <div class="case-study-card-front">
+                        <div class="case-study-bg" style="background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <span class="case-study-industry">Manufacturing</span>
+                        <h3 class="case-study-title">Smart Factory Implementation</h3>
+                        <p class="case-study-excerpt">IoT and AI-driven predictive maintenance reduced downtime by 75%.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">75%</span>
+                                <span class="stat-label">Downtime Reduction</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">18%</span>
+                                <span class="stat-label">Efficiency Gain</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-card-back">
+                        <h4 class="case-study-back-title">Industry 4.0 Transformation</h4>
+                        <p class="case-study-challenge">Unplanned equipment failures were costing the manufacturer $2.4M annually in lost production and emergency repairs.</p>
+                        <p class="case-study-solution">We deployed an IoT sensor network with AI analytics predicting equipment failures 72 hours in advance with 89% accuracy.</p>
+                        <div class="case-study-results">
+                            <h5 class="results-title">Key Results</h5>
+                            <ul class="results-list">
+                                <li>75% reduction in unplanned downtime</li>
+                                <li>18% improvement in production efficiency</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 5 -->
+            <div class="case-study-card case-study-item" data-category="technology">
+                <div class="case-study-card-inner">
+                    <div class="case-study-card-front">
+                        <div class="case-study-bg" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <span class="case-study-industry">Technology</span>
+                        <h3 class="case-study-title">Cloud Migration at Scale</h3>
+                        <p class="case-study-excerpt">Migrated 500+ enterprise applications to cloud with zero business disruption.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">500+</span>
+                                <span class="stat-label">Applications</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">0</span>
+                                <span class="stat-label">Downtime</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-card-back">
+                        <h4 class="case-study-back-title">Enterprise Cloud Journey</h4>
+                        <p class="case-study-challenge">The company's on-premise infrastructure couldn't scale to meet global demand, causing performance issues and high costs.</p>
+                        <p class="case-study-solution">We designed and executed a phased cloud migration strategy with automated testing and rollback capabilities.</p>
+                        <div class="case-study-results">
+                            <h5 class="results-title">Key Results</h5>
+                            <ul class="results-list">
+                                <li>500+ applications migrated with zero downtime</li>
+                                <li>Deployment frequency increased 15x</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 6 -->
+            <div class="case-study-card case-study-item" data-category="finance">
+                <div class="case-study-card-inner">
+                    <div class="case-study-card-front">
+                        <div class="case-study-bg" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <span class="case-study-industry">Finance</span>
+                        <h3 class="case-study-title">Blockchain Payment Network</h3>
+                        <p class="case-study-excerpt">Built a decentralized payment system processing $1.2B monthly with 0.1% fees.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">$1.2B</span>
+                                <span class="stat-label">Monthly Volume</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">0.1%</span>
+                                <span class="stat-label">Transaction Fee</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-card-back">
+                        <h4 class="case-study-back-title">Fintech Innovation</h4>
+                        <p class="case-study-challenge">Traditional cross-border payments were slow (3-5 days) and expensive (3-5% fees), limiting the company's growth.</p>
+                        <p class="case-study-solution">We developed a blockchain-based payment network with smart contracts enabling near-instant settlements at a fraction of the cost.</p>
+                        <div class="case-study-results">
+                            <h5 class="results-title">Key Results</h5>
+                            <ul class="results-list">
+                               <li>Near-instant settlement (under 2 minutes)</li>
+                                <li>Expanded to 38 new markets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section class="case-study-showcase">
+        <div class="showcase-bg"></div>
+        <div class="showcase-bg-pattern"></div>
+        <div class="container">
+            <div class="showcase-content">
+                <div class="showcase-visual">
+                    <div class="showcase-phone">
+                        <div class="showcase-phone-screen">
+                            <div class="showcase-phone-content" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        </div>
+                    </div>
+                    <div class="showcase-laptop">
+                        <div class="showcase-laptop-screen">
+                            <div class="showcase-laptop-content" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-text">
+                    <h2 class="showcase-title">Omnichannel Retail Transformation</h2>
+                    <p class="showcase-description">Our work with a leading retail chain created a seamless shopping experience across all touchpoints. By integrating AI-powered recommendations, AR virtual try-ons, and unified inventory management, we helped them achieve record-breaking sales while dramatically improving customer satisfaction.</p>
+                    
+                    <div class="showcase-stats">
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-value">35%</div>
+                            <div class="showcase-stat-label">Revenue Growth</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-value">4.8★</div>
+                            <div class="showcase-stat-label">Customer Rating</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-value">40%</div>
+                            <div class="showcase-stat-label">Cross-Channel Sales</div>
+                        </div>
+                        <div class="showcase-stat">
+                            <div class="showcase-stat-value">28%</div>
+                            <div class="showcase-stat-label">Inventory Turnover</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Transformation Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; font-size: 2.5rem; color: var(--primary-tan); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 3px;">The Power of Digital Transformation</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; opacity: 0.9;">Our approach delivers measurable impact across all business functions, driving growth and competitive advantage.</p>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="impact-title">Revenue Growth</h3>
+                    <p class="impact-description">Average 32% revenue increase for clients within first year of digital transformation implementation.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="impact-title">Process Automation</h3>
+                    <p class="impact-description">75% average reduction in manual processes through intelligent automation and AI.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3 class="impact-title">Customer Experience</h3>
+                    <p class="impact-description">4.7★ average customer satisfaction rating for transformed digital experiences.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="impact-title">Innovation Speed</h3>
+                    <p class="impact-description">10x faster time-to-market for new digital products and features.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="impact-title">Cloud Efficiency</h3>
+                    <p class="impact-description">45% average reduction in IT infrastructure costs through cloud optimization.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="impact-title">Data Utilization</h3>
+                    <p class="impact-description">300% increase in data-driven decision making post-transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Study Section -->
+    <section class="research-section">
+        <div class="container">
+            <div class="research-container">
+                <div class="research-visual">
+                    <div class="research-visual-content">
+                        <h3 class="research-visual-title">Digital Maturity Research</h3>
+                        <div class="research-visual-image"></div>
+                        <div class="research-visual-stats">
+                            <div class="research-stat">
+                                <div class="research-stat-value">72%</div>
+                                <div class="research-stat-label">of enterprises accelerating digital initiatives</div>
+                            </div>
+                            <div class="research-stat">
+                                <div class="research-stat-value">3.5x</div>
+                                <div class="research-stat-label">faster growth for digital leaders</div>
+                            </div>
+                            <div class="research-stat">
+                                <div class="research-stat-value">$1.7T</div>
+                                <div class="research-stat-label">global digital transformation spend</div>
+                            </div>
+                            <div class="research-stat">
+                                <div class="research-stat-value">89%</div>
+                                <div class="research-stat-label">adoption challenges without expert guidance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="research-content">
+                    <h2 class="research-title">2024 Digital Transformation Outlook</h2>
+                    <h3 class="research-subtitle">Key Findings from Our Global Research</h3>
+                    <p class="research-description">Our annual research study surveyed 1,200 executives across industries to identify trends, challenges, and success factors in digital transformation. The data reveals critical insights for organizations navigating technological disruption.</p>
+                    
+                    <div class="research-highlights">
+                        <div class="research-highlight">
+                            <div class="research-highlight-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="research-highlight-text">
+                                <strong>AI Adoption:</strong> 68% of enterprises have deployed AI solutions, but only 23% achieve full-scale implementation due to talent gaps.
+                            </div>
+                        </div>
+                        
+                        <div class="research-highlight">
+                            <div class="research-highlight-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="research-highlight-text">
+                                <strong>Cloud Migration:</strong> Hybrid cloud strategies deliver 42% better ROI than single-cloud approaches for enterprise workloads.
+                            </div>
+                        </div>
+                        
+                        <div class="research-highlight">
+                            <div class="research-highlight-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="research-highlight-text">
+                                <strong>Change Management:</strong> Organizations with comprehensive change programs are 5.3x more likely to succeed in transformations.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="case-studies-cta">
+        <div class="case-studies-cta-content">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Our team of digital transformation experts will help you achieve breakthrough results through cutting-edge technology and proven methodologies.</p>
+            <a href="contactus.html" class="cta-button">Schedule Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">TURBO TITANS</div>
+                    <div class="footer-tagline">Digital Transformation</div>
+                    <p class="footer-about-text">We help enterprises navigate digital disruption with cutting-edge technology solutions, AI implementation, and strategic consulting.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twiter"></i></a>
+                        <a href="#"><i class="fab fa-facbook-f"></i></a>
+                        <a href="#"><i class="fab fa-intagram"></i></a>
+						<a href="#"><i class="fab fa-intagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="case-studies.html">Insights</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3 class="footer-title">Services</h3>
+                    <ul>
+                        <li><a href="service-detail.html">Digital Strategy</a></li>
+                        <li><a href="service-detail.html">AI Solutions</a></li>
+                        <li><a href="service-detail.html">Cloud Transformation</a></li>
+                        <li><a href="service-detail.html">Data Analytics</a></li>
+                        <li><a href="service-detail.html">CX Optimization</a></li>
+                        <li><a href="service-detail.html">IoT Implementation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>Remote Consultations Available Worldwide<br>Based in South Africa</li>
+                        <li><i class="fas fa-phone"></i> +27 64 523 1633</li>
+                        <li><i class="fas fa-envelope"></i> Turbotitans@zohomail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 3AM - 10PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">© 2025 TURBO TITANS. ALL RIGHTS RESERVED.</div>
+                <div class="footer-legal">
+               </div>
+            </div>
+        </div>
+    </footer>
+
+        <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+        const dropdowns = document.querySelectorAll('.mobile-nav .dropdown');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Mobile Dropdown Toggle
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Case Study Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const caseStudyItems = document.querySelectorAll('.case-study-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Filter case studies
+                caseStudyItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 100) {
+                header.style.transform = 'translateY(0)';
+                return;
+            }
+            
+            if (currentScroll > lastScroll) {
+                // Scrolling down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // 3D effect for showcase devices
+        const showcaseVisual = document.querySelector('.showcase-visual');
+        const showcasePhone = document.querySelector('.showcase-phone');
+        const showcaseLaptop = document.querySelector('.showcase-laptop');
+
+        if (showcaseVisual) {
+            showcaseVisual.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                
+                showcasePhone.style.transform = `rotateY(${-xAxis}deg) rotateX(${yAxis}deg)`;
+                showcaseLaptop.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            });
+
+            showcaseVisual.addEventListener('mouseenter', () => {
+                showcasePhone.style.transition = 'all 0.5s ease';
+                showcaseLaptop.style.transition = 'all 0.5s ease';
+            });
+
+            showcaseVisual.addEventListener('mouseleave', () => {
+                showcasePhone.style.transform = 'rotateY(-20deg) rotateX(10deg)';
+                showcaseLaptop.style.transform = 'rotateY(20deg) rotateX(10deg)';
+            });
+        }
+
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.case-study-card, .impact-card, .research-stat, .showcase-stat');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial styles for animation
+        document.querySelectorAll('.case-study-card, .impact-card, .research-stat, .showcase-stat').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(50px)';
+            element.style.transition = 'all 0.8s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+            
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain AI Fusion | TURBO TITANS Digital Transformation</title>
+    <meta name="description" content="Turbo Titans combines blockchain's trust with AI's intelligence to create next-generation decentralized solutions.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+    <style>
+        :root {
+            --neon-pink: #FF10F0;
+            --electric-purple: #B026FF;
+            --cyber-teal: #00F5D4;
+            --dark-space: #0A0A12;
+            --pure-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: var(--dark-space);
+            color: var(--pure-white);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(10, 10, 18, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--cyber-teal);
+            text-shadow: 0 0 10px var(--cyber-teal);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--pure-white);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        nav a:hover {
+            color: var(--cyber-teal);
+            text-shadow: 0 0 15px var(--cyber-teal);
+        }
+
+        .screen-container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .screen {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .screen.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--cyber-teal);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--cyber-teal);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--cyber-teal);
+            border: 2px solid var(--cyber-teal);
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+            border-radius: 30px;
+            text-shadow: 0 0 5px var(--cyber-teal);
+            box-shadow: 0 0 10px rgba(0, 245, 212, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:hover {
+            background: rgba(0, 245, 212, 0.2);
+            box-shadow: 0 0 20px var(--cyber-teal);
+            transform: translateY(-3px);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 212, 0.4), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .dot-nav {
+            position: fixed;
+            bottom: 80px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--cyber-teal);
+            transform: scale(1.2);
+            box-shadow: 0 0 10px var(--cyber-teal);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* 3D Canvas Background */
+        #blockchainCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        /* Futuristic Card Elements */
+        .feature-card {
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--cyber-teal);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(0, 245, 212, 0.2);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px var(--cyber-teal);
+        }
+
+        .feature-card h3 {
+            color: var(--electric-purple);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Animated Grid Background */
+        .grid-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 245, 212, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 245, 212, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            background: var(--cyber-teal);
+            border-radius: 50%;
+            filter: blur(1px);
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+
+            .feature-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="grid-pattern"></div>
+    <canvas id="blockchainCanvas"></canvas>
+    <div id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">TURBO TITANS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Screen Container -->
+    <div class="screen-container">
+        <!-- Screen 1 - Hero -->
+        <div class="screen active" id="screen1">
+            <h1>Blockchain AI Fusion</h1>
+            <p>Where decentralized trust meets artificial intelligence - creating next-generation autonomous systems with self-optimizing smart contracts and neural consensus.</p>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-link"></i> Neural Blockchain Network</h3>
+                <p>Our proprietary architecture combines blockchain immutability with AI adaptability for revolutionary decentralized applications.</p>
+            </div>
+            
+            <a href="#screen2" class="btn next-btn">Explore the Future <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Screen 2 - Solutions -->
+        <div class="screen" id="screen2">
+            <h1>AI-Powered Blockchain Solutions</h1>
+            <p>Intelligent decentralized systems that learn, adapt, and optimize autonomously with our Neural Consensus and Smart Contract AI technologies.</p>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-brain"></i> Cognitive Smart Contracts</h3>
+                <p>Contracts that evolve based on real-world data inputs and machine learning patterns, creating truly dynamic agreements.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-project-diagram"></i> Adaptive Network Topology</h3>
+                <p>Our AI continuously optimizes node connections for maximum efficiency and minimum latency across the global network.</p>
+            </div>
+            
+            <div class="btn-group">
+                <a href="#screen1" class="btn prev-btn"><i class="fas fa-arrow-left"></i> Back</a>
+                <a href="#screen3" class="btn next-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Screen 3 - Features -->
+        <div class="screen" id="screen3">
+            <h1>Neural Consensus Protocol</h1>
+            <p>Our AI-driven consensus algorithms dynamically adjust validation rules based on network conditions, optimizing for speed, security, and energy efficiency.</p>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-bolt"></i> Quantum-Resistant Encryption</h3>
+                <p>Next-gen cryptographic protocols secured by AI that anticipates and adapts to emerging threats before they occur.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-network-wired"></i> Self-Healing Network</h3>
+                <p>Automated fault detection and resolution powered by machine learning maintains 99.99% uptime.</p>
+            </div>
+            
+            <div class="btn-group">
+                <a href="#screen2" class="btn prev-btn"><i class="fas fa-arrow-left"></i> Back</a>
+                <a href="#screen4" class="btn next-btn">Next <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Screen 4 - CTA -->
+        <div class="screen" id="screen4">
+            <h1>Ready to Evolve Your Blockchain?</h1>
+            <p>Our AI-powered blockchain solutions are transforming industries from decentralized finance to supply chain management.</p>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-rocket"></i> Enterprise Integration</h3>
+                <p>Seamless API connections to existing systems with AI-powered migration tools for painless adoption.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-shield-alt"></i> Military-Grade Security</h3>
+                <p>Multi-layered protection with neural network threat detection that learns from every attack attempt.</p>
+            </div>
+            
+            <div class="btn-group">
+                <a href="#screen3" class="btn prev-btn"><i class="fas fa-arrow-left"></i> Back</a>
+                <a href="contact.html" class="btn">Contact Us <i class="fas fa-comments"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dot Navigation -->
+    <div class="dot-nav">
+        <div class="dot active" data-target="screen1"></div>
+        <div class="dot" data-target="screen2"></div>
+        <div class="dot" data-target="screen3"></div>
+        <div class="dot" data-target="screen4"></div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button class="btn prev-btn" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+        <button class="btn next-btn">Next <i class="fas fa-arrow-right"></i></button>
+    </div>
+
+    <script>
+        // Three.js Blockchain Visualization
+        const canvas = document.getElementById('blockchainCanvas');
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 30;
+        
+        // Add orbit controls for interactive viewing
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableZoom = false;
+        controls.enablePan = false;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.5;
+        
+        // Create blockchain nodes
+        const nodes = [];
+        const nodeGeometry = new THREE.SphereGeometry(0.5, 16, 16);
+        const nodeMaterial = new THREE.MeshBasicMaterial({ 
+            color: 0x00F5D4,
+            transparent: true,
+            opacity: 0.8
+        });
+        
+        // Create connections
+        const connections = [];
+        const connectionMaterial = new THREE.LineBasicMaterial({ 
+            color: 0xB026FF,
+            transparent: true,
+            opacity: 0.3
+        });
+        
+        // Create blockchain structure
+        for (let i = 0; i < 20; i++) {
+            const node = new THREE.Mesh(nodeGeometry, nodeMaterial.clone());
+            node.position.x = (Math.random() - 0.5) * 40;
+            node.position.y = (Math.random() - 0.5) * 20;
+            node.position.z = (Math.random() - 0.5) * 40;
+            scene.add(node);
+            nodes.push(node);
+            
+            // Create connections to other nodes
+            if (i > 0) {
+                const connectionCount = Math.floor(Math.random() * 3) + 1;
+                for (let j = 0; j < connectionCount; j++) {
+                    const targetIndex = Math.floor(Math.random() * i);
+                    const connectionGeometry = new THREE.BufferGeometry().setFromPoints([
+                        new THREE.Vector3(
+                            node.position.x,
+                            node.position.y,
+                            node.position.z
+                        ),
+                        new THREE.Vector3(
+                            nodes[targetIndex].position.x,
+                            nodes[targetIndex].position.y,
+                            nodes[targetIndex].position.z
+                        )
+                    ]);
+                    const connection = new THREE.Line(connectionGeometry, connectionMaterial);
+                    scene.add(connection);
+                    connections.push(connection);
+                }
+            }
+        }
+        
+        // Add pulsing effect to nodes
+        function animateNodes() {
+            nodes.forEach(node => {
+                node.scale.x = node.scale.y = node.scale.z = 0.8 + Math.sin(Date.now() * 0.002) * 0.2;
+                node.material.opacity = 0.6 + Math.sin(Date.now() * 0.001) * 0.2;
+            });
+            
+            connections.forEach(conn => {
+                conn.material.opacity = 0.2 + Math.sin(Date.now() * 0.001) * 0.1;
+            });
+        }
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            animateNodes();
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.width = `${Math.random() * 5 + 2}px`;
+            particle.style.height = particle.style.width;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            
+            // Random movement animation
+            const duration = Math.random() * 20 + 10;
+            particle.style.animation = `float ${duration}s linear infinite`;
+            
+            // Create keyframes for each particle
+            const keyframes = `
+                @keyframes float {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    25% {
+                        transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px);
+                    }
+                    50% {
+                        transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px);
+                    }
+                    75% {
+                        transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px);
+                    }
+                    100% {
+                        transform: translate(0, 0);
+                    }
+                }
+            `;
+            
+            const style = document.createElement('style');
+            style.innerHTML = keyframes;
+            document.head.appendChild(style);
+            
+            particlesContainer.appendChild(particle);
+        }
+
+        // Screen navigation functionality
+        const screens = document.querySelectorAll('.screen');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentScreen = 0;
+
+        function showScreen(index) {
+            screens.forEach(screen => screen.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            screens[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentScreen = index;
+            
+            // Update button states
+            prevBtn.disabled = index === 0;
+            nextBtn.innerHTML = index === screens.length - 1 ? 'Contact <i class="fas fa-comments"></i>' : 'Next <i class="fas fa-arrow-right"></i>';
+            
+            // Change camera focus based on screen
+            if (index === 1) {
+                gsap.to(camera.position, { z: 40, duration: 1 });
+            } else if (index === 2) {
+                gsap.to(camera.position, { x: 10, y: 5, z: 35, duration: 1 });
+            } else if (index === 3) {
+                gsap.to(camera.position, { x: 0, y: 0, z: 50, duration: 1 });
+            } else {
+                gsap.to(camera.position, { x: 0, y: 0, z: 30, duration: 1 });
+            }
+        }
+
+        // Button click handlers
+        nextBtn.addEventListener('click', () => {
+            if (currentScreen < screens.length - 1) {
+                showScreen(currentScreen + 1);
+            } else {
+                window.location.href = 'contact.html';
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentScreen > 0) {
+                showScreen(currentScreen - 1);
+            }
+        });
+
+        // Dot click handlers
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showScreen(index);
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentScreen < screens.length - 1) {
+                showScreen(currentScreen + 1);
+            } else if (e.key === 'ArrowLeft' && currentScreen > 0) {
+                showScreen(currentScreen - 1);
+            }
+        });
+
+        // Initial show
+        showScreen(0);
+    </script>
+</body>
+</html>

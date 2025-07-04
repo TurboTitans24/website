@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Transformation | TURBO TITANS Digital Transformation Agency</title>
+    <meta name="description" content="Accelerate your business with our cloud solutions designed specifically for small and medium businesses to compete with enterprise-level capabilities.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+	<style>
+        :root {
+            --rich-black: #0a0a0a;
+            --pure-white: #ffffff;
+            --off-white: #f8f8f8;
+            --primary-tan: #d2b48c;
+            --electric-blue: #00a8e8;
+            --highlight-red: #cc0000;
+            --dark-blue: #003366;
+            --neon-tan: 0 0 15px rgba(210, 180, 140, 0.7);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--rich-black);
+            border-left: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--electric-blue), var(--highlight-red));
+            border-radius: 10px;
+            border: 3px solid var(--rich-black);
+            background-size: 200% 200%;
+            animation: scrollGradient 3s ease infinite;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--highlight-red), var(--electric-blue));
+        }
+
+        @keyframes scrollGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--off-white);
+            background-color: var(--rich-black);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Loading Screen */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--rich-black);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-wrapper.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .loader-cloud {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, var(--electric-blue) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .loader-cloud:nth-child(2) {
+            animation-delay: 0.5s;
+            transform: scale(0.8);
+            background: radial-gradient(circle at center, var(--highlight-red) 0%, transparent 70%);
+        }
+
+        .loader-cloud:nth-child(3) {
+            animation-delay: 1s;
+            transform: scale(0.6);
+            background: radial-gradient(circle at center, var(--primary-tan) 0%, transparent 70%);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 0.3; }
+        }
+
+        .loader-text {
+            color: var(--primary-tan);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: var(--neon-tan);
+        }
+        
+        /* Header */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--off-white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        /* Navigation */
+        .desktop-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .desktop-nav a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .desktop-nav a:hover {
+            color: var(--primary-tan);
+        }
+
+        .desktop-nav a.active {
+            color: var(--primary-tan);
+            font-weight: 600;
+        }
+
+        .desktop-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-tan);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(10, 10, 10, 0.95);
+            min-width: 200px;
+            padding: 15px 0;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--off-white);
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(210, 180, 140, 0.1);
+            color: var(--primary-tan);
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: var(--primary-tan);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Mobile Navigation */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 350px;
+            height: 100%;
+            background: var(--rich-black);
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--primary-tan);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            margin-top: 50px;
+        }
+
+        .mobile-nav ul li {
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav ul li a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .mobile-nav ul li a:hover {
+            color: var(--primary-tan);
+        }
+
+        .mobile-nav ul li a.active {
+            color: var(--primary-tan);
+            font-weight: 600;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-tan);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--electric-blue), var(--highlight-red));
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .cta-button, .cta-button-secondary {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--electric-blue), var(--highlight-red));
+            color: var(--pure-white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: var(--primary-tan);
+            border: 2px solid var(--primary-tan);
+        }
+
+        .cta-button-secondary:hover {
+            background: rgba(210, 180, 140, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Cloud Hero Section */
+        .cloud-hero {
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.3), rgba(204, 0, 0, 0.3));
+        }
+
+        .cloud-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 168, 232, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(204, 0, 0, 0.15) 0%, transparent 20%),
+                linear-gradient(to bottom, transparent, var(--rich-black));
+            z-index: 1;
+        }
+
+        .cloud-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cloud-hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: var(--neon-tan);
+        }
+
+        .cloud-hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary-tan);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .hero-scroll i {
+            margin-top: 10px;
+            animation: bounce 2s infinite;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Cloud Value Proposition */
+        .cloud-value {
+            position: relative;
+            padding: 100px 0;
+            background: var(--rich-black);
+            overflow: hidden;
+        }
+
+        .cloud-value::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(0, 168, 232, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 70% 60%, rgba(204, 0, 0, 0.05) 0%, transparent 20%);
+            animation: float 30s infinite linear;
+            z-index: 1;
+        }
+
+        .cloud-value-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cloud-value-text {
+            flex: 1;
+        }
+
+        .cloud-value-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+        }
+
+        .cloud-value-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .cloud-value-viz {
+            flex: 1;
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cloud-stack {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateStack 20s infinite linear;
+        }
+
+        .cloud-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--off-white);
+            background: rgba(0, 168, 232, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 30px rgba(0, 168, 232, 0.2);
+            border: 2px solid var(--primary-tan);
+            transition: var(--transition);
+        }
+
+        .cloud-layer:nth-child(1) { transform: translateZ(0px); background: rgba(0, 168, 232, 0.1); }
+        .cloud-layer:nth-child(2) { transform: translateZ(50px); background: rgba(0, 168, 232, 0.2); }
+        .cloud-layer:nth-child(3) { transform: translateZ(100px); background: rgba(0, 168, 232, 0.3); }
+        .cloud-layer:nth-child(4) { transform: translateZ(150px); background: rgba(0, 168, 232, 0.4); }
+
+        .cloud-layer:hover {
+            background: rgba(204, 0, 0, 0.3);
+            box-shadow: 0 0 40px rgba(204, 0, 0, 0.3);
+        }
+
+        @keyframes rotateStack {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(5%, 5%); }
+            50% { transform: translate(10%, 0); }
+            75% { transform: translate(5%, -5%); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Cloud Benefits Section */
+        .cloud-benefits {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.1), rgba(204, 0, 0, 0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card {
+            background: rgba(10, 10, 10, 0.7);
+            border-radius: 15px;
+            padding: 40px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--electric-blue), var(--highlight-red));
+            transition: all 0.5s ease;
+        }
+
+        .benefit-card:hover::before {
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(210, 180, 140, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--electric-blue);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            color: var(--highlight-red);
+            transform: scale(1.2);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover h3 {
+            color: var(--electric-blue);
+        }
+
+        .benefit-card p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover p {
+            opacity: 1;
+        }
+
+        /* Cloud Migration Path */
+        .cloud-migration {
+            padding: 100px 0;
+            background: var(--rich-black);
+            position: relative;
+        }
+
+        .migration-path {
+            position: relative;
+            height: 600px;
+            margin-top: 50px;
+        }
+
+        .path-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--electric-blue), var(--highlight-red));
+            z-index: 1;
+        }
+
+        .path-node {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            padding: 25px;
+            background: rgba(10, 10, 10, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            transition: var(--transition);
+            z-index: 2;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .path-node:nth-child(2) { top: 0%; }
+        .path-node:nth-child(3) { top: 25%; }
+        .path-node:nth-child(4) { top: 50%; }
+        .path-node:nth-child(5) { top: 75%; }
+
+        .path-node::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -30px;
+            border: 3px solid var(--rich-black);
+            transition: var(--transition);
+        }
+
+        .path-node::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -40px;
+            background: rgba(0, 168, 232, 0.2);
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .path-node:hover {
+            background: rgba(10, 10, 10, 0.9);
+            border-color: rgba(210, 180, 140, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .path-node:hover::before {
+            background: var(--highlight-red);
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .path-node:hover::after {
+            transform: translateY(-50%) scale(1.5);
+            background: rgba(204, 0, 0, 0.3);
+        }
+
+        .path-node h3 {
+            color: var(--primary-tan);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .path-node p {
+            margin-bottom: 0;
+        }
+
+        /* Cloud Architecture */
+        .cloud-architecture {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.1), rgba(204, 0, 0, 0.1));
+        }
+
+        .architecture-diagram {
+            position: relative;
+            height: 600px;
+            margin: 50px auto;
+            max-width: 800px;
+        }
+
+        .arch-layer {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            left: 0;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .arch-layer:nth-child(1) { top: 0; background: rgba(0, 168, 232, 0.1); }
+        .arch-layer:nth-child(2) { top: 120px; background: rgba(0, 168, 232, 0.2); }
+        .arch-layer:nth-child(3) { top: 240px; background: rgba(0, 168, 232, 0.3); }
+        .arch-layer:nth-child(4) { top: 360px; background: rgba(0, 168, 232, 0.4); }
+        .arch-layer:nth-child(5) { top: 480px; background: rgba(0, 168, 232, 0.5); }
+
+        .arch-layer h3 {
+            color: var(--primary-tan);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .arch-layer:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(210, 180, 140, 0.4);
+            background: rgba(204, 0, 0, 0.3);
+        }
+
+        .arch-layer:hover h3 {
+            color: var(--electric-blue);
+        }
+
+        .arch-connector {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(to bottom, var(--electric-blue), var(--highlight-red));
+        }
+
+        .arch-connector:nth-child(6) { top: 100px; }
+        .arch-connector:nth-child(7) { top: 220px; }
+        .arch-connector:nth-child(8) { top: 340px; }
+        .arch-connector:nth-child(9) { top: 460px; }
+
+        /* Cloud Services */
+        .cloud-services {
+            padding: 100px 0;
+            background: var(--rich-black);
+        }
+
+        .services-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 20px;
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            background: rgba(10, 10, 10, 0.7);
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(210, 180, 140, 0.3);
+        }
+
+        .accordion-header {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background: rgba(10, 10, 10, 0.9);
+        }
+
+        .accordion-header h3 {
+            font-size: 1.4rem;
+            color: var(--primary-tan);
+            margin: 0;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover h3 {
+            color: var(--electric-blue);
+        }
+
+        .accordion-icon {
+            font-size: 1.2rem;
+            color: var(--primary-tan);
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover .accordion-icon {
+            color: var(--highlight-red);
+            transform: rotate(90deg);
+        }
+
+        .accordion-content {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 25px;
+            max-height: 500px;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content p {
+            margin-bottom: 15px;
+        }
+
+        .accordion-content ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .accordion-content li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .accordion-content li::before {
+            content: '▹';
+            position: absolute;
+            left: -15px;
+            color: var(--electric-blue);
+        }
+
+        /* Cloud Comparison */
+        .cloud-comparison {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.1), rgba(204, 0, 0, 0.1));
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+            background: rgba(10, 10, 10, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .comparison-table th, 
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .comparison-table th {
+            background: rgba(0, 168, 232, 0.1);
+            color: var(--primary-tan);
+            font-size: 1.2rem;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(0, 168, 232, 0.05);
+        }
+
+        .feature-name {
+            font-weight: 600;
+            color: var(--primary-tan);
+        }
+
+        .feature-value {
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-value i {
+            margin-right: 10px;
+            color: var(--electric-blue);
+        }
+
+        /* Cloud CTA */
+        .cloud-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--dark-blue), var(--highlight-red));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cloud-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+            z-index: 1;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: var(--pure-white);
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-links {
+            flex: 2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .footer-column {
+            min-width: 180px;
+        }
+
+        .footer-column h4 {
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            color: var(--off-white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary-tan);
+        }
+
+        .footer-social {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-social h4 {
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: var(--off-white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-tan);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .cloud-value-container {
+                flex-direction: column;
+            }
+
+            .cloud-value-viz {
+                margin-top: 50px;
+            }
+
+            .cloud-hero-title {
+                font-size: 3rem;
+            }
+
+            .migration-path {
+                height: auto;
+                padding: 50px 0;
+            }
+
+            .path-line {
+                left: 30px;
+                height: calc(100% - 100px);
+            }
+
+            .path-node {
+                width: calc(100% - 80px);
+                left: 80px;
+                transform: none;
+                margin-bottom: 40px;
+            }
+
+            .path-node::before {
+                left: -60px;
+            }
+
+            .path-node::after {
+                left: -70px;
+            }
+
+            .path-node:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .cloud-hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 3px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+                        .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .arch-layer h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cloud-hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .benefit-card,
+            .path-node {
+                padding: 25px;
+            }
+
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 15px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Loading Screen -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader-cloud"></div>
+            <div class="loader-cloud"></div>
+            <div class="loader-cloud"></div>
+        </div>
+        <div class="loader-text">TURBO TITANS</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html" class="logo-text">TURBO TITANS</a>
+                    <div class="logo-tagline">DIGITAL TRANSFORMATION AGENCY</div>
+                </div>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="active">Solutions <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="data-solution.html">Data Solutions</a>
+                                <a href="ai-solution.html">AI Automation</a>
+                                <a href="cloud-solution.html" class="active">Cloud Transformation</a>
+                                <a href="digital-solution.html">Digital Strategy</a>
+                            </div>
+                        </li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <button class="mobile-close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">Solutions <i class="fas fa-chevron-down"></i></a>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><a href="data-solution.html">Data Solutions</a></li>
+                    <li><a href="ai-solution.html">AI Automation</a></li>
+                    <li><a href="cloud-solution.html" class="active">Cloud Transformation</a></li>
+                    <li><a href="digital-solution.html">Digital Strategy</a></li>
+                </ul>
+            </li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cloud Hero Section -->
+    <section class="cloud-hero">
+        <div class="container">
+            <div class="cloud-hero-content">
+                <h1 class="cloud-hero-title">Cloud Transformation</h1>
+                <p class="cloud-hero-subtitle">Elevate your business to new heights with our cloud solutions. Experience enterprise-grade infrastructure with SMB-friendly scalability, security, and cost-efficiency.</p>
+                <a href="#contact" class="cta-button">Begin Your Cloud Journey</a>
+            </div>
+            <a href="#value" class="hero-scroll">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Cloud Value Proposition -->
+    <section class="cloud-value" id="value">
+        <div class="container">
+            <div class="cloud-value-container">
+                <div class="cloud-value-text">
+                    <h2>Future-Proof Your Business in the Cloud</h2>
+                    <p>The cloud revolution is here, but most SMBs struggle with complex migrations, security concerns, and unpredictable costs. We simplify the journey with tailored solutions that deliver immediate value.</p>
+                    <p>Our cloud experts design architectures that grow with your business, ensuring you only pay for what you need while maintaining enterprise-level security and performance.</p>
+                    <p>With our proven methodology, you'll achieve 40-60% cost savings while gaining the agility to respond to market changes faster than ever before.</p>
+                    <a href="#services" class="cta-button-secondary">Explore Cloud Services</a>
+                </div>
+                <div class="cloud-value-viz">
+                    <div class="cloud-stack">
+                        <div class="cloud-layer">Infrastructure</div>
+                        <div class="cloud-layer">Platform</div>
+                        <div class="cloud-layer">Software</div>
+                        <div class="cloud-layer">Data</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Benefits Section -->
+    <section class="cloud-benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Cloud with Turbo Titans?</h2>
+                <p class="section-subtitle">We deliver more than just infrastructure migration - we transform how your business operates in the digital age.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Performance Boost</h3>
+                    <p>Experience 3-5x faster application performance with our optimized cloud architectures and content delivery networks.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>Military-grade encryption, continuous monitoring, and compliance frameworks tailored to your industry requirements.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Cost Predictability</h3>
+                    <p>Our FinOps approach eliminates surprise bills with right-sized resources and reserved capacity planning.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                    <h3>Elastic Scalability</h3>
+                    <p>Handle traffic spikes effortlessly with auto-scaling that grows or shrinks based on real-time demand.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Disaster Recovery</h3>
+                    <p>99.99% uptime with geo-redundant backups and automated failover systems that protect your business continuity.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Managed Services</h3>
+                    <p>24/7 monitoring, patching, and optimization handled by our certified cloud operations team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Migration Path -->
+    <section class="cloud-migration">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Cloud Migration Journey</h2>
+                <p class="section-subtitle">We guide you through every step of the transformation process with minimal disruption.</p>
+            </div>
+            
+            <div class="migration-path">
+                <div class="path-line"></div>
+                
+                <div class="path-node">
+                    <h3>Assessment & Strategy</h3>
+                    <p>Comprehensive analysis of your current infrastructure, applications, and workloads to create a prioritized cloud roadmap with ROI projections.</p>
+                </div>
+                
+                <div class="path-node">
+                    <h3>Proof of Concept</h3>
+                    <p>Validate the approach with a non-critical workload migration, testing performance, security, and cost models before full commitment.</p>
+                </div>
+                
+                <div class="path-node">
+                    <h3>Data Migration</h3>
+                    <p>Secure transfer of databases and storage with zero downtime using our proprietary migration toolkit and validation processes.</p>
+                </div>
+                
+                <div class="path-node">
+                    <h3>Application Modernization</h3>
+                    <p>Refactor legacy applications for cloud-native operation, implementing microservices, containers, and serverless where beneficial.</p>
+                </div>
+                
+                <div class="path-node">
+                    <h3>Optimization & Governance</h3>
+                    <p>Continuous monitoring and adjustment of resources with automated policies to maintain performance and cost efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Architecture -->
+    <section class="cloud-architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cloud Architecture Excellence</h2>
+                <p class="section-subtitle">Our designs follow industry best practices while tailoring to your specific business needs.</p>
+            </div>
+            
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <h3>Presentation Layer</h3>
+                </div>
+                <div class="arch-connector"></div>
+                
+                <div class="arch-layer">
+                    <h3>Application Layer</h3>
+                </div>
+                <div class="arch-connector"></div>
+                
+                <div class="arch-layer">
+                    <h3>API Gateway</h3>
+                </div>
+                <div class="arch-connector"></div>
+                
+                <div class="arch-layer">
+                    <h3>Data Services</h3>
+                </div>
+                <div class="arch-connector"></div>
+                
+                <div class="arch-layer">
+                    <h3>Security & Compliance</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Services -->
+    <section class="cloud-services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Cloud Service Offerings</h2>
+                <p class="section-subtitle">Comprehensive solutions across all major platforms and deployment models.</p>
+            </div>
+            
+            <div class="services-accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Cloud Migration Services</h3>
+                        <i class="fas fa-chevron-right accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>End-to-end migration services that minimize risk and downtime while maximizing performance and cost savings.</p>
+                        <ul>
+                            <li>Workload assessment and prioritization</li>
+                            <li>Lift-and-shift migrations</li>
+                            <li>Replatforming and refactoring</li>
+                            <li>Data synchronization strategies</li>
+                            <li>Post-migration validation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Multi-Cloud Management</h3>
+                        <i class="fas fa-chevron-right accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Unified management across AWS, Azure, and Google Cloud with consistent security and governance policies.</p>
+                        <ul>
+                            <li>Cross-cloud networking</li>
+                            <li>Unified identity and access management</li>
+                            <li>Cost visibility and optimization</li>
+                            <li>Disaster recovery across providers</li>
+                            <li>Workload portability</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Cloud-Native Development</h3>
+                        <i class="fas fa-chevron-right accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Build scalable, resilient applications using modern cloud architectures and DevOps practices.</p>
+                        <ul>
+                            <li>Microservices design</li>
+                            <li>Containerization with Kubernetes</li>
+                            <li>Serverless application development</li>
+                            <li>CI/CD pipeline implementation</li>
+                            <li>Observability and monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Cloud Security & Compliance</h3>
+                        <i class="fas fa-chevron-right accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Comprehensive protection for your cloud environments meeting industry-specific regulations.</p>
+                        <ul>
+                            <li>Identity and access management</li>
+                            <li>Data encryption at rest and in transit</li>
+                            <li>Continuous compliance monitoring</li>
+                            <li>Threat detection and response</li>
+                            <li>Security posture assessments</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Cloud Cost Optimization</h3>
+                        <i class="fas fa-chevron-right accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Reduce your cloud spend by 30-50% without sacrificing performance through our FinOps approach.</p>
+                        <ul>
+                            <li>Right-sizing recommendations</li>
+                            <li>Reserved instance planning</li>
+                            <li>Spot instance strategies</li>
+                            <li>Usage analytics and reporting</li>
+                            <li>Automated scaling policies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Comparison -->
+    <section class="cloud-comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cloud Platform Comparison</h2>
+                <p class="section-subtitle">We're platform-agnostic and recommend the best solution for your specific needs.</p>
+            </div>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>AWS</th>
+                        <th>Azure</th>
+                        <th>Google Cloud</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Compute Services</td>
+                        <td class="feature-value"><i class="fas fa-check"></i> EC2, Lambda, ECS</td>
+                        <td class="feature-value"><i class="fas fa-check"></i> VMs, Functions, AKS</td>
+                        <td class="feature-value"><i class="fas fa-check"></i> Compute Engine, Cloud Run, GKE</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Storage Solutions</td>
+                        <td class="feature-value"><i class="fas fa-check"></i> S3, EBS, EFS</td>
+                        <td class="feature-value"><i class="fas fa-check"></i> Blob Storage, Disk Storage</td>
+                        <td class="feature-value"><i class="fas fa-check"></i> Cloud Storage, Persistent Disk</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Database Options</td>
+                        <td class="feature-value"><i class="fas fa-check"></i> RDS, DynamoDB</td>
+                        <td class="feature-value"><i class="fas fa-check"></i> SQL Database, Cosmos DB</td>
+                        <td class="feature-value"><i class="fas fa-check"></i> Cloud SQL, Firestore</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">AI/ML Services</td>
+                        <td class="feature-value"><i class="fas fa-star"></i> SageMaker, Rekognition</td>
+                        <td class="feature-value"><i class="fas fa-star"></i> Azure ML, Cognitive Services</td>
+                        <td class="feature-value"><i class="fas fa-star"></i> Vertex AI, Vision AI</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Global Infrastructure</td>
+                        <td class="feature-value"><i class="fas fa-globe"></i> 25+ Regions</td>
+                        <td class="feature-value"><i class="fas fa-globe"></i> 60+ Regions</td>
+                        <td class="feature-value"><i class="fas fa-globe"></i> 29 Regions</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Best For</td>
+                        <td class="feature-value"><i class="fas fa-lightbulb"></i> Enterprise workloads, Startups</td>
+                        <td class="feature-value"><i class="fas fa-lightbulb"></i> Microsoft shops, Hybrid cloud</td>
+                        <td class="feature-value"><i class="fas fa-lightbulb"></i> Data analytics, AI/ML</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Cloud CTA -->
+    <section class="cloud-cta" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business with Cloud?</h2>
+                <p>Schedule a free cloud assessment with our architects and receive a customized roadmap with cost projections and timeline.</p>
+                <div class="cta-buttons">
+                    <a href="contactus.html" class="cta-button">Get Your Cloud Assessment</a>
+                    <a href="case-studies.html" class="cta-button-secondary">View Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo-text">TURBO TITANS</a>
+                    <div class="logo-tagline">DIGITAL TRANSFORMATION AGENCY</div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="data-solution.html">Data Solutions</a></li>
+                            <li><a href="ai-solution.html">AI Automation</a></li>
+                            <li><a href="cloud-solution.html">Cloud Transformation</a></li>
+                            <li><a href="digital-solution.html">Digital Strategy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="aboutus.html">About Us</a></li>
+                            <li><a href="case-studies.html">Case Studies</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="case-studies.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="contactus.html">Contact Us</a></li>
+                            <li><a href="aboutus.html">Privacy Policy</a></li>
+                            <li><a href="aboutus.html">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 TURBO TITANS. ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loader = document.querySelector('.loader-wrapper');
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile Navigation
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileCloseBtn = document.querySelector('.mobile-close-btn');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileCloseBtn.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Accordion Functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const accordionItem = this.parentElement;
+                accordionItem.classList.toggle('active');
+                
+                // Close other open accordion items
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    if (item !== accordionItem && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileNav.classList.contains('active')) {
+                        mobileNav.classList.remove('active');
+                        overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.4)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+            }
+        });
+
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.benefit-card, .path-node, .arch-layer');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.benefit-card, .path-node, .arch-layer').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
+            
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+               

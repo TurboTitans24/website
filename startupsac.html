@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Acceleration | TURBO TITANS</title>
+    <meta name="description" content="Interactive startup acceleration platform - transform your idea into a scalable business">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+	<link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <style>
+        :root {
+            --neon-pink: #FF10F0;
+            --electric-purple: #B026FF;
+            --cyber-teal: #00F5D4;
+            --matrix-green: #00FF41;
+            --dark-space: #0A0A12;
+            --void-black: #000000;
+            --pure-white: #FFFFFF;
+            --neon-glow-pink: 0 0 15px rgba(255, 16, 240, 0.8);
+            --neon-glow-purple: 0 0 15px rgba(176, 38, 255, 0.8);
+            --neon-glow-teal: 0 0 15px rgba(0, 245, 212, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', 'Orbitron', sans-serif;
+            background-color: var(--dark-space);
+            color: var(--pure-white);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        @font-face {
+            font-family: 'Rajdhani';
+            src: url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap');
+        }
+
+        @font-face {
+            font-family: 'Orbitron';
+            src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        }
+
+        #presentation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: all;
+            z-index: 2;
+        }
+
+        .slide.next {
+            transform: translateX(100%) rotateY(30deg);
+        }
+
+        .slide.prev {
+            transform: translateX(-100%) rotateY(-30deg);
+        }
+
+        .slide-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            color: var(--cyber-teal);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: var(--neon-glow-teal);
+        }
+
+        .slide-content {
+            max-width: 800px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .slide-image {
+            max-width: 600px;
+            max-height: 300px;
+            margin: 20px 0;
+            border: 2px solid var(--electric-purple);
+            box-shadow: var(--neon-glow-purple);
+            border-radius: 10px;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            z-index: 10;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--electric-purple), var(--neon-pink));
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+
+        .nav-button {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(10, 10, 18, 0.7);
+            border: 2px solid var(--electric-purple);
+            border-radius: 50%;
+            color: var(--pure-white);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: var(--electric-purple);
+            box-shadow: var(--neon-glow-purple);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        #prev-button {
+            left: 20px;
+        }
+
+        #next-button {
+            right: 20px;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Orbitron', sans-serif;
+            color: var(--cyber-teal);
+            z-index: 10;
+        }
+
+        .interactive-element {
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--electric-purple);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-element:hover {
+            background: rgba(176, 38, 255, 0.2);
+            box-shadow: var(--neon-glow-purple);
+            transform: translateY(-3px);
+        }
+
+        .cyber-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: transparent;
+            color: var(--cyber-teal);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--cyber-teal);
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 20px rgba(0, 245, 212, 0.3);
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .cyber-button:hover {
+            background: rgba(0, 245, 212, 0.1);
+            color: var(--pure-white);
+            box-shadow: 0 0 30px rgba(0, 245, 212, 0.6);
+        }
+
+        .startup-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .stage-icon {
+            font-size: 2.5rem;
+            color: var(--neon-pink);
+            margin-bottom: 15px;
+        }
+
+        .stage-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--cyber-teal);
+            margin-bottom: 10px;
+        }
+
+        .stage-description {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .timeline-line {
+            height: 4px;
+            width: 80%;
+            background: linear-gradient(90deg, var(--neon-pink), var(--electric-purple));
+            position: relative;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--dark-space);
+            border: 3px solid var(--cyber-teal);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 2.5rem;
+            }
+            
+            .slide-content {
+                font-size: 1rem;
+            }
+            
+            .nav-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="vanta-bg"></div>
+    
+    <div id="presentation-container">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide active" id="slide1">
+            <h1 class="slide-title">STARTUP ACCELERATION</h1>
+            <p class="slide-content">From idea to market domination in record time</p>
+            <img src="logo.png" class="slide-image">
+            <div class="interactive-element" onclick="goToSlide(2)">
+                <i class="fas fa-rocket"></i> Begin Acceleration Journey
+            </div>
+        </div>
+        
+        <!-- Slide 2: The Problem -->
+        <div class="slide" id="slide2">
+            <h1 class="slide-title">THE CHALLENGE</h1>
+            <p class="slide-content">90% of startups fail. The most common reasons:</p>
+            
+            <div class="interactive-element">
+                <i class="fas fa-exclamation-triangle"></i> No market need (42%)
+            </div>
+            <div class="interactive-element">
+                <i class="fas fa-money-bill-wave"></i> Ran out of cash (29%)
+            </div>
+            <div class="interactive-element">
+                <i class="fas fa-users"></i> Wrong team (23%)
+            </div>
+            <div class="interactive-element">
+                <i class="fas fa-trophy"></i> Outcompeted (19%)
+            </div>
+            
+            <p class="slide-content">Our acceleration program addresses all these failure points systematically.</p>
+        </div>
+        
+        <!-- Slide 3: Our Approach -->
+        <div class="slide" id="slide3">
+            <h1 class="slide-title">OUR FORMULA</h1>
+            <p class="slide-content">The TURBO TITANS acceleration framework:</p>
+            
+            <div class="timeline">
+                <div class="timeline-line">
+                    <div class="timeline-marker" style="left: 0%;"></div>
+                    <div class="timeline-marker" style="left: 25%;"></div>
+                    <div class="timeline-marker" style="left: 50%;"></div>
+                    <div class="timeline-marker" style="left: 75%;"></div>
+                    <div class="timeline-marker" style="left: 100%;"></div>
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; width: 80%;">
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="stage-title">IDEATION</div>
+                    <div class="stage-description">Validate your concept before building</div>
+                </div>
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-flask"></i></div>
+                    <div class="stage-title">VALIDATION</div>
+                    <div class="stage-description">Test with real users quickly</div>
+                </div>
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="stage-title">LAUNCH</div>
+                    <div class="stage-description">Go to market with traction</div>
+                </div>
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="stage-title">SCALE</div>
+                    <div class="stage-description">Grow exponentially</div>
+                </div>
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-globe"></i></div>
+                    <div class="stage-title">DOMINATE</div>
+                    <div class="stage-description">Become market leader</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Ideation Phase -->
+        <div class="slide" id="slide4">
+            <h1 class="slide-title">IDEATION ENGINE</h1>
+            <p class="slide-content">Transform your raw idea into a validated business model</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px;">
+                <div class="interactive-element">
+                    <i class="fas fa-search-dollar"></i> Market Analysis
+                </div>
+                <div class="interactive-element">
+                    <i class="fas fa-chess-board"></i> Competitive Landscape
+                </div>
+                <div class="interactive-element">
+                    <i class="fas fa-user-check"></i> Customer Personas
+                </div>
+                <div class="interactive-element">
+                    <i class="fas fa-puzzle-piece"></i> Problem/Solution Fit
+                </div>
+                <div class="interactive-element">
+                    <i class="fas fa-box-open"></i> MVP Definition
+                </div>
+                <div class="interactive-element">
+                    <i class="fas fa-coins"></i> Revenue Models
+                </div>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Ideation" class="slide-image">
+        </div>
+        
+        <!-- Slide 5: Validation Phase -->
+        <div class="slide" id="slide5">
+            <h1 class="slide-title">VALIDATION LAB</h1>
+            <p class="slide-content">Test your assumptions before over-investing</p>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 800px;">
+                <div class="interactive-element" style="width: 45%; margin: 10px;">
+                    <i class="fas fa-poll"></i> Landing Page Tests
+                </div>
+                <div class="interactive-element" style="width: 45%; margin: 10px;">
+                    <i class="fas fa-comments-dollar"></i> Pre-sales Campaigns
+                </div>
+                <div class="interactive-element" style="width: 45%; margin: 10px;">
+                    <i class="fas fa-user-friends"></i> Customer Interviews
+                </div>
+                <div class="interactive-element" style="width: 45%; margin: 10px;">
+                    <i class="fas fa-tachometer-alt"></i> Metrics Dashboard
+                </div>
+            </div>
+            
+            <div class="slide-content">
+                "Fail fast, learn faster" - Our validation process helps you identify flaws in your business model before you've wasted time and money.
+            </div>
+        </div>
+        
+        <!-- Slide 6: Launch Phase -->
+        <div class="slide" id="slide6">
+            <h1 class="slide-title">LAUNCH PAD</h1>
+            <p class="slide-content">Go to market with maximum impact</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 900px;">
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-bullhorn"></i></div>
+                    <div class="stage-title">PR Strategy</div>
+                </div>
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-funnel-dollar"></i></div>
+                    <div class="stage-title">Conversion Optimization</div>
+                </div>
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-viruses"></i></div>
+                    <div class="stage-title">Viral Mechanics</div>
+                </div>
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="stage-title">Partnerships</div>
+                </div>
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-robot"></i></div>
+                    <div class="stage-title">Automation</div>
+                </div>
+                <div class="startup-stage">
+                    <div class="stage-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="stage-title">Analytics</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 7: Scale Phase -->
+        <div class="slide" id="slide7">
+            <h1 class="slide-title">SCALE ENGINE</h1>
+            <p class="slide-content">Systems for exponential growth</p>
+            
+            <div style="display: flex; justify-content: center; align-items: center; height: 60%;">
+                <div style="text-align: center; margin: 0 30px;">
+                    <div class="stage-icon"><i class="fas fa-server"></i></div>
+                    <div class="stage-title">Tech Infrastructure</div>
+                    <div class="stage-description">Auto-scaling systems that grow with you</div>
+                </div>
+                <div style="text-align: center; margin: 0 30px;">
+                    <div class="stage-icon"><i class="fas fa-brain"></i></div>
+                    <div class="stage-title">AI Optimization</div>
+                    <div class="stage-description">Machine learning for growth</div>
+                </div>
+                <div style="text-align: center; margin: 0 30px;">
+                    <div class="stage-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="stage-title">Global Expansion</div>
+                    <div class="stage-description">Enter new markets systematically</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 8: Funding -->
+        <div class="slide" id="slide8">
+            <h1 class="slide-title">FUEL FOR GROWTH</h1>
+            <p class="slide-content">Strategic funding at every stage</p>
+            
+            <div style="display: flex; justify-content: space-around; width: 100%; max-width: 900px; margin: 30px 0;">
+                <div class="funding-stage">
+                    <div class="stage-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="stage-title">Pre-Seed</div>
+                    <div class="stage-description">$50K - $500K</div>
+                </div>
+                <div class="funding-stage">
+                    <div class="stage-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="stage-title">Seed</div>
+                    <div class="stage-description">$500K - $2M</div>
+                </div>
+                <div class="funding-stage">
+                    <div class="stage-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="stage-title">Series A</div>
+                    <div class="stage-description">$2M - $15M</div>
+                </div>
+            </div>
+            
+            <div class="slide-content">
+                We help you prepare for each funding round with investor-grade metrics, pitch materials, and financial models.
+            </div>
+            
+            <a href="#" class="cyber-button">Valuation Calculator</a>
+        </div>
+        
+        <!-- Slide 9: Success Stories -->
+        <div class="slide" id="slide9">
+            <h1 class="slide-title">ACCELERATION STORIES</h1>
+            
+            <div style="display: flex; overflow-x: auto; max-width: 900px; padding: 20px 0;">
+                <div style="min-width: 280px; margin: 0 15px; text-align: center;">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 3px solid var(--electric-purple);">
+                    <h3 style="margin: 15px 0; color: var(--cyber-teal);">0 to $10M ARR</h3>
+                    <p>AI-powered e-commerce platform scaled globally in 18 months</p>
+                </div>
+                <div style="min-width: 280px; margin: 0 15px; text-align: center;">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 3px solid var(--electric-purple);">
+                    <h3 style="margin: 15px 0; color: var(--cyber-teal);">$1M to $50M</h3>
+                    <p>SaaS company 10x'd revenue with our growth hacking framework</p>
+                </div>
+                <div style="min-width: 280px; margin: 0 15px; text-align: center;">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 3px solid var(--electric-purple);">
+                    <h3 style="margin: 15px 0; color: var(--cyber-teal);">Acquired in 2 Years</h3>
+                    <p>Mobile app startup bought by Fortune 500 after rapid scaling</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 10: CTA -->
+        <div class="slide" id="slide10">
+            <h1 class="slide-title">READY TO LAUNCH?</h1>
+            <p class="slide-content">Join our next acceleration cohort and get:</p>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 800px; margin: 30px 0;">
+                <div class="interactive-element" style="width: 45%; margin: 10px;">
+                    <i class="fas fa-user-shield"></i> Dedicated Growth Architect
+                </div>
+                <div class="interactive-element" style="width: 45%; margin: 10px;">
+                    <i class="fas fa-tools"></i> Custom Tech Stack
+                </div>
+                <div class="interactive-element" style="width: 45%; margin: 10px;">
+                    <i class="fas fa-network-wired"></i> Investor Network Access
+                </div>
+                <div class="interactive-element" style="width: 45%; margin: 10px;">
+                    <i class="fas fa-chart-line"></i> Performance Dashboard
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: center;">
+                <a href="contactus.html" class="cyber-button">Apply Now</a>
+                <a href="case-studies.html" class="cyber-button">See Case Studies</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Controls -->
+    <button class="nav-button" id="prev-button"><i class="fas fa-chevron-left"></i></button>
+    <button class="nav-button" id="next-button"><i class="fas fa-chevron-right"></i></button>
+    
+    <!-- Progress Indicator -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <div class="slide-counter" id="slide-counter">1 / 10</div>
+    
+    <script>
+        // Initialize Vanta.js background
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xb026ff,
+            backgroundColor: 0x0a0a12,
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+        
+        // Presentation Logic
+        let currentSlide = 1;
+        const totalSlides = 10;
+        
+        function updateSlide() {
+            // Update all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                const slide = document.getElementById(`slide${i}`);
+                slide.classList.remove('active', 'prev', 'next');
+                
+                if (i === currentSlide) {
+                    slide.classList.add('active');
+                } else if (i < currentSlide) {
+                    slide.classList.add('prev');
+                } else {
+                    slide.classList.add('next');
+                }
+            }
+            
+            // Update progress bar
+            document.getElementById('progress-fill').style.width = `${(currentSlide / totalSlides) * 100}%`;
+            
+            // Update slide counter
+            document.getElementById('slide-counter').textContent = `${currentSlide} / ${totalSlides}`;
+        }
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+        
+        function goToSlide(slideNumber) {
+            currentSlide = slideNumber;
+            updateSlide();
+        }
+        
+        // Event Listeners
+        document.getElementById('next-button').addEventListener('click', nextSlide);
+        document.getElementById('prev-button').addEventListener('click', prevSlide);
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+        
+        // Swipe for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) nextSlide();
+            if (touchEndX > touchStartX + 50) prevSlide();
+        }
+        
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+</html>

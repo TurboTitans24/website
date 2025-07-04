@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Strategy | TURBO TITANS Digital Transformation Agency</title>
+    <meta name="description" content="Comprehensive digital strategy solutions designed to future-proof your business with actionable insights and measurable results.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+	<style>
+        :root {
+            --rich-black: #0a0a0a;
+            --pure-white: #ffffff;
+            --off-white: #f8f8f8;
+            --primary-tan: #d2b48c;
+            --electric-blue: #00a8e8;
+            --highlight-red: #cc0000;
+            --dark-blue: #003366;
+            --neon-tan: 0 0 15px rgba(210, 180, 140, 0.7);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Custom Scrollbar - Enhanced */
+        ::-webkit-scrollbar {
+            width: 14px;
+            background: var(--rich-black);
+        }
+
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(to bottom, 
+                rgba(210, 180, 140, 0.05), 
+                rgba(0, 168, 232, 0.05), 
+                rgba(204, 0, 0, 0.05));
+            border-left: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, 
+                var(--electric-blue), 
+                var(--primary-tan), 
+                var(--highlight-red));
+            border-radius: 10px;
+            border: 3px solid var(--rich-black);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, 
+                var(--highlight-red), 
+                var(--primary-tan), 
+                var(--electric-blue));
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--off-white);
+            background-color: var(--rich-black);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 168, 232, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(204, 0, 0, 0.03) 0%, transparent 20%);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header - Simplified */
+        header {
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(5px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            text-decoration: none;
+        }
+
+        /* Main Content Sections */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-tan);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--electric-blue), var(--highlight-red));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--off-white);
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Digital Hero Section */
+        .digital-hero {
+            height: 90vh;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+            background: 
+                linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)),
+                url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+        }
+
+        .digital-hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .digital-hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            margin-bottom: 25px;
+            text-shadow: var(--neon-tan);
+            animation: fadeInDown 1s ease;
+        }
+
+        .digital-hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Content Blocks */
+        .content-block {
+            margin-bottom: 80px;
+        }
+
+        .content-block h2 {
+            font-size: 2.2rem;
+            color: var(--electric-blue);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .content-block h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-tan);
+        }
+
+        .content-block h3 {
+            font-size: 1.8rem;
+            color: var(--primary-tan);
+            margin: 40px 0 20px;
+        }
+
+        .content-block p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .content-block ul, .content-block ol {
+            margin-bottom: 30px;
+            padding-left: 30px;
+        }
+
+        .content-block li {
+            margin-bottom: 15px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .content-block ul li::before {
+            content: '▹';
+            position: absolute;
+            left: -20px;
+            color: var(--electric-blue);
+            font-weight: bold;
+        }
+
+        .content-block ol {
+            counter-reset: item;
+        }
+
+        .content-block ol li {
+            counter-increment: item;
+        }
+
+        .content-block ol li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: -25px;
+            color: var(--primary-tan);
+            font-weight: bold;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .stat-item {
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(210, 180, 140, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--electric-blue), var(--highlight-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--off-white);
+            opacity: 0.9;
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                var(--electric-blue), 
+                var(--primary-tan), 
+                var(--highlight-red));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-content {
+            width: calc(50% - 40px);
+            padding: 30px;
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            border-radius: 8px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(210, 180, 140, 0.3);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-tan);
+            border-radius: 50%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -40px;
+        }
+
+        .timeline-step {
+            position: absolute;
+            top: 25px;
+            width: 40px;
+            height: 40px;
+            background: var(--rich-black);
+            border: 3px solid var(--electric-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-tan);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-step {
+            left: calc(50% - 20px);
+        }
+
+        .timeline-item:nth-child(even) .timeline-step {
+            right: calc(50% - 20px);
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(204, 0, 0, 0.1);
+            border-left: 4px solid var(--highlight-red);
+            padding: 25px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box h4 {
+            color: var(--highlight-red);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Success Box */
+        .success-box {
+            background: rgba(0, 168, 232, 0.1);
+            border-left: 4px solid var(--electric-blue);
+            padding: 25px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .success-box h4 {
+            color: var(--electric-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Digital Maturity Model */
+        .maturity-model {
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            border-radius: 8px;
+            padding: 40px;
+            margin: 50px 0;
+        }
+
+        .maturity-levels {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .maturity-level {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .maturity-level:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .level-number {
+            width: 50px;
+            height: 50px;
+            background: var(--rich-black);
+            border: 3px solid var(--primary-tan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .level-content h4 {
+            font-size: 1.4rem;
+            color: var(--primary-tan);
+            margin-bottom: 10px;
+        }
+
+        .level-content p {
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .digital-cta {
+            background: linear-gradient(135deg, var(--dark-blue), var(--highlight-red));
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .digital-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+            z-index: 1;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: var(--pure-white);
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--primary-tan);
+            color: var(--rich-black);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: var(--pure-white);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-tan);
+            color: var(--primary-tan);
+        }
+
+        .cta-button-secondary:hover {
+            background: rgba(210, 180, 140, 0.2);
+            color: var(--pure-white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--rich-black);
+            color: var(--off-white);
+            padding: 60px 0 0;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about {
+            grid-column: span 2;
+        }
+
+        .footer-logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            letter-spacing: 1px;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .footer-links h3 {
+            color: var(--primary-tan);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, var(--electric-blue), var(--highlight-red));
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--off-white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-tan);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .footer-bottom p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .digital-hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .timeline-content {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .digital-hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .digital-hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .process-timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-content {
+                width: 100%;
+                margin-left: 60px !important;
+                margin-top: 20px;
+            }
+            
+            .timeline-content::before {
+                left: -40px !important;
+                right: auto !important;
+            }
+            
+            .timeline-step {
+                left: 30px !important;
+                right: auto !important;
+                transform: translateX(-50%);
+            }
+            
+            .footer-about {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .digital-hero-title {
+                font-size: 2rem;
+            }
+            
+            .content-block h2 {
+                font-size: 1.8rem;
+            }
+            
+            .content-block h3 {
+                font-size: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo-text">TURBO TITANS DIGITAL TRANSFORMATION AGENCY</a>
+                <nav>
+                    <a href="contactus.html" class="cta-button-secondary"></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Digital Hero Section -->
+    <section class="digital-hero">
+        <div class="container">
+            <div class="digital-hero-content">
+                <h1 class="digital-hero-title">Digital Strategy Solutions</h1>
+                <p class="digital-hero-subtitle">Future-proof your business with a comprehensive digital strategy that aligns technology, processes, and people to drive sustainable growth in the digital economy.</p>
+                <a href="#consultation" class="cta-button">Start Your Transformation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Strategy Introduction -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Digital Imperative</h2>
+                <p class="section-subtitle">In today's rapidly evolving digital landscape, having a robust digital strategy isn't optional—it's existential. The businesses thriving in this environment aren't just using technology; they're strategically transforming their operations, customer experiences, and business models.</p>
+            </div>
+            
+            <div class="content-block">
+                <h2>Why Digital Strategy Matters More Than Ever</h2>
+                <p>The digital economy is growing at an unprecedented pace, accelerated by recent global shifts. Consider these facts:</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">87%</div>
+                        <div class="stat-label">of companies believe digital will disrupt their industry</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3.5x</div>
+                        <div class="stat-label">more revenue growth for digitally mature companies</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">70%</div>
+                        <div class="stat-label">of digital transformations fail due to poor strategy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$1.7T</div>
+                        <div class="stat-label">wasted on digital initiatives that didn't deliver</div>
+                    </div>
+                </div>
+                
+                <p>Our approach to digital strategy is different. We don't just help you implement technology—we help you build a digital-first organization that continuously adapts and thrives in changing conditions.</p>
+                
+                <div class="warning-box">
+                    <h4>Critical Warning</h4>
+                    <p>Most digital "strategies" are actually just technology implementation plans. A true digital strategy must encompass organizational culture, processes, talent development, and business model innovation—not just IT systems.</p>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h2>Our Comprehensive Digital Strategy Framework</h2>
+                <p>After helping over 200 SMBs navigate digital transformation, we've developed a proven framework that addresses all critical aspects of digital maturity:</p>
+                
+                <div class="maturity-model">
+                    <div class="maturity-levels">
+                        <div class="maturity-level">
+                            <div class="level-number">1</div>
+                            <div class="level-content">
+                                <h4>Digital Foundations</h4>
+                                <p>Core infrastructure, basic automation, and digital tools for essential operations. Most SMBs start here but get stuck.</p>
+                            </div>
+                        </div>
+                        <div class="maturity-level">
+                            <div class="level-number">2</div>
+                            <div class="level-content">
+                                <h4>Functional Optimization</h4>
+                                <p>Department-specific digital improvements in marketing, sales, operations, etc. This is where ROI begins but remains siloed.</p>
+                            </div>
+                        </div>
+                        <div class="maturity-level">
+                            <div class="level-number">3</div>
+                            <div class="level-content">
+                                <h4>Cross-Functional Integration</h4>
+                                <p>Breaking down silos to create seamless customer experiences and operational workflows across the organization.</p>
+                            </div>
+                        </div>
+                        <div class="maturity-level">
+                            <div class="level-number">4</div>
+                            <div class="level-content">
+                                <h4>Data-Driven Organization</h4>
+                                <p>Where decisions at all levels are informed by real-time data and predictive analytics, not just intuition.</p>
+                            </div>
+                        </div>
+                        <div class="maturity-level">
+                            <div class="level-number">5</div>
+                            <div class="level-content">
+                                <h4>Adaptive Digital Enterprise</h4>
+                                <p>The pinnacle where digital is embedded in the company DNA, enabling continuous innovation and market leadership.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>Most SMBs oscillate between levels 1 and 2 without a clear path forward. Our strategy creates the roadmap to systematically progress through each stage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Strategy Process -->
+    <section style="background: rgba(0, 51, 102, 0.05);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Proven Digital Strategy Process</h2>
+                <p class="section-subtitle">Unlike cookie-cutter approaches, our methodology is tailored to your unique business context and objectives</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-step">1</div>
+                    <div class="timeline-content">
+                        <h3>Digital Audit & Assessment</h3>
+                        <p>We conduct a comprehensive 360° evaluation of your current digital capabilities across 12 key dimensions including technology infrastructure, data maturity, digital skills, customer experience, and organizational readiness.</p>
+                        <p><strong>Deliverable:</strong> Digital Maturity Scorecard with prioritized gaps and opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">2</div>
+                    <div class="timeline-content">
+                        <h3>Strategic Vision Workshop</h3>
+                        <p>Facilitated sessions with leadership to align digital ambitions with business objectives. We surface hidden assumptions and challenge conventional thinking to uncover breakthrough opportunities.</p>
+                        <p><strong>Deliverable:</strong> Digital North Star vision statement with 3-5 year horizon.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">3</div>
+                    <div class="timeline-content">
+                        <h3>Capability Roadmapping</h3>
+                        <p>We identify the specific digital capabilities needed to achieve your vision and map them across technology, processes, talent, and culture. This becomes your strategic investment blueprint.</p>
+                        <p><strong>Deliverable:</strong> Prioritized capability roadmap with sequencing and dependencies.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">4</div>
+                    <div class="timeline-content">
+                        <h3>Transformation Architecture</h3>
+                        <p>Detailed design of how all elements will work together—technology stacks, data flows, process changes, organizational structure, and governance models.</p>
+                        <p><strong>Deliverable:</strong> Integrated architecture blueprints and implementation playbooks.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-step">5</div>
+                    <div class="timeline-content">
+                        <h3>Execution & Change Management</h3>
+                        <p>We don't just hand off documents. Our team works alongside yours to implement the strategy, measure impact, and adapt as needed—with a strong focus on organizational adoption.</p>
+                        <p><strong>Deliverable:</strong> Working digital solutions with embedded capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Focus Areas -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Digital Strategy Focus Areas</h2>
+                <p class="section-subtitle">A comprehensive digital strategy must address these critical dimensions</p>
+            </div>
+            
+            <div class="content-block">
+                <h3>1. Customer Digital Experience (CX) Transformation</h3>
+                <p>Redesigning all customer touchpoints for seamless digital interactions across the entire journey:</p>
+                <ul>
+                    <li><strong>Digital-First Engagement:</strong> Moving beyond "digital as an option" to digital as the primary engagement channel</li>
+                    <li><strong>Omnichannel Integration:</strong> Creating consistent experiences across web, mobile, social, and physical channels</li>
+                    <li><strong>Personalization at Scale:</strong> Leveraging data and AI to deliver tailored experiences without increasing complexity</li>
+                    <li><strong>Self-Service Ecosystems:</strong> Empowering customers with intuitive tools to serve their own needs</li>
+                </ul>
+                
+                <div class="success-box">
+                    <h4>Case Example: Retail Client</h4>
+                    <p>A regional retailer implemented our CX transformation strategy, resulting in 68% increase in online conversions, 42% reduction in service calls, and 31% higher average order value through personalized recommendations.</p>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>2. Operational Digitalization</h3>
+                <p>Transforming back-office and operational processes through digital technologies:</p>
+                <ul>
+                    <li><strong>Process Automation:</strong> Identifying and automating repetitive, rules-based tasks across all functions</li>
+                    <li><strong>Intelligent Workflows:</strong> Embedding decision-support and predictive capabilities into operational processes</li>
+                    <li><strong>Digital Twin Capabilities:</strong> Creating virtual representations of physical operations for simulation and optimization</li>
+                    <li><strong>Supply Chain Digitization:</strong> End-to-end visibility and AI-driven optimization of supply networks</li>
+                </ul>
+            </div>
+            
+            <div class="content-block">
+                <h3>3. Data & Analytics Strategy</h3>
+                <p>Building the infrastructure and capabilities to leverage data as a strategic asset:</p>
+                <ul>
+                    <li><strong>Data Democratization:</strong> Making relevant data accessible to decision-makers at all levels</li>
+                    <li><strong>Predictive & Prescriptive Analytics:</strong> Moving beyond descriptive reporting to forward-looking insights</li>
+                    <li><strong>AI/ML Integration:</strong> Embedding machine learning models into core business processes</li>
+                    <li><strong>Data Governance:</strong> Ensuring quality, security, and compliance without stifling innovation</li>
+                </ul>
+            </div>
+            
+            <div class="content-block">
+                <h3>4. Digital Business Model Innovation</h3>
+                <p>Exploring new revenue streams and value creation opportunities enabled by digital:</p>
+                <ul>
+                    <li><strong>Platform Business Models:</strong> Creating ecosystems that connect different user groups</li>
+                    <li><strong>Subscription & As-a-Service:</strong> Transitioning from one-time transactions to recurring revenue models</li>
+                    <li><strong>Digital Product Development:</strong> Complementing physical offerings with digital products and services</li>
+                    <li><strong>Outcome-Based Models:</strong> Shifting from selling products to selling results and business outcomes</li>
+                </ul>
+            </div>
+            
+            <div class="content-block">
+                <h3>5. Digital Culture & Talent</h3>
+                <p>Building the organizational capabilities to sustain digital transformation:</p>
+                <ul>
+                    <li><strong>Digital Upskilling:</strong> Systematic development of digital competencies across the workforce</li>
+                    <li><strong>Agile Ways of Working:</strong> Implementing flexible, cross-functional collaboration models</li>
+                    <li><strong>Innovation Processes:</strong> Creating structures for continuous experimentation and learning</li>
+                    <li><strong>Digital Leadership:</strong> Developing leaders who can navigate digital disruption</li>
+                </ul>
+                
+                <div class="warning-box">
+                    <h4>Critical Insight</h4>
+                    <p>Our research shows that digital culture and talent issues are the #1 reason digital transformations fail (not technology). Companies that invest equally in technology AND organizational capabilities are 3x more likely to succeed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Technology Stack Section -->
+    <section style="background: rgba(0, 51, 102, 0.05);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Strategic Technology Partners</h2>
+                <p class="section-subtitle">We leverage best-in-class technologies tailored to your specific needs and maturity level</p>
+            </div>
+            
+            <div class="content-block">
+                <h2>Our Technology Ecosystem</h2>
+                <p>Unlike many agencies tied to specific platforms, we're technology-agnostic. We recommend solutions based on your unique requirements, not vendor partnerships. Here are some of the leading technologies we integrate:</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <i class="fas fa-brain fa-3x" style="color: var(--electric-blue); margin-bottom: 15px;"></i>
+                        <h3>AI & Machine Learning</h3>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>Predictive Analytics</li>
+                            <li>Natural Language Processing</li>
+                            <li>Computer Vision</li>
+                            <li>Recommendation Engines</li>
+                        </ul>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-cloud fa-3x" style="color: var(--electric-blue); margin-bottom: 15px;"></i>
+                        <h3>Cloud Platforms</h3>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>AWS Architectures</li>
+                            <li>Azure Integration</li>
+                            <li>Google Cloud Solutions</li>
+                            <li>Hybrid Cloud Deployments</li>
+                        </ul>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-database fa-3x" style="color: var(--electric-blue); margin-bottom: 15px;"></i>
+                        <h3>Data Infrastructure</h3>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>Data Warehousing</li>
+                            <li>Real-time Analytics</li>
+                            <li>Customer Data Platforms</li>
+                            <li>Data Governance</li>
+                        </ul>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-robot fa-3x" style="color: var(--electric-blue); margin-bottom: 15px;"></i>
+                        <h3>Automation</h3>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>RPA (Robotic Process Automation)</li>
+                            <li>Workflow Automation</li>
+                            <li>AI-Powered Chatbots</li>
+                            <li>IoT Integration</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="success-box">
+                    <h4>Technology Selection Philosophy</h4>
+                    <p>We follow a rigorous 5-step process for technology recommendation: 1) Business need assessment, 2) Technical fit analysis, 3) Total cost of ownership evaluation, 4) Implementation complexity scoring, and 5) Future-proofing assessment. This ensures we recommend solutions that deliver both immediate value and long-term scalability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Measurement Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Measuring Digital Strategy Success</h2>
+                <p class="section-subtitle">We establish clear metrics and KPIs to ensure your digital investments deliver measurable business impact</p>
+            </div>
+            
+            <div class="content-block">
+                <h2>Our ROI Framework</h2>
+                <p>Digital transformation success can't be measured by technology adoption alone. We track impact across four dimensions:</p>
+                
+                <div class="maturity-model">
+                    <div class="maturity-levels">
+                        <div class="maturity-level">
+                            <div class="level-number"><i class="fas fa-chart-line"></i></div>
+                            <div class="level-content">
+                                <h4>Financial Metrics</h4>
+                                <p>Revenue growth, cost reduction, profit margins, customer lifetime value, and digital ROI.</p>
+                            </div>
+                        </div>
+                        <div class="maturity-level">
+                            <div class="level-number"><i class="fas fa-users"></i></div>
+                            <div class="level-content">
+                                <h4>Customer Metrics</h4>
+                                <p>Digital engagement, satisfaction scores, conversion rates, retention, and share of wallet.</p>
+                            </div>
+                        </div>
+                        <div class="maturity-level">
+                            <div class="level-number"><i class="fas fa-cogs"></i></div>
+                            <div class="level-content">
+                                <h4>Operational Metrics</h4>
+                                <p>Process efficiency, cycle times, error rates, automation levels, and workforce productivity.</p>
+                            </div>
+                        </div>
+                        <div class="maturity-level">
+                            <div class="level-number"><i class="fas fa-lightbulb"></i></div>
+                            <div class="level-content">
+                                <h4>Innovation Metrics</h4>
+                                <p>Time-to-market, digital initiative pipeline, experiment velocity, and new revenue streams.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Typical Results Our Clients Achieve</h3>
+                <p>While results vary by industry and starting maturity, our clients typically see:</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">25-45%</div>
+                        <div class="stat-label">Reduction in operational costs through automation</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30-60%</div>
+                        <div class="stat-label">Faster time-to-market for new products/services</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20-50%</div>
+                        <div class="stat-label">Improvement in customer satisfaction scores</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2-5x</div>
+                        <div class="stat-label">Return on digital investments within 2-3 years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Specialization Section -->
+    <section style="background: rgba(0, 51, 102, 0.05);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Industry-Specific Digital Strategies</h2>
+                <p class="section-subtitle">While our framework is universal, we tailor implementations to your industry's unique digital challenges and opportunities</p>
+            </div>
+            
+            <div class="content-block">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <i class="fas fa-store fa-3x" style="color: var(--primary-tan); margin-bottom: 15px;"></i>
+                        <h3>Retail & E-Commerce</h3>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>Omnichannel integration</li>
+                            <li>Personalization engines</li>
+                            <li>AI-powered recommendations</li>
+                            <li>Inventory optimization</li>
+                        </ul>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-industry fa-3x" style="color: var(--primary-tan); margin-bottom: 15px;"></i>
+                        <h3>Manufacturing</h3>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>Industry 4.0 transformation</li>
+                            <li>Predictive maintenance</li>
+                            <li>Digital twin implementation</li>
+                            <li>Smart factory solutions</li>
+                        </ul>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-hand-holding-usd fa-3x" style="color: var(--primary-tan); margin-bottom: 15px;"></i>
+                        <h3>Financial Services</h3>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>Digital banking platforms</li>
+                            <li>RegTech solutions</li>
+                            <li>AI-driven risk assessment</li>
+                            <li>Blockchain applications</li>
+                        </ul>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-heartbeat fa-3x" style="color: var(--primary-tan); margin-bottom: 15px;"></i>
+                        <h3>Healthcare</h3>
+                        <ul style="text-align: left; padding-left: 20px;">
+                            <li>Telehealth integration</li>
+                            <li>Patient experience platforms</li>
+                            <li>Interoperability solutions</li>
+                            <li>AI diagnostics support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>Digital Disruption Warning</h4>
+                    <p>Every industry is being disrupted by digital-native competitors and changing customer expectations. The average lifespan of companies on the S&P 500 has decreased from 60 years to under 20 years, primarily due to digital disruption. Having an industry-specific digital strategy is no longer optional for long-term survival.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="digital-cta" id="consultation">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Digital Future?</h2>
+                <p>Digital leadership doesn't happen by accident. It requires a deliberate strategy, expert guidance, and disciplined execution. Let's discuss how we can help you build a digital advantage that drives sustainable growth.</p>
+                <div class="cta-buttons">
+                    <a href="contactus.html" class="cta-button">Get Your Digital Assessment</a>
+                    <a href="#" class="cta-button-secondary">ENHANCED productivity</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Digital Strategy FAQs</h2>
+                <p class="section-subtitle">Answers to common questions about our digital strategy services</p>
+            </div>
+            
+            <div class="content-block">
+                <h3>1. How is a digital strategy different from an IT strategy?</h3>
+                <p>An IT strategy focuses primarily on technology infrastructure and systems, while a digital strategy encompasses how technology transforms all aspects of the business—customer experiences, operations, business models, and organizational culture. Digital strategy is business strategy in the digital age.</p>
+                
+                <h3>2. How long does it take to develop a digital strategy?</h3>
+                <p>Our comprehensive strategy engagements typically take 6-8 weeks from initial assessment to finalized roadmap. However, we can deliver a high-level diagnostic assessment in as little as 2 weeks for businesses needing quicker insights.</p>
+                
+                <h3>3. What's the typical investment range for digital strategy services?</h3>
+                <p>Engagements typically range from $25,000 for small businesses to $150,000+ for enterprise-level transformations. We offer tiered packages to meet different needs and budgets.</p>
+                
+                <h3>4. How do you measure the success of a digital strategy?</h3>
+                <p>We establish clear KPIs across financial, customer, operational, and innovation dimensions before starting. Success metrics are tailored to your specific business objectives and tracked throughout implementation.</p>
+                
+                <h3>5. What makes your approach different from other digital strategy firms?</h3>
+                <p>Three key differentiators: 1) We focus equally on technology AND organizational capabilities, 2) Our frameworks are battle-tested with SMBs (not just enterprises), and 3) We stay involved through execution—we don't just deliver PowerPoints.</p>
+                
+                <h3>6. Can we implement the strategy ourselves after you develop it?</h3>
+                <p>While we provide detailed implementation roadmaps that could be executed internally, most clients choose our ongoing support for at least the first 6-12 months to ensure proper execution and adaptation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo-text">TURBO TITANS</div>
+                    <p>We're a digital transformation agency helping SMBs navigate the complexities of digital evolution. Our strategic approach bridges the gap between technology potential and business results.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="#" style="color: var(--primary-tan); margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="color: var(--primary-tan); margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--primary-tan); margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: var(--primary-tan); font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Digital Strategy</a></li>
+                        <li><a href="#">Customer Experience</a></li>
+                        <li><a href="#">Data & Analytics</a></li>
+                        <li><a href="#">Digital Transformation</a></li>
+                        <li><a href="#">Process Automation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="case-studies.html">Careers</a></li>
+                        <li><a href="case-studies.html">Insights Blog</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                
+            <div class="footer-bottom">
+                <p>&copy;2025 TURBO TITANS. ALL RIGHTS RESERVED.</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.2)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+            });
+            
+            // Animate elements when they come into view
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.timeline-content, .stat-item, .maturity-level');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            document.querySelectorAll('.timeline-content, .stat-item, .maturity-level').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    </script>
+</body>
+</html>

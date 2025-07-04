@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Transformation | TURBO TITANS Digital Transformation Agency</title>
+    <meta name="description" content="Turbo Titans AI-powered transformation solutions that leverage cutting-edge artificial intelligence to revolutionize business operations.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-tan: #D2B48C;
+            --dark-tan: #B38B6D;
+            --primary-blue: #003366;
+            --electric-blue: #0066CC;
+            --highlight-red: #CC0000;
+            --dark-red: #990000;
+            --pure-black: #000000;
+            --rich-black: #0A0A0A;
+            --pure-white: #FFFFFF;
+            --off-white: #F5F5F5;
+            --neon-glow: 0 0 10px rgba(0, 102, 204, 0.7), 0 0 20px rgba(204, 0, 0, 0.5);
+            --neon-blue: 0 0 15px rgba(0, 102, 204, 0.8);
+            --neon-red: 0 0 15px rgba(204, 0, 0, 0.8);
+            --neon-tan: 0 0 15px rgba(210, 180, 140, 0.8);
+            --holographic-gradient: linear-gradient(135deg, rgba(0,102,204,0.8), rgba(204,0,0,0.8), rgba(210,180,140,0.8));
+            --ai-purple: #8A2BE2;
+            --neon-purple: 0 0 15px rgba(138, 43, 226, 0.8);
+            --ai-teal: #20B2AA;
+            --neon-teal: 0 0 15px rgba(32, 178, 170, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--rich-black);
+            border-left: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--electric-blue), var(--highlight-red));
+            border-radius: 10px;
+            border: 3px solid var(--rich-black);
+            background-size: 200% 200%;
+            animation: scrollGradient 3s ease infinite;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--highlight-purple), var(--electric-blue));
+        }
+
+        @keyframes scrollGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--rich-black);
+            color: var(--off-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: var(--neon-tan);
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Navigation Styles */
+        .desktop-nav ul {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .desktop-nav ul li {
+            position: relative;
+        }
+
+        .desktop-nav ul li a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .desktop-nav ul li a:hover {
+            color: var(--primary-tan);
+        }
+
+        .desktop-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--electric-blue);
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Styles */
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--rich-black);
+            min-width: 200px;
+            padding: 15px 0;
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            border-top: 2px solid var(--electric-blue);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 102, 204, 0.1);
+            color: var(--electric-blue);
+            padding-left: 25px;
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-tan);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-nav-active {
+            display: block !important;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--rich-black);
+            padding: 20px;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .mobile-nav-active ul {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-nav-active .dropdown-content {
+            position: static;
+            border: none;
+            padding: 10px 0 0 15px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* AI Hero Section */
+        .ai-hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+            background: radial-gradient(ellipse at center, rgba(138, 43, 226, 0.1) 0%, rgba(10,10,10,1) 70%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--ai-teal);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: var(--neon-teal);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--ai-teal);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        /* AI Neural Network Visualization */
+        .neural-network {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .neuron {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--ai-purple);
+            box-shadow: 0 0 10px var(--ai-purple);
+        }
+
+        .connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(to right, rgba(138, 43, 226, 0.3), rgba(32, 178, 170, 0.3));
+            transform-origin: left center;
+        }
+
+        /* AI Capabilities Section */
+        .ai-capabilities {
+            padding: 120px 0;
+            background: linear-gradient(to bottom, rgba(10,10,10,1), rgba(20,20,30,1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--ai-teal);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: var(--neon-teal);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .capability-card {
+            background: rgba(20, 20, 30, 0.7);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--ai-teal);
+        }
+
+        .capability-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.8s ease;
+        }
+
+        .capability-card:hover::before {
+            transform: rotate(90deg);
+        }
+
+        .capability-icon {
+            font-size: 3rem;
+            color: var(--ai-purple);
+            margin-bottom: 25px;
+            transition: all 0.5s ease;
+        }
+
+        .capability-card:hover .capability-icon {
+            color: var(--ai-teal);
+            transform: scale(1.2);
+        }
+
+        .capability-title {
+            font-size: 1.5rem;
+            color: var(--ai-teal);
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .capability-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .capability-cta {
+            display: inline-flex;
+            align-items: center;
+            color: var(--ai-purple);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .capability-cta i {
+            margin-left: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .capability-card:hover .capability-cta {
+            color: var(--ai-teal);
+        }
+
+        .capability-card:hover .capability-cta i {
+            transform: translateX(5px);
+        }
+
+        /* AI Model Visualization */
+        .ai-model-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, rgba(32, 178, 170, 0.1), rgba(138, 43, 226, 0.1));
+            position: relative;
+        }
+
+        .model-container {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .model-visual {
+            flex: 1;
+            height: 500px;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .model-structure {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotateModel 30s infinite linear;
+        }
+
+        .model-layer {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--ai-purple);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: var(--ai-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            opacity: 0.9;
+            transition: all 0.5s ease;
+            background: rgba(20, 20, 30, 0.7);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+        }
+
+        .model-layer:hover {
+            background: rgba(32, 178, 170, 0.1);
+            box-shadow: 0 0 30px rgba(32, 178, 170, 0.5);
+        }
+
+        .model-layer-1 { transform: translateZ(0px); }
+        .model-layer-2 { transform: translateZ(150px); }
+        .model-layer-3 { transform: translateZ(300px); }
+        .model-layer-4 { transform: translateZ(450px); }
+
+        .model-connection {
+            position: absolute;
+            height: 150px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--ai-purple), var(--ai-teal));
+            left: 50%;
+            transform-origin: top center;
+        }
+
+        .model-content {
+            flex: 1;
+        }
+
+        .model-title {
+            font-size: 2.5rem;
+            color: var(--ai-teal);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .model-subtitle {
+            font-size: 1.2rem;
+            color: var(--ai-purple);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .model-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .model-features {
+            margin-bottom: 40px;
+        }
+
+        .model-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .model-feature-icon {
+            font-size: 1.5rem;
+            color: var(--ai-purple);
+            margin-right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(138, 43, 226, 0.1);
+        }
+
+        .model-feature-text {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* AI Process Section */
+        .ai-process {
+            padding: 120px 0;
+            background: linear-gradient(to bottom, rgba(20,20,30,1), rgba(10,10,10,1));
+            position: relative;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(138, 43, 226, 0.1);
+            border: 2px solid var(--ai-purple);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--ai-teal);
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .process-step:hover .step-number {
+            background: rgba(32, 178, 170, 0.1);
+            border-color: var(--ai-teal);
+            box-shadow: 0 0 30px rgba(32, 178, 170, 0.5);
+            transform: scale(1.1);
+        }
+
+        .step-content {
+            background: rgba(20, 20, 30, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            transition: all 0.5s ease;
+            flex-grow: 1;
+        }
+
+        .process-step:hover .step-content {
+            border-color: var(--ai-teal);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            color: var(--ai-teal);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .step-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .process-line {
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--ai-purple), var(--ai-teal));
+            z-index: 1;
+        }
+
+        /* AI Impact Section */
+        .ai-impact {
+            padding: 120px 0;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(32, 178, 170, 0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .impact-card {
+            background: rgba(20, 20, 30, 0.7);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--ai-teal);
+        }
+
+        .impact-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(138, 43, 226, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--ai-purple);
+            transition: all 0.5s ease;
+        }
+
+        .impact-card:hover .impact-icon {
+            background: rgba(32, 178, 170, 0.1);
+            color: var(--ai-teal);
+            transform: scale(1.1);
+        }
+
+        .impact-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--ai-teal);
+            margin-bottom: 15px;
+            transition: all 0.5s ease;
+        }
+
+        .impact-card:hover .impact-value {
+            text-shadow: var(--neon-teal);
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .ai-cta {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(32, 178, 170, 0.8));
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%2320B2AA" stroke-width="0.5" stroke-dasharray="5,5" /></svg>');
+            opacity: 0.2;
+        }
+
+        .ai-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ai-cta h2 {
+            font-size: 2.8rem;
+            color: var(--pure-white);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .ai-cta p {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--ai-teal);
+            color: var(--pure-black);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background: var(--ai-purple);
+            color: var(--pure-white);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(to bottom, rgba(10,10,10,1), rgba(0,0,0,1));
+            padding: 80px 0 0;
+            position: relative;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col {
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            color: var(--primary-tan);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-tan);
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .footer-about {
+            margin: 20px 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(210, 180, 140, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--electric-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-tan);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        @keyframes rotateModel {
+            from {
+                transform: rotateY(0);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .model-container {
+                flex-direction: column;
+            }
+            
+            .model-visual {
+                width: 100%;
+                margin-bottom: 40px;
+                height: 400px;
+            }
+            
+            .model-content {
+                width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .capabilities-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .model-title {
+                font-size: 2rem;
+            }
+            
+            /* Mobile menu toggle */
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .process-line {
+                left: 30px;
+            }
+            
+            .ai-cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .model-layer {
+                width: 200px;
+                height: 200px;
+                font-size: 1rem;
+            }
+            
+            .model-layer-2 { transform: translateZ(100px); }
+            .model-layer-3 { transform: translateZ(200px); }
+            .model-layer-4 { transform: translateZ(300px); }
+            
+            .ai-cta {
+                padding: 80px 0;
+            }
+            
+            .ai-cta h2 {
+                font-size: 1.8rem;
+            }
+            
+            .ai-cta p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TURBO TITANS</span>
+                    <span class="logo-tagline">Digital Transformation</span>
+                </a>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="service-detail.html">Digital Strategy</a>
+                                <a href="ai.html">AI Solutions</a>
+                                <a href="service-detail.html">Cloud Transformation</a>
+                                <a href="service-detail.html">Data Analytics</a>
+                                <a href="service-detail.html">CX Optimization</a>
+                            </div>
+                        </li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="blog.html">Insights</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+       <!-- Hero Section -->
+    <section class="ai-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">AI Transformation</h1>
+            <p class="hero-subtitle">Harness the power of artificial intelligence to revolutionize your business operations, customer experiences, and decision-making processes.</p>
+            <a href="#capabilities" class="cta-button">Explore AI Solutions</a>
+        </div>
+        <div class="hero-scroll">Scroll to Discover</div>
+        
+        <!-- Neural Network Background -->
+        <div class="neural-network" id="neuralNetwork"></div>
+    </section>
+
+    <!-- AI Capabilities Section -->
+    <section id="capabilities" class="ai-capabilities">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AI Capabilities</h2>
+                <p class="section-subtitle">Comprehensive artificial intelligence solutions tailored to transform your business</p>
+            </div>
+            
+            <div class="capabilities-grid">
+                <!-- Capability 1 -->
+                <div class="capability-card">
+                    <i class="fas fa-robot capability-icon"></i>
+                    <h3 class="capability-title">Intelligent Automation</h3>
+                    <p class="capability-description">Streamline operations with AI-powered automation that learns and adapts to your business processes, reducing costs and increasing efficiency.</p>
+                    <a href="#" class="capability-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Capability 2 -->
+                <div class="capability-card">
+                    <i class="fas fa-chart-line capability-icon"></i>
+                    <h3 class="capability-title">Predictive Analytics</h3>
+                    <p class="capability-description">Anticipate market trends, customer behavior, and operational needs with our advanced predictive modeling and forecasting solutions.</p>
+                    <a href="#" class="capability-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Capability 3 -->
+                <div class="capability-card">
+                    <i class="fas fa-comments capability-icon"></i>
+                    <h3 class="capability-title">Conversational AI</h3>
+                    <p class="capability-description">Enhance customer engagement with intelligent chatbots and virtual assistants that deliver human-like interactions at scale.</p>
+                    <a href="#" class="capability-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Capability 4 -->
+                <div class="capability-card">
+                    <i class="fas fa-eye capability-icon"></i>
+                    <h3 class="capability-title">Computer Vision</h3>
+                    <p class="capability-description">Leverage image and video analysis for quality control, security, and enhanced customer experiences across industries.</p>
+                    <a href="#" class="capability-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Capability 5 -->
+                <div class="capability-card">
+                    <i class="fas fa-brain capability-icon"></i>
+                    <h3 class="capability-title">Machine Learning</h3>
+                    <p class="capability-description">Implement custom machine learning models that continuously improve from your data, uncovering insights and optimizing operations.</p>
+                    <a href="#" class="capability-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Capability 6 -->
+                <div class="capability-card">
+                    <i class="fas fa-project-diagram capability-icon"></i>
+                    <h3 class="capability-title">Neural Networks</h3>
+                    <p class="capability-description">Deploy deep learning solutions for complex pattern recognition, natural language processing, and advanced predictive capabilities.</p>
+                    <a href="#" class="capability-cta">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Model Visualization Section -->
+    <section class="ai-model-section">
+        <div class="container">
+            <div class="model-container">
+                <div class="model-visual">
+                    <div class="model-structure">
+                        <div class="model-layer model-layer-1">Input Layer</div>
+                        <div class="model-layer model-layer-2">Hidden Layer 1</div>
+                        <div class="model-layer model-layer-3">Hidden Layer 2</div>
+                        <div class="model-layer model-layer-4">Output Layer</div>
+                        <div class="model-connection" style="transform: rotateX(70deg) translateY(75px);"></div>
+                        <div class="model-connection" style="transform: rotateX(70deg) translateY(75px) rotateY(90deg);"></div>
+                    </div>
+                </div>
+                <div class="model-content">
+                    <h2 class="model-title">Deep Learning Architecture</h2>
+                    <p class="model-subtitle">Custom Neural Network Solutions</p>
+                    <p class="model-description">Our AI experts design and implement custom deep learning architectures tailored to your specific business challenges, leveraging the latest advancements in neural network technology.</p>
+                    
+                    <div class="model-features">
+                        <div class="model-feature">
+                            <div class="model-feature-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="model-feature-text">
+                                <strong>Multi-layer Architecture:</strong> Custom-designed neural networks with optimal layer configuration for your specific use case.
+                            </div>
+                        </div>
+                        <div class="model-feature">
+                            <div class="model-feature-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div class="model-feature-text">
+                                <strong>High Performance:</strong> Optimized for speed and accuracy with our proprietary training algorithms.
+                            </div>
+                        </div>
+                        <div class="model-feature">
+                            <div class="model-feature-icon">
+                                <i class="fas fa-arrows-alt"></i>
+                            </div>
+                            <div class="model-feature-text">
+                                <strong>Scalable Solutions:</strong> From edge devices to cloud clusters, our models scale to meet your operational needs.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="cta-button">Explore AI Models</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Process Section -->
+    <section class="ai-process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AI Implementation Process</h2>
+                <p class="section-subtitle">Our proven methodology for successful AI transformation</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-line"></div>
+                
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Discovery & Assessment</h3>
+                        <p class="step-description">We conduct a comprehensive analysis of your business processes, data infrastructure, and strategic goals to identify the highest-value AI opportunities.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Data Strategy</h3>
+                        <p class="step-description">Our data scientists work with your team to prepare and optimize your data assets, ensuring quality, accessibility, and compliance.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Model Development</h3>
+                        <p class="step-description">We design, train, and validate custom AI models using state-of-the-art algorithms and your proprietary data.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Integration & Deployment</h3>
+                        <p class="step-description">Our engineers seamlessly integrate the AI solutions into your existing systems and workflows for immediate impact.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Continuous Optimization</h3>
+                        <p class="step-description">We monitor performance and continuously improve the models as your business evolves and new data becomes available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Impact Section -->
+    <section class="ai-impact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AI Transformation Impact</h2>
+                <p class="section-subtitle">Measurable results from our AI implementations</p>
+            </div>
+            
+            <div class="impact-grid">
+                <!-- Impact 1 -->
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="impact-value">70%</div>
+                    <div class="impact-label">Process Automation</div>
+                </div>
+                
+                <!-- Impact 2 -->
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="impact-value">45%</div>
+                    <div class="impact-label">Cost Reduction</div>
+                </div>
+                
+                <!-- Impact 3 -->
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="impact-value">3.5x</div>
+                    <div class="impact-label">Faster Decisions</div>
+                </div>
+                
+                <!-- Impact 4 -->
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="impact-value">90%</div>
+                    <div class="impact-label">Accuracy Improvement</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="ai-cta">
+        <div class="ai-cta-content">
+            <h2>Ready for AI Transformation?</h2>
+            <p>Schedule a consultation with our AI specialists to discover how artificial intelligence can revolutionize your business operations and create competitive advantage.</p>
+            <a href="contactus.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">TURBO TITANS</span>
+                        <span class="logo-tagline">Digital Transformation</span>
+                    </a>
+                    <p class="footer-about">We help enterprises navigate digital transformation with cutting-edge technology solutions and strategic consulting.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-likedin-in"></i></a>
+                        <a href="#"><i class="fab fa-titter"></i></a>
+                        <a href="#"><i class="fab fa-acebook-f"></i></a>
+                        <a href="#"><i class="fab fainstagram"></i></a>
+						<a href="#"><i class="fab f-instagram"></i></a>
+						<a href="#"><i class="fab a-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>AI Solutions</h3>
+                    <ul>
+                        <li><a href="#">Intelligent Automation</a></li>
+                        <li><a href="#">Predictive Analytics</a></li>
+                        <li><a href="#">Conversational AI</a></li>
+                        <li><a href="#">Computer Vision</a></li>
+                        <li><a href="#">Machine Learning</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="#">Financial Services</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Manufacturing</a></li>
+                        <li><a href="#">Retail</a></li>
+                        <li><a href="#">Government</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="blog.html">Insights</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TURBO TITANS. DIGITAL TRANSFORMATION AGENCY. ALL RIGHTS RESERVED.</p>
+                <div class="footer-links">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('.desktop-nav');
+            nav.classList.toggle('mobile-nav-active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Create neural network visualization
+        function createNeuralNetwork() {
+            const container = document.getElementById('neuralNetwork');
+            const width = container.offsetWidth;
+            const height = container.offsetHeight;
+            
+            // Create neurons
+            for (let i = 0; i < 30; i++) {
+                const neuron = document.createElement('div');
+                neuron.className = 'neuron';
+                neuron.style.left = `${Math.random() * width}px`;
+                neuron.style.top = `${Math.random() * height}px`;
+                neuron.style.opacity = Math.random() * 0.5 + 0.3;
+                neuron.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+                container.appendChild(neuron);
+                
+                // Animate neurons
+                animateNeuron(neuron, width, height);
+            }
+            
+            // Create connections
+            const neurons = document.querySelectorAll('.neuron');
+            neurons.forEach(neuron1 => {
+                neurons.forEach(neuron2 => {
+                    if (Math.random() > 0.95) {
+                        const x1 = parseFloat(neuron1.style.left);
+                        const y1 = parseFloat(neuron1.style.top);
+                        const x2 = parseFloat(neuron2.style.left);
+                        const y2 = parseFloat(neuron2.style.top);
+                        
+                        const distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                        if (distance < 300) {
+                            const connection = document.createElement('div');
+                            connection.className = 'connection';
+                            connection.style.left = `${x1}px`;
+                            connection.style.top = `${y1}px`;
+                            connection.style.width = `${distance}px`;
+                            connection.style.transform = `rotate(${Math.atan2(y2 - y1, x2 - x1)}rad)`;
+                            connection.style.opacity = Math.random() * 0.3 + 0.1;
+                            container.appendChild(connection);
+                        }
+                    }
+                });
+            });
+        }
+        
+        function animateNeuron(neuron, maxWidth, maxHeight) {
+            let x = parseFloat(neuron.style.left);
+            let y = parseFloat(neuron.style.top);
+            let xSpeed = (Math.random() - 0.5) * 2;
+            let ySpeed = (Math.random() - 0.5) * 2;
+            
+            function move() {
+                x += xSpeed;
+                y += ySpeed;
+                
+                // Bounce off edges
+                if (x <= 0 || x >= maxWidth) xSpeed *= -1;
+                if (y <= 0 || y >= maxHeight) ySpeed *= -1;
+                
+                neuron.style.left = `${x}px`;
+                neuron.style.top = `${y}px`;
+                
+                requestAnimationFrame(move);
+            }
+            
+            move();
+        }
+        
+        // Initialize neural network when DOM is loaded
+        document.addEventListener('DOMContentLoaded', createNeuralNetwork);
+        
+        // Animate capability cards on scroll
+        const capabilityCards = document.querySelectorAll('.capability-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        capabilityCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(50px)';
+            card.style.transition = 'all 0.8s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

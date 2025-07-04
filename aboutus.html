@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Turbo Titans | Digital Transformation specialists</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+	<style>
+        :root {
+            --primary-tan: #D2B48C;
+            --dark-tan: #B38B6D;
+            --primary-blue: #003366;
+            --electric-blue: #0066CC;
+            --highlight-red: #CC0000;
+            --dark-red: #990000;
+            --pure-black: #000000;
+            --rich-black: #0A0A0A;
+            --pure-white: #FFFFFF;
+            --off-white: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+            background-color: var(--rich-black);
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--pure-black);
+            border-left: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--electric-blue), var(--highlight-red));
+            border-radius: 10px;
+            border: 2px solid var(--rich-black);
+            background-size: 200% 200%;
+            animation: scrollbarGradient 3s ease infinite;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--highlight-red), var(--primary-tan));
+            animation: scrollbarGradientHover 1.5s ease infinite;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background: var(--pure-black);
+        }
+
+        @keyframes scrollbarGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes scrollbarGradientHover {
+            0% { background-position: 0% 50%; box-shadow: 0 0 5px var(--highlight-red); }
+            50% { background-position: 100% 50%; box-shadow: 0 0 10px var(--electric-blue); }
+            100% { background-position: 0% 50%; box-shadow: 0 0 5px var(--highlight-red); }
+        }
+
+        /* Scrollbar for Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--electric-blue) var(--pure-black);
+        }
+
+        body {
+            background-color: var(--rich-black);
+            color: var(--off-white);
+            overflow-x: hidden;
+            perspective: 1000px;
+            scroll-behavior: smooth;
+        }
+
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--pure-black);
+        }
+
+        /* Binary Code Animation */
+        .binary-code {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0.05;
+        }
+
+        .binary-line {
+            position: absolute;
+            font-family: monospace;
+            color: var(--electric-blue);
+            font-size: 1rem;
+            white-space: nowrap;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(100vh); }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 30px 0;
+            position: relative;
+            z-index: 100;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.2);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-tan), var(--electric-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--highlight-red), var(--primary-blue));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover .logo-text::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .logo-tagline {
+            font-size: 0.8rem;
+            color: var(--primary-tan);
+            letter-spacing: 2px;
+            margin-left: 15px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 40px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--highlight-red);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-tan);
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        /* About Hero Section */
+        .about-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            text-align: center;
+        }
+
+        .about-hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, var(--primary-tan), var(--electric-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .about-hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--off-white);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        /* 3D DNA Strand */
+        .dna-container {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            margin: 100px auto;
+            perspective: 1000px;
+        }
+
+        .dna-strand {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotateDNA 30s infinite linear;
+        }
+
+        .dna-node {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--electric-blue);
+            box-shadow: 0 0 15px var(--electric-blue);
+            transform-style: preserve-3d;
+        }
+
+        .dna-connector {
+            position: absolute;
+            width: 2px;
+            background: var(--primary-tan);
+            transform-origin: top center;
+        }
+
+        @keyframes rotateDNA {
+            0% { transform: rotateY(0) rotateX(0); }
+            100% { transform: rotateY(360deg) rotateX(360deg); }
+        }
+
+        /* About Content Section */
+        .about-content {
+            padding: 100px 0;
+        }
+
+        .about-section {
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--highlight-red), var(--electric-blue));
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--off-white);
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* Mission Vision Values */
+        .mv-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .mv-card {
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            padding: 40px 30px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            min-height: 350px;
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.1), rgba(204, 0, 0, 0.1));
+            z-index: -1;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(210, 180, 140, 0.3);
+        }
+
+        .mv-card:nth-child(1):hover {
+            border-top: 3px solid var(--electric-blue);
+        }
+
+        .mv-card:nth-child(2):hover {
+            border-top: 3px solid var(--highlight-red);
+        }
+
+        .mv-card:nth-child(3):hover {
+            border-top: 3px solid var(--primary-tan);
+        }
+
+        .mv-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--primary-tan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .mv-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .mv-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--off-white);
+            opacity: 0.8;
+        }
+
+        /* Policies Section */
+        .policies-section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 80px 0;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .policy-accordion {
+            margin-top: 50px;
+        }
+
+        .policy-item {
+            margin-bottom: 20px;
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .policy-header {
+            padding: 20px;
+            background: rgba(10, 10, 10, 0.7);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .policy-header:hover {
+            background: rgba(10, 10, 10, 0.9);
+        }
+
+        .policy-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .policy-toggle {
+            font-size: 1.5rem;
+            color: var(--electric-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .policy-item.active .policy-toggle {
+            transform: rotate(45deg);
+        }
+
+        .policy-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(10, 10, 10, 0.5);
+        }
+
+        .policy-item.active .policy-content {
+            max-height: 1000px;
+        }
+
+        .policy-text {
+            padding: 30px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--off-white);
+            opacity: 0.9;
+        }
+
+        .policy-text ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .policy-text ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .policy-text ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-red);
+        }
+
+        /* 3D Globe Visualization */
+        .globe-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            perspective: 1000px;
+        }
+
+        .globe {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotateGlobe 30s infinite linear;
+        }
+
+        .globe-node {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--highlight-red);
+            box-shadow: 0 0 10px var(--highlight-red);
+            transform-style: preserve-3d;
+        }
+
+        .globe-line {
+            position: absolute;
+            width: 1px;
+            background: var(--electric-blue);
+            transform-origin: top center;
+        }
+
+        @keyframes rotateGlobe {
+            0% { transform: rotateY(0); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        /* Remote Work Section */
+        .remote-section {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .remote-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .remote-item {
+            padding: 40px 20px;
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .remote-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(210, 180, 140, 0.1), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .remote-item:hover::before {
+            left: 100%;
+        }
+
+        .remote-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--electric-blue);
+        }
+
+        .remote-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .remote-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--off-white);
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--pure-black);
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .footer-column {
+            width: 30%;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-tan), var(--electric-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--off-white);
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .footer-links a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-links a::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-red);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-tan);
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: 5px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--primary-tan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--highlight-red);
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-contact span {
+            font-size: 0.9rem;
+            color: var(--off-white);
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--off-white);
+            opacity: 0.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .mv-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .remote-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-hero-title {
+                font-size: 3.5rem;
+            }
+
+            .globe-container {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 30px;
+            }
+
+            nav ul li {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .about-hero {
+                height: auto;
+                padding: 100px 0;
+            }
+
+            .about-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .mv-container {
+                grid-template-columns: 1fr;
+            }
+
+            .remote-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.8rem;
+            }
+
+            .about-hero-title {
+                font-size: 2rem;
+            }
+
+            .remote-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-wrap: wrap;
+            }
+
+            .footer-column {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Binary Code Animation -->
+    <div class="binary-code" id="binaryCode"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <h1 class="logo-text">TURBO TITANS</h1>
+                    <span class="logo-tagline">Digital Transformation Agency</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1 class="about-hero-title">PIONEERING DIGITAL EVOLUTION</h1>
+                <p class="about-hero-subtitle">
+                    Turbo Titans is a collective of digital architects, security sentinels, and transformation strategists 
+                    operating at the intersection of innovation and execution.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D DNA Strand -->
+    <div class="dna-container" id="dnaStrand"></div>
+
+    <!-- About Content Section -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-section">
+                <h2 class="about-title">OUR STORY</h2>
+                <p class="about-text">
+                    Turbo Titans emerged from a shared vision to bridge the gap between emerging technologies 
+                    and practical business applications. Our journey began with three cybersecurity experts in a virtual workspace, 
+                    and has since evolved into a global network of specialists collaborating across time zones.
+                </p>
+                <p class="about-text">
+                    Unlike traditional agencies, we operate as a distributed collective of experts, each selected for their 
+                    unparalleled expertise in specific technological domains. This model allows us to assemble the perfect 
+                    team for each project while maintaining agility and reducing overhead costs.
+                </p>
+            </div>
+
+            <!-- Mission Vision Values -->
+            <div class="about-section">
+                <h2 class="about-title">OUR CORE</h2>
+                <div class="mv-container">
+                    <div class="mv-card">
+                        <div class="mv-icon">⟁</div>
+                        <h3 class="mv-title">MISSION</h3>
+                        <p class="mv-description">
+                            To accelerate digital transformation through innovative solutions that are secure by design, 
+                            future-proof by architecture, and transformative by impact. We exist to turn technological 
+                            potential into measurable business advantage.
+                        </p>
+                    </div>
+                    <div class="mv-card">
+                        <div class="mv-icon">⌲</div>
+                        <h3 class="mv-title">VISION</h3>
+                        <p class="mv-description">
+                            A world where organizations don't just adapt to digital evolution but actively shape it. 
+                            We envision being the catalyst for this change, empowering businesses to become architects 
+                            of their digital destiny.
+                        </p>
+                    </div>
+                    <div class="mv-card">
+                        <div class="mv-icon">⎇</div>
+                        <h3 class="mv-title">VALUES</h3>
+                        <p class="mv-description">
+                            <strong>Innovation</strong> without compromise.<br>
+                            <strong>Security</strong> as a foundation, not a feature.<br>
+                            <strong>Collaboration</strong> across boundaries.<br>
+                            <strong>Transparency</strong> in all engagements.<br>
+                            <strong>Impact</strong> measured by client success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Globe Visualization -->
+            <div class="globe-container" id="globeNetwork"></div>
+
+            <!-- Remote Work Section -->
+            <section class="remote-section">
+                <div class="container">
+                    <h2 class="about-title">BORDERLESS EXPERTISE</h2>
+                    <p class="about-text">
+                        Our distributed model allows us to operate without geographical constraints, assembling the perfect 
+                        team for each project from our global network of specialists. This approach delivers several 
+                        strategic advantages:
+                    </p>
+                    <div class="remote-grid">
+                        <div class="remote-item">
+                            <div class="remote-icon">🌐</div>
+                            <h3 class="remote-title">Global Talent</h3>
+                            <p class="remote-description">
+                                Access to world-class experts regardless of location, with 24/7 coverage across time zones.
+                            </p>
+                        </div>
+                        <div class="remote-item">
+                            <div class="remote-icon">⚡</div>
+                            <h3 class="remote-title">Rapid Scaling</h3>
+                            <p class="remote-description">
+                                Instant team expansion or specialization without the overhead of traditional hiring.
+                            </p>
+                        </div>
+                        <div class="remote-item">
+                            <div class="remote-icon">🔒</div>
+                            <h3 class="remote-title">Secure Operations</h3>
+                            <p class="remote-description">
+                                Military-grade security protocols ensure protection regardless of physical workspace.
+                            </p>
+                        </div>
+                        <div class="remote-item">
+                            <div class="remote-icon">💡</div>
+                            <h3 class="remote-title">Diverse Perspectives</h3>
+                            <p class="remote-description">
+                                Cross-cultural insights lead to more innovative and globally applicable solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Policies Section -->
+            <section class="policies-section">
+                <div class="container">
+                    <h2 class="about-title">POLICIES & TERMS</h2>
+                    <p class="about-text">
+                        Our commitment to transparency and ethical operations is codified in these foundational policies.
+                    </p>
+                    <div class="policy-accordion">
+                        <!-- Engagement Terms -->
+                        <div class="policy-item">
+                            <div class="policy-header">
+                                <h3 class="policy-title">Engagement Terms</h3>
+                                <span class="policy-toggle">+</span>
+                            </div>
+                            <div class="policy-content">
+                                <div class="policy-text">
+                                    <p>
+                                        <strong>1. Project Initiation:</strong> All engagements begin with a discovery phase to align objectives, scope, and success metrics. A formal Statement of Work (SOW) must be signed before commencement.
+                                    </p>
+                                    <p>
+                                        <strong>2. Payment Structure:</strong> We operate on milestone-based payments with 30% upfront for new clients. Final deliverables are released upon full payment.
+                                    </p>
+                                    <p>
+                                        <strong>3. Intellectual Property:</strong> Unless otherwise agreed, clients retain full ownership of deliverables. Turbo Titans reserves the right to showcase work in our portfolio (confidential projects may be anonymized).
+                                    </p>
+                                    <p>
+                                        <strong>4. Termination:</strong> Either party may terminate with 30 days written notice. Client remains responsible for payments for work completed up to termination date.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Security Policy -->
+                        <div class="policy-item">
+                            <div class="policy-header">
+                                <h3 class="policy-title">Security Policy</h3>
+                                <span class="policy-toggle">+</span>
+                            </div>
+                            <div class="policy-content">
+                                <div class="policy-text">
+                                    <p>
+                                        Turbo Titans adheres to the highest security standards to protect client data and systems:
+                                    </p>
+                                    <ul>
+                                        <li>All team members undergo rigorous background checks and security training</li>
+                                        <li>End-to-end encryption for all communications and file transfers</li>
+                                        <li>Multi-factor authentication required for all systems access</li>
+                                        <li>Regular third-party security audits and penetration testing</li>
+                                        <li>Compliance with GDPR, CCPA, and other relevant data protection regulations</li>
+                                        <li>Immediate notification protocol for any security incidents</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Confidentiality Agreement -->
+                        <div class="policy-item">
+                            <div class="policy-header">
+                                <h3 class="policy-title">Confidentiality Agreement</h3>
+                                <span class="policy-toggle">+</span>
+                            </div>
+                            <div class="policy-content">
+                                <div class="policy-text">
+                                    <p>
+                                        <strong>1. Non-Disclosure:</strong> All client information is treated as confidential unless explicitly designated as public. This obligation continues indefinitely beyond project completion.
+                                    </p>
+                                    <p>
+                                        <strong>2. Need-to-Know Basis:</strong> Information is shared only with team members directly involved in the project.
+                                    </p>
+                                    <p>
+                                        <strong>3. Data Handling:</strong> Client data is stored in encrypted formats with strict access controls. Physical media is prohibited unless explicitly authorized.
+                                    </p>
+                                    <p>
+                                        <strong>4. Anonymization:</strong> Case studies may reference client work only with permission or when sufficiently anonymized.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Service Level Agreement -->
+                        <div class="policy-item">
+                            <div class="policy-header">
+                                <h3 class="policy-title">Service Level Agreement</h3>
+                                <span class="policy-toggle">+</span>
+                            </div>
+                            <div class="policy-content">
+                                <div class="policy-text">
+                                    <p>
+                                        Turbo Titans commits to the following service standards:
+                                    </p>
+                                    <ul>
+                                        <li><strong>Response Times:</strong> 2 business hours for critical issues, 8 hours for high priority, 24 hours for standard inquiries</li>
+                                        <li><strong>Uptime:</strong> 99.9% for managed services and platforms</li>
+                                        <li><strong>Support Coverage:</strong> 24/7 monitoring and emergency support for designated clients</li>
+                                        <li><strong>Change Management:</strong> All changes follow documented approval and rollback procedures</li>
+                                        <li><strong>Performance Metrics:</strong> Monthly reports detailing SLA compliance and service quality</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ethical Framework -->
+                        <div class="policy-item">
+                            <div class="policy-header">
+                                <h3 class="policy-title">Ethical Framework</h3>
+                                <span class="policy-toggle">+</span>
+                            </div>
+                            <div class="policy-content">
+                                <div class="policy-text">
+                                    <p>
+                                        We uphold strict ethical standards in all engagements:
+                                    </p>
+                                    <ul>
+                                        <li>We refuse projects involving surveillance technology, offensive cyber operations, or technologies that may cause societal harm</li>
+                                        <li>All AI implementations include bias testing and ethical impact assessments</li>
+                                        <li>Transparent algorithms - no "black box" solutions without client understanding</li>
+                                        <li>Environmental impact considered in all technology recommendations</li>
+                                        <li>Whistleblower protection for team members reporting ethical concerns</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">TURBO TITANS</div>
+                    <p class="footer-description">
+                        Accelerating digital transformation through innovative technologies, 
+                        robust security frameworks, and strategic collaborations across the globe.
+                    </p>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#nextgen">Next Generation Technologies</a></li>
+                        <li><a href="services.html#security">Vulnerability Management</a></li>
+                        <li><a href="services.html#collab">Collaborative Agreements</a></li>
+                        <li><a href="services.html#analytics">Advanced Analytics</a></li>
+                        <li><a href="services.html#transformation">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i>✉</i>
+                            <span>Turbotitans@zohomail.com</span>
+                        </li>
+                        <li>
+                            <i>✆</i>
+                            <span>+27 64 523 1633</span>
+                        </li>
+                        <li>
+                            <i>⌂</i>
+                            <span>Remote Consultations Available Worldwide<br>Based in South Africa</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 TURBO TITANS DIGITAL TRANSFORMATION AGENCY. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+        <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+        // Binary Code Animation
+        function createBinaryCode() {
+            const binaryContainer = document.getElementById('binaryCode');
+            const binaryChars = ['0', '1'];
+            const lines = Math.floor(window.innerHeight / 30);
+            
+            for (let i = 0; i < lines; i++) {
+                const line = document.createElement('div');
+                line.className = 'binary-line';
+                
+                // Random binary string
+                let binaryString = '';
+                const length = Math.floor(Math.random() * 50) + 30;
+                for (let j = 0; j < length; j++) {
+                    binaryString += binaryChars[Math.floor(Math.random() * binaryChars.length)];
+                }
+                
+                line.textContent = binaryString;
+                line.style.left = `${Math.random() * 100}%`;
+                line.style.animationDuration = `${Math.random() * 20 + 10}s`;
+                line.style.animationDelay = `${Math.random() * 5}s`;
+                
+                binaryContainer.appendChild(line);
+            }
+        }
+
+        // 3D DNA Strand Animation
+        function createDNAStrand() {
+            const container = document.getElementById('dnaStrand');
+            const dnaStrand = document.createElement('div');
+            dnaStrand.className = 'dna-strand';
+            
+            const nodes = 20;
+            const radius = 100;
+            const height = 300;
+            
+            for (let i = 0; i < nodes; i++) {
+                // Create nodes
+                const node = document.createElement('div');
+                node.className = 'dna-node';
+                
+                // Position nodes in a double helix
+                const angle = (i / nodes) * Math.PI * 2;
+                const x1 = Math.cos(angle) * radius;
+                const z1 = Math.sin(angle) * radius;
+                const x2 = Math.cos(angle + Math.PI) * radius;
+                const z2 = Math.sin(angle + Math.PI) * radius;
+                
+                const y = (i / nodes) * height - height / 2;
+                
+                // First helix node
+                const node1 = node.cloneNode();
+                node1.style.transform = `translate3d(${x1}px, ${y}px, ${z1}px)`;
+                dnaStrand.appendChild(node1);
+                
+                // Second helix node
+                const node2 = node.cloneNode();
+                node2.style.transform = `translate3d(${x2}px, ${y}px, ${z2}px)`;
+                dnaStrand.appendChild(node2);
+                
+                // Create connectors between nodes
+                if (i > 0) {
+                    const connector1 = document.createElement('div');
+                    connector1.className = 'dna-connector';
+                    connector1.style.height = `${height / nodes}px`;
+                    connector1.style.transform = `translate3d(${x1}px, ${y - height/nodes}px, ${z1}px) rotateX(90deg)`;
+                    dnaStrand.appendChild(connector1);
+                    
+                    const connector2 = document.createElement('div');
+                    connector2.className = 'dna-connector';
+                    connector2.style.height = `${height / nodes}px`;
+                    connector2.style.transform = `translate3d(${x2}px, ${y - height/nodes}px, ${z2}px) rotateX(90deg)`;
+                    dnaStrand.appendChild(connector2);
+                }
+            }
+            
+            container.appendChild(dnaStrand);
+        }
+
+        // 3D Globe Network Visualization
+        function createGlobeNetwork() {
+            const container = document.getElementById('globeNetwork');
+            const globe = document.createElement('div');
+            globe.className = 'globe';
+            
+            const nodes = 50;
+            const radius = 150;
+            
+            // Create nodes (cities/team locations)
+            const locations = [
+                { name: "Cape Town", lat: -33.9249, long: 18.4241 },
+                { name: "New York", lat: 40.7128, long: -74.0060 },
+                { name: "London", lat: 51.5074, long: -0.1278 },
+                { name: "Tokyo", lat: 35.6762, long: 139.6503 },
+                { name: "Sydney", lat: -33.8688, long: 151.2093 },
+                { name: "Berlin", lat: 52.5200, long: 13.4050 },
+                { name: "San Francisco", lat: 37.7749, long: -122.4194 },
+                { name: "Singapore", lat: 1.3521, long: 103.8198 }
+            ];
+            
+            // Add main hub nodes
+            locations.forEach(loc => {
+                const node = document.createElement('div');
+                node.className = 'globe-node';
+                node.style.width = '12px';
+                node.style.height = '12px';
+                node.style.boxShadow = '0 0 20px var(--highlight-red)';
+                
+                // Convert lat/long to 3D coordinates
+                const phi = (90 - loc.lat) * (Math.PI / 180);
+                const theta = (loc.long + 180) * (Math.PI / 180);
+                
+                const x = -(radius * Math.sin(phi) * Math.cos(theta));
+                const y = radius * Math.cos(phi);
+                const z = radius * Math.sin(phi) * Math.sin(theta);
+                
+                node.style.transform = `translate3d(${x}px, ${y}px, ${z}px)`;
+                node.setAttribute('data-city', loc.name);
+                
+                globe.appendChild(node);
+            });
+            
+            // Add random connection nodes
+            for (let i = 0; i < nodes; i++) {
+                const node = document.createElement('div');
+                node.className = 'globe-node';
+                
+                // Random spherical coordinates
+                const phi = Math.random() * Math.PI;
+                const theta = Math.random() * Math.PI * 2;
+                
+                const x = -(radius * Math.sin(phi) * Math.cos(theta));
+                const y = radius * Math.cos(phi);
+                const z = radius * Math.sin(phi) * Math.sin(theta);
+                
+                node.style.transform = `translate3d(${x}px, ${y}px, ${z}px)`;
+                globe.appendChild(node);
+                
+                // Occasionally add connections between nodes
+                if (Math.random() > 0.7 && i > 0) {
+                    const targetIndex = Math.floor(Math.random() * i);
+                    const targetNode = globe.children[targetIndex];
+                    
+                    if (targetNode) {
+                        const targetX = parseFloat(targetNode.style.transform.match(/translate3d\(([-\d.]+)px/)[1]);
+                        const targetY = parseFloat(targetNode.style.transform.match(/, ([-\d.]+)px/)[1]);
+                        const targetZ = parseFloat(targetNode.style.transform.match(/, ([-\d.]+)px\)/)[2]);
+                        
+                        const dx = x - targetX;
+                        const dy = y - targetY;
+                        const dz = z - targetZ;
+                        
+                        const distance = Math.sqrt(dx*dx + dy*dy + dz*dz);
+                        
+                        const connector = document.createElement('div');
+                        connector.className = 'globe-line';
+                        connector.style.height = `${distance}px`;
+                        
+                        // Position and rotate to connect the nodes
+                        const midX = (x + targetX) / 2;
+                        const midY = (y + targetY) / 2;
+                        const midZ = (z + targetZ) / 2;
+                        
+                        // Calculate rotation angles
+                        const rotX = Math.atan2(dz, dy) * (180 / Math.PI) + 90;
+                        const rotZ = -Math.atan2(dx, dy) * (180 / Math.PI);
+                        
+                        connector.style.transform = `
+                            translate3d(${midX}px, ${midY - distance/2}px, ${midZ}px)
+                            rotateX(${rotX}deg)
+                            rotateZ(${rotZ}deg)
+                        `;
+                        
+                        globe.appendChild(connector);
+                    }
+                }
+            }
+            
+            container.appendChild(globe);
+        }
+
+        // Policy Accordion Functionality
+        function setupAccordion() {
+            const policyItems = document.querySelectorAll('.policy-item');
+            
+            policyItems.forEach(item => {
+                const header = item.querySelector('.policy-header');
+                
+                header.addEventListener('click', () => {
+                    // Close all other items
+                    policyItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.policy-content').style.maxHeight = '0';
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    const content = item.querySelector('.policy-content');
+                    
+                    if (item.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        content.style.maxHeight = '0';
+                    }
+                });
+            });
+        }
+
+        // Initialize Particle.js Background
+        function initParticles() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#0066CC"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#D2B48C",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+
+        // Animate elements on scroll
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.mv-card, .remote-item, .about-section').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        function setupSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize all functions when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            createBinaryCode();
+            createDNAStrand();
+            createGlobeNetwork();
+            setupAccordion();
+            initParticles();
+            setupScrollAnimations();
+            setupSmoothScrolling();
+            
+            // Add animation class to hero section
+            setTimeout(() => {
+                document.querySelector('.about-hero-content').classList.add('animate');
+            }, 500);
+        });
+
+        // Responsive adjustments on window resize
+        window.addEventListener('resize', () => {
+            // Recreate binary code animation to fit new window size
+            const binaryContainer = document.getElementById('binaryCode');
+            binaryContainer.innerHTML = '';
+            createBinaryCode();
+        });
+		document.addEventListener('DOMContentLoaded', function() {
+    const policyItems = document.querySelectorAll('.policy-item');
+    
+    policyItems.forEach(item => {
+        const header = item.querySelector('.policy-header');
+        const toggle = item.querySelector('.policy-toggle');
+        
+        header.addEventListener('click', function() {
+            // Toggle active class on the parent item
+            item.classList.toggle('active');
+            
+            // Update the toggle symbol
+            if (item.classList.contains('active')) {
+                toggle.textContent = '×'; // Change to close symbol
+            } else {
+                toggle.textContent = '+'; // Change back to plus
+            }
+            
+            // Close other open items if desired (optional)
+            // policyItems.forEach(otherItem => {
+            //     if (otherItem !== item && otherItem.classList.contains('active')) {
+            //         otherItem.classList.remove('active');
+            //         otherItem.querySelector('.policy-toggle').textContent = '+';
+            //     }
+            // });
+        });
+    });
+    
+    // Optional: Open first item by default
+    // policyItems[0].classList.add('active');
+    // policyItems[0].querySelector('.policy-toggle').textContent = '×';
+});
+    </script>
+</body>
+</html>
