@@ -3712,6 +3712,209 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
+// ===== MOBILE NAVIGATION =====
+function setupMobileNavigation() {
+    // Create mobile nav elements
+    const mobileNav = document.createElement('div');
+    mobileNav.id = 'mobile-nav';
+    mobileNav.style.display = 'none';
+    
+    const navButton = document.createElement('button');
+    navButton.id = 'mobile-nav-button';
+    navButton.innerHTML = '☰';
+    
+    // Create nav links based on your existing navigation
+    const navLinks = [
+        { text: 'Home', href: 'index.html' },
+        { text: 'Services', href: 'services.html' },
+        { text: 'About Us', href: 'aboutus.html' },
+        { text: 'Contact', href: 'contactus.html' },
+        { text: 'Digital Quiz', href: '#quiz' },
+        { text: 'Security War Room', href: '#cyber-war-room' },
+        { text: 'Collaboration Game', href: '#collab-game' }
+    ];
+    
+    navLinks.forEach(link => {
+        const a = document.createElement('a');
+        a.href = link.href;
+        a.textContent = link.text;
+        a.addEventListener('click', () => {
+            mobileNav.style.display = 'none';
+            navButton.classList.remove('active');
+        });
+        mobileNav.appendChild(a);
+    });
+    
+    // Add elements to the body
+    document.body.appendChild(navButton);
+    document.body.appendChild(mobileNav);
+    
+    // Toggle mobile nav when button is clicked
+    navButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        mobileNav.style.display = this.classList.contains('active') ? 'block' : 'none';
+    });
+    
+    // Close nav when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mobileNav.contains(e.target) && e.target !== navButton) {
+            mobileNav.style.display = 'none';
+            navButton.classList.remove('active');
+        }
+    });
+    
+    // Add styles for mobile nav
+    const style = document.createElement('style');
+    style.textContent = `
+        #mobile-nav-button {
+            position: fixed;
+            top: 25px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(0, 102, 204, 0.2);
+            border: 1px solid var(--electric-blue);
+            color: var(--off-white);
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        #mobile-nav-button.active {
+            background: rgba(0, 102, 204, 0.4);
+            box-shadow: 0 0 20px var(--electric-blue);
+            color: var(--primary-tan);
+            border-color: var(--primary-tan);
+        }
+        
+        #mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100vh;
+            background: rgba(5, 10, 15, 0.98);
+            border-right: 1px solid var(--electric-blue);
+            z-index: 999;
+            padding: 80px 20px 20px;
+            box-shadow: 5px 0 15px rgba(0, 102, 204, 0.5);
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #mobile-nav[style*="display: block"] {
+            transform: translateX(0);
+            box-shadow: 10px 0 30px rgba(0, 102, 204, 0.7);
+        }
+        
+        #mobile-nav a {
+            display: block;
+            color: var(--off-white);
+            padding: 15px;
+            margin: 10px 0;
+            text-decoration: none;
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            transition: all 0.3s ease;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+        
+        #mobile-nav a::before {
+            content: '>';
+            position: absolute;
+            left: -15px;
+            color: var(--highlight-red);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        
+        #mobile-nav a:hover {
+            background: rgba(0, 102, 204, 0.1);
+            box-shadow: 0 0 10px var(--electric-blue);
+            transform: translateX(5px);
+            color: var(--primary-tan);
+            border-color: var(--primary-tan);
+        }
+        
+        #mobile-nav a:hover::before {
+            opacity: 1;
+            left: 10px;
+        }
+        
+        /* Scan line effect */
+        #mobile-nav::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
+            animation: scan 3s linear infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        @media (max-width: 992px) {
+            #mobile-nav-button {
+                display: flex;
+            }
+            
+            nav ul {
+                display: none !important;
+            }
+            
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            #mobile-nav {
+                width: 85%;
+            }
+            
+            .logo-tagline {
+                display: none;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// Initialize mobile navigation when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    setupMobileNavigation();
+    
+    // Add IDs to sections for navigation
+    document.querySelector('.quiz-section').id = 'quiz';
+    document.querySelector('.cyber-war-room').id = 'cyber-war-room';
+    document.querySelector('.collab-game-section').id = 'collab-game';
+});
     </script>
 </body>
 </html>
